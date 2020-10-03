@@ -2,11 +2,7 @@
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Implementations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace DeadHand
 {
@@ -19,9 +15,10 @@ namespace DeadHand
         static void Main(string[] args)
         {
             SetupGame();
-#if DEBUG
+#if !DEBUG
             SimulateOSStart();
 #endif
+            _gameController.StartTimer();
             while (true)
             {
                 DecodeCommand(CommandPrompt());
@@ -30,7 +27,9 @@ namespace DeadHand
 
         private static void SetupGame()
         {
-            _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()));
+            _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()), 
+                                                 (TimeLeftCommand)CommandBase.GetByIdentifier(CommandIdentifier.timeLeft.ToString()),
+                                                 (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.insertCode.ToString()));
         }
 
         private static void DecodeCommand(string command)

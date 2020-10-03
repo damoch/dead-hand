@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading;
 using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Implementations;
+using System.Timers;
 
 namespace DeadHand
 {
@@ -11,7 +12,10 @@ namespace DeadHand
     {
         internal EmailCommand EmailService { get; set; }
 
+        private System.Timers.Timer _gameTimer;
         private bool _emailNewMessages;
+        private TimeLeftCommand _timerService;
+        private InsertCodeCommand _codeService;
 
         public void ChceckEmail()
         {
@@ -22,9 +26,31 @@ namespace DeadHand
             }
         }
 
-        internal GameController(EmailCommand emailService)
+        internal GameController(EmailCommand emailService,
+                                TimeLeftCommand timerService,
+                                InsertCodeCommand codeService)
         {
             SetupEmailService(emailService);
+            _timerService = timerService;
+            _codeService = codeService;
+            _codeService.OnSuccesfullCode += StartTimer;
+        }
+
+        public void StartTimer()
+        {
+            if (_gameTimer != null)
+            {
+                _gameTimer.Dispose();
+            }
+            _gameTimer = new System.Timers.Timer(60 * 1000);
+            _timerService.CurrentTimer = DateTime.Now.AddSeconds(60);
+            _gameTimer.Elapsed += _gameTimer_Elapsed;
+            _gameTimer.Start();
+        }
+
+        private void _gameTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Console.WriteLine("elapsed");
         }
 
         private void SetupEmailService(EmailCommand emailService)
@@ -52,8 +78,7 @@ I have to end. They know that I want to blow whistle on them. It's all on your h
 Good luck.
 
 
-Joanna.",
-                    SpookyAdd = 8
+Joanna."
                 }
             };
         }

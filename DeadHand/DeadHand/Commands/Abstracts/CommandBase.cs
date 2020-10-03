@@ -10,7 +10,9 @@ namespace DeadHand.Commands.Abstracts
         private static Dictionary<CommandIdentifier, CommandBase> _implementations = new Dictionary<CommandIdentifier, CommandBase> {
             { CommandIdentifier.help, new HelpCommand() },
             { CommandIdentifier.email, new EmailCommand() },
-            { CommandIdentifier.shutdown, new ShutdownCommand() }
+            { CommandIdentifier.shutdown, new ShutdownCommand() },
+            { CommandIdentifier.timeLeft, new TimeLeftCommand() },
+            { CommandIdentifier.insertCode, new InsertCodeCommand() }
         };
         public abstract CommandIdentifier Identifier { get; }
         public abstract string Description { get; }

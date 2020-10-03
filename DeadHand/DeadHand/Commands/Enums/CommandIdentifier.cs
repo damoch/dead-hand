@@ -2,6 +2,7 @@
 {
     internal enum CommandIdentifier
     {
-        help, email, connect, shutdown, installTool, ecms, decoder, donis
+        help, email, connect, shutdown, installTool, ecms, decoder, donis, status, weaponStatus, timeLeft,
+        insertCode
     }
 }

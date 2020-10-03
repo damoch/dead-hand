@@ -49,7 +49,9 @@
     <Compile Include="Commands\Implementations\ECMSCommand.cs" />
     <Compile Include="Commands\Implementations\EmailCommand.cs" />
     <Compile Include="Commands\Implementations\HelpCommand.cs" />
+    <Compile Include="Commands\Implementations\InsertCodeCommand.cs" />
     <Compile Include="Commands\Implementations\ShutdownCommand.cs" />
+    <Compile Include="Commands\Implementations\TimeLeftCommand.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
