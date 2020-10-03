@@ -18,7 +18,6 @@ namespace DeadHand
 #if !DEBUG
             SimulateOSStart();
 #endif
-            _gameController.StartTimer();
             while (true)
             {
                 DecodeCommand(CommandPrompt());
@@ -29,7 +28,7 @@ namespace DeadHand
         {
             _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()), 
                                                  (TimeLeftCommand)CommandBase.GetByIdentifier(CommandIdentifier.timeLeft.ToString()),
-                                                 (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.insertCode.ToString()));
+                                                 (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.enterCode.ToString()));
         }
 
         private static void DecodeCommand(string command)

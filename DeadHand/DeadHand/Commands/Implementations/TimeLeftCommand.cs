@@ -13,6 +13,11 @@ namespace DeadHand.Commands.Implementations
 
         public override void Execute(string param = null)
         {
+            if(CurrentTimer == new DateTime())
+            {
+                Console.WriteLine("Dead Hand is not active");
+                return;
+            }
             var elpased = CurrentTimer - DateTime.Now;
             Console.WriteLine($"Time until Dead Hand activation {elpased.Minutes} minutes {elpased.Seconds} seconds");
         }
