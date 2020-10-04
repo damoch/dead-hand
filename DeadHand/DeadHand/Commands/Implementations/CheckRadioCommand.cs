@@ -1,11 +1,7 @@
 ﻿using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace DeadHand.Commands.Implementations
 {
@@ -14,7 +10,7 @@ namespace DeadHand.Commands.Implementations
         public override CommandIdentifier Identifier => CommandIdentifier.checkRadio;
         public ProgrammingType CurrentProgramming { get; set; }
 
-        public override string Description => "Allows to check, whether National Radio program 4 is still on the air, and what type of prrogramming is broadcasted";
+        public override string Description => "Allows to check whether National Radio program 4 is still on the air, and what type of prrogramming is broadcasted";
 
         public override void Execute(string param = null)
         {

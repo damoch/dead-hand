@@ -34,6 +34,12 @@ namespace DeadHand
 
         private static void DecodeCommand(string command)
         {
+            if (_gameController.DeadHandSettings.NeedsMaintenance)
+            {
+                Thread.Sleep(8000);
+                Console.WriteLine($"This seems to take longer than usual. Try to use {CommandIdentifier.status} command on info, about what can be done to resolve this issue");
+                Thread.Sleep(14000);
+            }
             var commTab = command.Split(' ');
             var commName = commTab[0];
 

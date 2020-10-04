@@ -22,14 +22,14 @@ namespace DeadHand.Commands.Implementations
             Console.WriteLine("Welcome to Dead Hand. Please enter code and press enter: ");
             var result = Console.ReadLine();
             Console.WriteLine("Checking code...");
-            Thread.Sleep(_rng.Next(1, 99) * 1000);
+            Thread.Sleep(_rng.Next(1, 15) * 1000);
             if (CancelCommand)
             {
                 return;
             }
             if (_rng.Next(1, 99) < 20)
             {
-                Console.WriteLine("An error occured. Pleasy try again.");
+                Console.WriteLine("An error occured. Pleasy try again later.");
                 return;
             }
 

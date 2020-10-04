@@ -12,12 +12,14 @@ namespace DeadHand
         internal EmailCommand EmailService { get; set; }
 
         private System.Timers.Timer _gameTimer;
+        private System.Timers.Timer _deadHandMaintenanceTimer;
         private bool _emailNewMessages;
         private TimeLeftCommand _timerService;
         private InsertCodeCommand _codeService;
         private CheckRadioCommand _radioService;
         private ScenarioBase _scenario;
-
+        private Random _rng = new Random();
+        internal DeadHandSettings DeadHandSettings { get; set; }
         public void ChceckEmail()
         {
             if (_emailNewMessages)
@@ -37,8 +39,25 @@ namespace DeadHand
             _codeService = codeService;
             _radioService = checkRadioCommand;
             _codeService.OnSuccesfullDelayCode += StartTimer;
+            DeadHandSettings = new DeadHandSettings()
+            {
+                MotherboardTemperature = 80,
+                MemoryCacheUsedPercentage = 20,
+                DiskFragmentationPercentage = 10
+            };
+
+            _deadHandMaintenanceTimer = new Timer(_rng.Next(_rng.Next(2, 4) * 60 * 1000));
+            _deadHandMaintenanceTimer.Elapsed += _deadHandMaintenanceTimer_Elapsed;
+            _deadHandMaintenanceTimer.Start();
 
             CreateTimeline();
+        }
+
+        private void _deadHandMaintenanceTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            DeadHandSettings.DiskFragmentationPercentage += _rng.Next(0, 20);
+            DeadHandSettings.MemoryCacheUsedPercentage += _rng.Next(0, 20);
+            DeadHandSettings.MotherboardTemperature += _rng.Next(0, 20);
         }
 
         private void CreateTimeline()
@@ -98,5 +117,16 @@ Since peace talks in Geneva have been cancelled, and hostile armed force has iss
             EmailService.EmailList.Add(email);
             _emailNewMessages = true;
         }
+
+
+    }
+
+    internal class DeadHandSettings
+    {
+        public int DiskFragmentationPercentage { get; set; }
+        public int MemoryCacheUsedPercentage { get; set; }
+        public int MotherboardTemperature { get; set; }
+
+        public bool NeedsMaintenance { get => DiskFragmentationPercentage > 50 || MemoryCacheUsedPercentage > 70 || MotherboardTemperature > 120; }
     }
 }
