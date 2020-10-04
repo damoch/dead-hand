@@ -9,9 +9,10 @@ namespace DeadHand.Commands.Implementations
     {
         private string _delayCode = "F7SA-USA7-JA98-CDSA";
         private string _activationCode = "2DCJ-CA83-8A9H-A9HD";
+        private string _shutdownCode = "FA7S-I82B-HEY4-HWEF";
         public override CommandIdentifier Identifier => CommandIdentifier.deadHand;
         public Action OnSuccesfullDelayCode { get; set; }
-        private Random _rng = new Random();
+        public Action OnSystemShutdown { get; set; }
 
         public override string Description => "Controls Dead Hand system";
         public bool CancelCommand { get; set; }
@@ -41,6 +42,11 @@ namespace DeadHand.Commands.Implementations
             {
                 Console.WriteLine("Code correct. Dead Hand activation in 7 minutes");
                 OnSuccesfullDelayCode.Invoke();
+            }
+            else if(result == _shutdownCode)
+            {
+                CancelCommand = true;
+                OnSystemShutdown.Invoke();
             }
             else
             {

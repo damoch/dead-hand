@@ -28,7 +28,8 @@ namespace DeadHand
         {
             _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()), 
                                                  (TimeLeftCommand)CommandBase.GetByIdentifier(CommandIdentifier.timeLeft.ToString()),
-                                                 (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()));
+                                                 (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
+                                                 (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()));
         }
 
         private static void DecodeCommand(string command)

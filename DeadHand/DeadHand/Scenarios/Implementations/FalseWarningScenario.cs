@@ -1,14 +1,12 @@
 ﻿using DeadHand.Commands.Implementations;
 using DeadHand.Scenarios.Abstracts;
 using System;
-using System.Threading;
-using System.Timers;
 
 namespace DeadHand.Scenarios.Implementations
 {
     internal class FalseWarningScenario : ScenarioBase
     {
-        public FalseWarningScenario(EmailCommand emailService) : base(emailService)
+        public FalseWarningScenario(EmailCommand emailService, CheckRadioCommand radioService) : base(emailService, radioService)
         {
 
         }
@@ -20,7 +18,8 @@ namespace DeadHand.Scenarios.Implementations
             SimulateLaunch();
             Console.Clear();
             Console.WriteLine(@"
-EPILOGUE: Asset responsible for Dead Hand system, had mistaken military exercise of 'hostile force' as a ligitimate threat, and allowed automatic retaliation system to perform
+EPILOGUE: 
+Asset responsible for Dead Hand system, had mistaken military exercise of 'hostile force' as a ligitimate threat, and allowed automatic retaliation system to perform
 nuclear attack.
 
 'Hostile force' seeing hundrets of ballistic missles coming their way, launched their own nuclear attack. Other nations seeing that laucnched their own arsennals, mutually destroying
@@ -34,7 +33,26 @@ $"Thanks for playing Dead Hand, developed by kszaku in October of 2020\n");
 
         public override void ScenarioEndingShutdown()
         {
-            throw new System.NotImplementedException();
+            SimulateShutdown();
+            Console.Clear();
+            Console.WriteLine(@"
+EPILOGUE: 
+(newspaper article printed following day)
+After hours of talks behind closed doors, during press conference in Geneva representatives of both countries anounced, that they succesfully signed the peace treaty.
+The treaty is promising the end of tensions between two nuclear powers, that had their tipping point yesterday, as reportedly both countries issued high alerts to their military
+forces.
+Both leaders expressed their satisfaction of fact, that total nuclear disarnment has found its place in the threaty.
+
+UN General Secretary expressed gratitude saying 'May this be last time, that world comes this close to nuclear anihilation. Nuclear weapons are deeply
+immoral, and pose existential threat to all of humanity. We must seek complete destruction of such tools'.
+
+However, no leader wanted to comment, whether infamous 'Dead hand' system actually exists.
+" +
+$"Scenario name: False warning\n" +
+$"This scenario has one more ending\n" +
+$"" +
+$"Thanks for playing Dead Hand, developed by kszaku in October of 2020\n");
+        
         }
 
         public override void StartScenario()

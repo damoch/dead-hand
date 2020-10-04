@@ -12,10 +12,12 @@ namespace DeadHand.Commands.Abstracts
             { CommandIdentifier.email, new EmailCommand() },
             { CommandIdentifier.shutdown, new ShutdownCommand() },
             { CommandIdentifier.timeLeft, new TimeLeftCommand() },
-            { CommandIdentifier.deadHand, new InsertCodeCommand() }
+            { CommandIdentifier.deadHand, new InsertCodeCommand() },
+            { CommandIdentifier.checkRadio, new CheckRadioCommand() } 
         };
         public abstract CommandIdentifier Identifier { get; }
         public abstract string Description { get; }
+        protected Random _rng = new Random();
 
         public abstract void Execute(string param = null);
 

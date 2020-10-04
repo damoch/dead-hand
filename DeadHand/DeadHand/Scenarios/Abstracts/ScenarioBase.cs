@@ -8,9 +8,19 @@ namespace DeadHand.Scenarios.Abstracts
 {
     internal abstract class ScenarioBase
     {
+        public ScenarioBase(EmailCommand emailService,
+                            CheckRadioCommand radioService)
+        {
+            _rng = new Random();
+            _emailService = emailService;
+            _triggers = new List<System.Timers.Timer>();
+            _radioService = radioService;
+        }
+        protected bool _isDeception;
         public abstract string ScenarioName { get; }
         protected Random _rng;
         protected EmailCommand _emailService;
+        protected CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
         public abstract void StartScenario();
 
@@ -64,6 +74,10 @@ THIS CONCLUDES PRESIDENTIAL ADDRESS
 "
             }, true);
 
+            if (!_isDeception)
+            {
+                _radioService.CurrentProgramming = CheckRadioCommand.ProgrammingType.presidentialAddress;
+            }
             ((System.Timers.Timer)sender).Stop();
         }
 
@@ -135,6 +149,11 @@ Keep in mind, that CIVIL DANGER and EVACUATE IMMEDIATELY messages are still in e
 THIS CONCLUDES ALL CLEAR MESSAGE
 "
             }, true);
+            if (!_isDeception)
+            {
+                _radioService.CurrentProgramming = CheckRadioCommand.ProgrammingType.specialBulletin;
+            }
+
             ((System.Timers.Timer)sender).Stop();
         }
 
@@ -256,41 +275,168 @@ THIS CONCLUDES ALL CLEAR MESSAGE
             ((System.Timers.Timer)sender).Stop();
         }
 
-        public ScenarioBase(EmailCommand emailService)
-        {
-            _rng = new Random();
-            _emailService = emailService;
-            _triggers = new List<System.Timers.Timer>();
-        }
+
 
         public abstract void ScenarioEndingLaunch();
         public abstract void ScenarioEndingShutdown();
 
-        protected static void SimulateLaunch()
+        protected void SimulateShutdown()
         {
             CancellAllEvents();
-            Console.Clear();
+            Console.Beep(400, 1000);
+            Console.Beep(500, 1000);
+            Console.Beep(600, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(600, 1000);
+            Console.Beep(500, 1000);
+            Console.Beep(400, 1000);
+            Console.Clear();            
             Thread.Sleep(2000);
-            foreach (var c in "DEAD HAND SYSTEM FULLY OPERATIONAL")
+            foreach (var c in "USER HAS ENTERED CORRECT SHUTDOWN CODE")
             {
                 Console.Write(c);
-                Thread.Sleep(100);
+                Console.Beep(900, 30);
+                Thread.Sleep(30);
+            }
+            Thread.Sleep(2000);
+            foreach (var c in "WEAPON SYSTEMS DISENGAGED")
+            {
+                Console.Write(c);
+                Console.Beep(900, 30);
+                Thread.Sleep(30);
+            }
+
+        }
+
+        protected void SimulateLaunch()
+        {
+            CancellAllEvents();
+            Console.Beep(400, 1000);
+            Console.Beep(500, 1000);
+            Console.Beep(600, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(700, 1000);
+            Console.Beep(600, 1000);
+            Console.Beep(500, 1000);
+            Console.Beep(400, 1000);
+            Thread.Sleep(500);
+            Console.Clear();
+            Thread.Sleep(2000);
+            foreach (var c in "DEAD HAND SYSTEM ACTIVATED")
+            {
+                Console.Write(c);
+                Console.Beep(900, 30);
+                Thread.Sleep(30);
             }
             Thread.Sleep(2000);
             Console.WriteLine("");
 
-            foreach (var c in "PROCEEDING TO AUTOMATICALLY LAUNCH BALLISTIC MISSLES TOWARDS DESIGNATED TARGETS")
+            foreach (var c in "PROCEEDING TO LAUNCH BALLISTIC MISSLES TOWARDS DESIGNATED TARGETS")
             {
                 Console.Write(c);
-                Thread.Sleep(100);
+                Console.Beep(900, 30);
+                Thread.Sleep(30);
+            }
+            Thread.Sleep(5000);
+            Console.Clear();
+            foreach (var c in "LOADING TARGETS LIST...")
+            {
+                Console.Write(c);
+                Console.Beep(900, 30);
+                Thread.Sleep(30);
             }
             Thread.Sleep(5000);
             Console.WriteLine("");
+
+            Console.WriteLine("Code: Alpha\nType: Air base\nEstimated casualties: 20k");
+            Console.Beep(400, 500);
+            Thread.Sleep(500);
+            Console.WriteLine("Code: Bravo\nType: Naval base\nEstimated casualties: 10k");
+            Console.Beep(400, 500);
+            Thread.Sleep(500);
+            Console.WriteLine("Code: Charlie\nType: Population centre\nEstimated casualties: 1 million");
+            Console.Beep(400, 500);
+            Thread.Sleep(500);
+            Console.WriteLine("Code: Delta\nType: Industrial centre\nEstimated casualties: 500k");
+            Console.Beep(400, 500);
+            Thread.Sleep(500);
+            Console.WriteLine("Code: Echo\nType: Naval base\nEstimated casualties: 500k");
+            Console.Beep(400, 300);
+            Thread.Sleep(300);
+            Console.WriteLine("Code: Foxtrot\nType: Naval base\nEstimated casualties: 10k");
+            Console.Beep(400, 300);
+            Thread.Sleep(300);
+            Console.WriteLine("Code: Golf\nType: Air base\nEstimated casualties: 10k");
+            Console.Beep(400, 200);
+            Thread.Sleep(200);
+            Console.WriteLine("Code: Hotel\nType: Population centre\nEstimated casualties: 100k");
+            Console.Beep(400, 200);
+            Thread.Sleep(200);
+            Console.WriteLine("Code: India\nType: Population centre\nEstimated casualties: 700k");
+            Console.Beep(400, 200);
+            Thread.Sleep(200);
+            Console.WriteLine("Code: India\nType: Ballistic misle launch site\nEstimated casualties: UNKNOWN");
+            Console.Beep(400, 200);
+            Thread.Sleep(200);
+            Console.WriteLine("Code: Juliet\nType: Ballistic misle launch site\nEstimated casualties: UNKNOWN");
+            Console.Beep(400, 200);
+            Thread.Sleep(200);
+            Console.WriteLine("Code: Kilo\nType: Ballistic misle launch site\nEstimated casualties: UNKNOWN");
+            Console.Beep(400, 200);
+            Thread.Sleep(200);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+            Console.WriteLine("Code: Defeat\nType: This is genocide\nEstimated casualties: No one wins");
+            Console.Beep(400, 50);
+            Thread.Sleep(50);
+
             Console.Clear();
             foreach (var c in "GOOD BYE")
             {
                 Console.Write(c);
-                Thread.Sleep(1000);
+                Console.Beep(900, 50);
+                Thread.Sleep(500);
             }
             Thread.Sleep(5000);
             Console.Clear();

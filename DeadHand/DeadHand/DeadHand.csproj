@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Commands\Abstracts\CommandBase.cs" />
     <Compile Include="Commands\Enums\CommandIdentifier.cs" />
+    <Compile Include="Commands\Implementations\CheckRadioCommand.cs" />
     <Compile Include="Commands\Implementations\DecoderCommand.cs" />
     <Compile Include="Commands\Implementations\ECMSCommand.cs" />
     <Compile Include="Commands\Implementations\EmailCommand.cs" />
