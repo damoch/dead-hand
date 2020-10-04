@@ -3,6 +3,6 @@
     internal enum CommandIdentifier
     {
         help, email, connect, shutdown, installTool, ecms, decoder, donis, status, weaponStatus, timeLeft,
-        enterCode
+        deadHand
     }
 }

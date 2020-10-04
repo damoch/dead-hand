@@ -9,16 +9,16 @@ namespace DeadHand.Commands.Implementations
     {
         private string _delayCode = "F7SA-USA7-JA98-CDSA";
         private string _activationCode = "2DCJ-CA83-8A9H-A9HD";
-        public override CommandIdentifier Identifier => CommandIdentifier.enterCode;
+        public override CommandIdentifier Identifier => CommandIdentifier.deadHand;
         public Action OnSuccesfullDelayCode { get; set; }
         private Random _rng = new Random();
 
-        public override string Description => "Allows you to insert code to cancel Dead Hand activation";
+        public override string Description => "Controls Dead Hand system";
         public bool CancelCommand { get; set; }
 
         public override void Execute(string param = null)
         {
-            Console.WriteLine("Please enter code and press enter: ");
+            Console.WriteLine("Welcome to Dead Hand. Please enter code and press enter: ");
             var result = Console.ReadLine();
             Console.WriteLine("Checking code...");
             Thread.Sleep(_rng.Next(1, 99) * 1000);

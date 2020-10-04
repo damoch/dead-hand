@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Enums;
 
@@ -18,6 +19,22 @@ namespace DeadHand.Commands.Implementations
         public EmailCommand()
         {
             EmailList = new List<Email>();
+        }
+
+        public void AddEmail(Email email, bool playTones)
+        {
+            EmailList.Add(email);
+            if (playTones)
+            {
+                Console.Beep(900, 1000);
+                Thread.Sleep(500);
+                Console.Beep(900, 1000);
+                Thread.Sleep(500);
+                Console.Beep(900, 1000);
+                Thread.Sleep(500);
+                Console.Beep(500, 3000);
+            }
+            Console.WriteLine("email: there are new messages");
         }
 
         public override void Execute(string param = null)

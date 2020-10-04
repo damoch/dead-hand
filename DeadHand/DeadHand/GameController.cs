@@ -5,6 +5,8 @@ using System.Threading;
 using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Implementations;
 using System.Timers;
+using DeadHand.Scenarios.Abstracts;
+using DeadHand.Scenarios.Implementations;
 
 namespace DeadHand
 {
@@ -13,9 +15,11 @@ namespace DeadHand
         internal EmailCommand EmailService { get; set; }
 
         private System.Timers.Timer _gameTimer;
+        private List<System.Timers.Timer> _timelineTriggers;
         private bool _emailNewMessages;
         private TimeLeftCommand _timerService;
         private InsertCodeCommand _codeService;
+        private ScenarioBase _scenario;
 
         public void ChceckEmail()
         {
@@ -34,6 +38,15 @@ namespace DeadHand
             _timerService = timerService;
             _codeService = codeService;
             _codeService.OnSuccesfullDelayCode += StartTimer;
+
+            CreateTimeline();
+        }
+
+        private void CreateTimeline()
+        {
+            _scenario = new FalseWarningScenario(EmailService);
+            _scenario.StartScenario();
+
         }
 
         public void StartTimer()
@@ -43,7 +56,7 @@ namespace DeadHand
                 _gameTimer.Dispose();
             }
             _gameTimer = new System.Timers.Timer(7 * 60 * 1000);
-            _timerService.CurrentTimer = DateTime.Now.AddSeconds(60);
+            _timerService.CurrentTimer = DateTime.Now.AddSeconds(7 * 60);
             _gameTimer.Elapsed += _gameTimer_Elapsed;
             _gameTimer.Start();
         }
@@ -73,7 +86,7 @@ Since peace talks in Geneva have been cancelled, and hostile armed force has iss
 "\n4. To help "+Environment.UserName+" make decision whether enter the code and wait another 7 minutes, or allow attack to commence, following checks may be performed:"+
 "\na) Check whether National Radio 4 is still broadcasting"+
 "\nb) Check whether Naval Wether Service stil issues weather updates"+
-"\nIn addition, all Civil Defense broadcasts will be redirected to "+Environment.UserName+" email inbox in text form"+
+"\nIn addition, all National Civil Defense Service broadcasts will be redirected to "+Environment.UserName+" email inbox in text form"+
 "\n5. "+Environment.UserName+" is responsible for operation of computer controling Dead Hand system"+
 "\n6. Dead Hand may be shut down only by entering shutdown code, that will be issued in ALL CLEAR message from Strategic Command"
                 }

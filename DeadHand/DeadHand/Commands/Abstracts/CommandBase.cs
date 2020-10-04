@@ -12,7 +12,7 @@ namespace DeadHand.Commands.Abstracts
             { CommandIdentifier.email, new EmailCommand() },
             { CommandIdentifier.shutdown, new ShutdownCommand() },
             { CommandIdentifier.timeLeft, new TimeLeftCommand() },
-            { CommandIdentifier.enterCode, new InsertCodeCommand() }
+            { CommandIdentifier.deadHand, new InsertCodeCommand() }
         };
         public abstract CommandIdentifier Identifier { get; }
         public abstract string Description { get; }
