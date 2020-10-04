@@ -63,7 +63,7 @@ namespace DeadHand
 
         private void _gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Console.WriteLine("elapsed");
+            _scenario.ScenarioEndingLaunch();
             _codeService.CancelCommand = true;
         }
 

@@ -1,6 +1,7 @@
 ﻿using DeadHand.Commands.Implementations;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Timers;
 
 namespace DeadHand.Scenarios.Abstracts
@@ -8,9 +9,9 @@ namespace DeadHand.Scenarios.Abstracts
     internal abstract class ScenarioBase
     {
         public abstract string ScenarioName { get; }
-        internal Random _rng;
-        internal EmailCommand _emailService;
-        internal List<Timer> _triggers;
+        protected Random _rng;
+        protected EmailCommand _emailService;
+        protected List<System.Timers.Timer> _triggers;
         public abstract void StartScenario();
 
         protected void SendShutdownKeyMessage_Elapsed(object sender, ElapsedEventArgs e)
@@ -28,7 +29,7 @@ $"With that in mind, Startegic Command authorizes {Environment.UserName} to ente
 
             }, false);
 
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
         }
 
         protected void SendPresidentialAddress_Elapsed(object sender, ElapsedEventArgs e)
@@ -63,7 +64,7 @@ THIS CONCLUDES PRESIDENTIAL ADDRESS
 "
             }, true);
 
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
         }
 
         protected void SendCivilDanger2Message_Elapsed(object sender, ElapsedEventArgs e)
@@ -105,7 +106,7 @@ The President will address the nation shortly after this message is issued.
 THIS CONCLUDES CIVIL DANGER WARNING MESSAGE
 "
             }, true);
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
         }
 
         protected void SendAllClearAirAttackMessage_Elapsed(object sender, ElapsedEventArgs e)
@@ -134,7 +135,7 @@ Keep in mind, that CIVIL DANGER and EVACUATE IMMEDIATELY messages are still in e
 THIS CONCLUDES ALL CLEAR MESSAGE
 "
             }, true);
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
         }
 
         protected void SendAirAttackWarning(object sender, ElapsedEventArgs e)
@@ -167,7 +168,7 @@ Every citzen receiving this message is ordered to take immediate actions:
 THIS CONCLUDES AIR ATTACK ALERT MESSAGE
 "
             }, true);
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
         }
 
         protected void SendEvacuateImmediatlyMessage(object sender, ElapsedEventArgs e)
@@ -199,7 +200,7 @@ Every citzen receiving this message is ordered to take immediate actions:
 THIS CONCLUDES EVACUATE IMMEDIATELY MESSAGE
 "
             }, true);
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
         }
 
         protected void SendCivilDangerEmail(object sender, ElapsedEventArgs e)
@@ -224,14 +225,83 @@ Every citzen of this country is ordered to take following immediate precautions 
 THIS CONCLUDES CIVIL DANGER WARNING MESSAGE
 "
             }, true) ;
-            ((Timer)sender).Stop();
+            ((System.Timers.Timer)sender).Stop();
+        }
+
+        protected void SendFinalAllClearMessage_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            _emailService.AddEmail(new Email()
+            {
+                Sender = "EMERGENCY ALERT SERVICE",
+                Subject = "ALL CLEAR - THIS IS NOT A TEST",
+                ReceivedDate = DateTime.Now,
+                Content = @"
+THIS MESSAGE IS BROADCASTED AT THE REQUEST OF GOVERNMENT. THIS IS NOT A TEST
+
+National Civil Defense Service has issued a ALL CLEAR message for CIVIL DANGER message issued earlier.
+
+This country is no longer under threat of hostile aggression.
+
+ALL CLEAR
+
+It is safe to leave your shelter now. If you, or member of your family or community got hurt, National Civil Defense Service officers are in place to provide help.
+
+1. Always listen to directions provided by police, fire department, military and National Civil Defense Service officers on site.
+2. Do not use telephone lines. Telephone lines should be kept open for emergency use.
+3. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.
+
+THIS CONCLUDES ALL CLEAR MESSAGE
+"
+            }, true);
+            ((System.Timers.Timer)sender).Stop();
         }
 
         public ScenarioBase(EmailCommand emailService)
         {
             _rng = new Random();
             _emailService = emailService;
-            _triggers = new List<Timer>();
+            _triggers = new List<System.Timers.Timer>();
+        }
+
+        public abstract void ScenarioEndingLaunch();
+        public abstract void ScenarioEndingShutdown();
+
+        protected static void SimulateLaunch()
+        {
+            CancellAllEvents();
+            Console.Clear();
+            Thread.Sleep(2000);
+            foreach (var c in "DEAD HAND SYSTEM FULLY OPERATIONAL")
+            {
+                Console.Write(c);
+                Thread.Sleep(100);
+            }
+            Thread.Sleep(2000);
+            Console.WriteLine("");
+
+            foreach (var c in "PROCEEDING TO AUTOMATICALLY LAUNCH BALLISTIC MISSLES TOWARDS DESIGNATED TARGETS")
+            {
+                Console.Write(c);
+                Thread.Sleep(100);
+            }
+            Thread.Sleep(5000);
+            Console.WriteLine("");
+            Console.Clear();
+            foreach (var c in "GOOD BYE")
+            {
+                Console.Write(c);
+                Thread.Sleep(1000);
+            }
+            Thread.Sleep(5000);
+            Console.Clear();
+        }
+
+        protected void CancellAllEvents()
+        {
+            foreach (var item in _triggers)
+            {
+                item.Stop();
+            }
         }
     }
 }
