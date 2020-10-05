@@ -4,6 +4,7 @@ using DeadHand.Commands.Implementations;
 using System.Timers;
 using DeadHand.Scenarios.Abstracts;
 using DeadHand.Scenarios.Implementations;
+using System.Text;
 
 namespace DeadHand
 {
@@ -18,6 +19,7 @@ namespace DeadHand
         private InsertCodeCommand _codeService;
         private CheckRadioCommand _radioService;
         private DefragCommand _defragCommand;
+        private StatusCommand _statusCommand;
         private ScenarioBase _scenario;
         private Random _rng = new Random();
         internal DeadHandSettings DeadHandSettings { get; set; }
@@ -34,13 +36,15 @@ namespace DeadHand
                                 TimeLeftCommand timerService,
                                 InsertCodeCommand codeService,
                                 CheckRadioCommand checkRadioCommand,
-                                DefragCommand defragCommand)
+                                DefragCommand defragCommand,
+                                StatusCommand statusCommand)
         {
             SetupEmailService(emailService);
             _timerService = timerService;
             _codeService = codeService;
             _radioService = checkRadioCommand;
             _defragCommand = defragCommand;
+            _statusCommand = statusCommand;
             _codeService.OnSuccesfullDelayCode += StartTimer;
             DeadHandSettings = new DeadHandSettings()
             {
@@ -53,6 +57,7 @@ namespace DeadHand
             _deadHandMaintenanceTimer.Elapsed += _deadHandMaintenanceTimer_Elapsed;
             _deadHandMaintenanceTimer.Start();
             _defragCommand.CurrentSettings = DeadHandSettings;
+            _statusCommand.CurrentSettings = DeadHandSettings;
 
             CreateTimeline();
         }
@@ -61,7 +66,7 @@ namespace DeadHand
         {
             DeadHandSettings.DiskFragmentationPercentage += _rng.Next(0, 40);
             DeadHandSettings.MemoryCacheUsedPercentage += _rng.Next(0, 40);
-            DeadHandSettings.MotherboardTemperature += _rng.Next(0, 40);
+            DeadHandSettings.MotherboardTemperature = _rng.Next(60, 120);
         }
 
         private void CreateTimeline()
@@ -132,5 +137,26 @@ Since peace talks in Geneva have been cancelled, and hostile armed force has iss
         public int MotherboardTemperature { get; set; }
 
         public bool NeedsMaintenance { get => DiskFragmentationPercentage > 50 || MemoryCacheUsedPercentage > 70; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine($"Motherboard Temperature: {MotherboardTemperature}°C");
+            sb.Append($"Disk Fragmentation: {DiskFragmentationPercentage}%");
+
+            if(DiskFragmentationPercentage > 50)
+            {
+                sb.Append(" Warning: defragmentation needed");
+            }
+            sb.AppendLine("");
+            sb.AppendLine($"Memory chaed used: {MemoryCacheUsedPercentage}%");
+
+            if (MemoryCacheUsedPercentage > 70)
+            {
+                sb.Append(" Warning: memory cache cleanup needed");
+            }
+
+            return sb.ToString();
+        }
     }
 }

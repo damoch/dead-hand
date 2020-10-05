@@ -26,7 +26,7 @@ namespace DeadHand.Commands.Implementations
             Thread.Sleep(_rng.Next(2, 4) * 1000);
             if (IsWorking && _rng.Next(1,99)>20)
             {
-                Console.WriteLine("Weather report:\nTemperature: 25°\nWind: 10km/h\nCloudy\nHumidity: 10%");
+                Console.WriteLine("Weather report:\nTemperature: 25°C\nWind: 10km/h\nCloudy\nHumidity: 10%");
             }
             else
             {

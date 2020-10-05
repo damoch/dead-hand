@@ -30,7 +30,9 @@ namespace DeadHand
                                                  (TimeLeftCommand)CommandBase.GetByIdentifier(CommandIdentifier.timeLeft.ToString()),
                                                  (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
                                                  (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()),
-                                                 (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString()));
+                                                 (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString()),
+                                                 (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString())
+                                                 );
         }
 
         private static void DecodeCommand(string command)
