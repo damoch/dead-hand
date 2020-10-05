@@ -5,6 +5,7 @@
         help, email, connect, shutdown, installTool, ecms, decoder, donis, status, weaponStatus, timeLeft,
         deadHand,
         checkRadio,
-        weatherService
+        weatherService,
+        defrag
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="Commands\Enums\CommandIdentifier.cs" />
     <Compile Include="Commands\Implementations\CheckRadioCommand.cs" />
     <Compile Include="Commands\Implementations\DecoderCommand.cs" />
+    <Compile Include="Commands\Implementations\DefragCommand.cs" />
     <Compile Include="Commands\Implementations\ECMSCommand.cs" />
     <Compile Include="Commands\Implementations\EmailCommand.cs" />
     <Compile Include="Commands\Implementations\HelpCommand.cs" />

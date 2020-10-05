@@ -14,7 +14,8 @@ namespace DeadHand.Commands.Abstracts
             { CommandIdentifier.timeLeft, new TimeLeftCommand() },
             { CommandIdentifier.deadHand, new InsertCodeCommand() },
             { CommandIdentifier.checkRadio, new CheckRadioCommand() },
-            { CommandIdentifier.weatherService, new WeatherServiceCommand() }
+            { CommandIdentifier.weatherService, new WeatherServiceCommand() },
+            { CommandIdentifier.defrag, new DefragCommand() }
         };
         public abstract CommandIdentifier Identifier { get; }
         public abstract string Description { get; }
