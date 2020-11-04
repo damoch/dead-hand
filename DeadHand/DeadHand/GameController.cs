@@ -13,6 +13,7 @@ namespace DeadHand
         internal EmailCommand EmailService { get; set; }
 
         private System.Timers.Timer _gameTimer;
+        private System.Timers.Timer _gameEnterCodeTimer;
         private System.Timers.Timer _deadHandMaintenanceTimer;
         private bool _emailNewMessages;
         private TimeLeftCommand _timerService;
@@ -20,6 +21,7 @@ namespace DeadHand
         private CheckRadioCommand _radioService;
         private DefragCommand _defragCommand;
         private StatusCommand _statusCommand;
+        private CleanCacheCommand _cleanCacheCommand;
         private ScenarioBase _scenario;
         private Random _rng = new Random();
         internal DeadHandSettings DeadHandSettings { get; set; }
@@ -37,7 +39,8 @@ namespace DeadHand
                                 InsertCodeCommand codeService,
                                 CheckRadioCommand checkRadioCommand,
                                 DefragCommand defragCommand,
-                                StatusCommand statusCommand)
+                                StatusCommand statusCommand,
+                                CleanCacheCommand cleanCacheCommand)
         {
             SetupEmailService(emailService);
             _timerService = timerService;
@@ -45,6 +48,7 @@ namespace DeadHand
             _radioService = checkRadioCommand;
             _defragCommand = defragCommand;
             _statusCommand = statusCommand;
+            _cleanCacheCommand = cleanCacheCommand;
             _codeService.OnSuccesfullDelayCode += StartTimer;
             DeadHandSettings = new DeadHandSettings()
             {
@@ -53,11 +57,12 @@ namespace DeadHand
                 DiskFragmentationPercentage = 10
             };
 
-            _deadHandMaintenanceTimer = new Timer(_rng.Next(_rng.Next(2, 4) * 60 * 1000));
+            _deadHandMaintenanceTimer = new Timer(_rng.Next(2, 4) * 60 * 1000);
             _deadHandMaintenanceTimer.Elapsed += _deadHandMaintenanceTimer_Elapsed;
             _deadHandMaintenanceTimer.Start();
             _defragCommand.CurrentSettings = DeadHandSettings;
             _statusCommand.CurrentSettings = DeadHandSettings;
+            _cleanCacheCommand.CurrentSettings = DeadHandSettings;
 
             CreateTimeline();
         }
@@ -83,10 +88,28 @@ namespace DeadHand
             {
                 _gameTimer.Dispose();
             }
-            _gameTimer = new System.Timers.Timer(7 * 60 * 1000);
-            _timerService.CurrentTimer = DateTime.Now.AddSeconds(7 * 60);
+            if(_gameEnterCodeTimer != null)
+            {
+                _gameEnterCodeTimer.Dispose();
+            }
+            _gameTimer = new System.Timers.Timer(10 * 60 * 1000);
+            _gameEnterCodeTimer = new Timer(4 * 60 * 1000);
+            _gameEnterCodeTimer.Elapsed += _gameEnterCodeTimer_Elapsed;
+            _timerService.CurrentTimer = DateTime.Now.AddMinutes(10);
+            _codeService.AcceptCodeTime = DateTime.Now.AddMinutes(6);
             _gameTimer.Elapsed += _gameTimer_Elapsed;
             _gameTimer.Start();
+            _gameEnterCodeTimer.Start();
+        }
+
+        private void _gameEnterCodeTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Console.Beep(600, 1000);
+            Console.Beep(400, 1000);
+            Console.Beep(600, 1000);
+            Console.Beep(400, 1000);
+            Console.WriteLine("Warning: Dead hand will launch in 4 minutes. Enter delay code, if you want to delay the launch");
+            ((Timer)sender).Stop();
         }
 
         private void _gameTimer_Elapsed(object sender, ElapsedEventArgs e)
@@ -109,9 +132,9 @@ namespace DeadHand
 Since peace talks in Geneva have been cancelled, and hostile armed force has issued red alert to their strategic weapons division, Strategic Command has issued STANDBY alert.
 
 1. "+Environment.UserName+" has been authorized to enter following Dead Hand activation code: 2DCJ-CA83-8A9H-A9HD" +
-"\n2. 7 minutes after activation Dead Hand will automatically launch retaliationary nuclear strike against enemy cities" +
-"\n3. In final 2 minutes before activation "+Environment.UserName+" will get the chance to enter following cancellation code: F7SA-USA7-JA98-CDSA. Entering that code will delay retaliation for 7 minutes"+
-"\n4. To help "+Environment.UserName+" make decision whether enter the code and wait another 7 minutes, or allow attack to commence, following checks may be performed:"+
+"\n2. 10 minutes after activation Dead Hand will automatically launch retaliationary nuclear strike against enemy cities" +
+"\n3. In final 4 minutes before activation "+Environment.UserName+" will get the chance to enter following delay code: F7SA-USA7-JA98-CDSA. Entering that code will delay retaliation for 7 minutes"+
+"\n4. To help "+Environment.UserName+" make decision whether enter the code and wait another 10 minutes, or allow attack to commence, following checks may be performed:"+
 "\na) Check whether National Radio program 4 is still broadcasting"+
 "\nb) Check whether Naval Wether Service stil issues weather updates"+
 "\nIn addition, all National Civil Defense Service broadcasts will be redirected to "+Environment.UserName+" email inbox in text form"+
@@ -149,7 +172,7 @@ Since peace talks in Geneva have been cancelled, and hostile armed force has iss
                 sb.Append(" Warning: defragmentation needed");
             }
             sb.AppendLine("");
-            sb.AppendLine($"Memory chaed used: {MemoryCacheUsedPercentage}%");
+            sb.AppendLine($"Memory cache used: {MemoryCacheUsedPercentage}%");
 
             if (MemoryCacheUsedPercentage > 70)
             {

@@ -31,8 +31,8 @@ namespace DeadHand
                                                  (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
                                                  (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()),
                                                  (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString()),
-                                                 (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString())
-                                                 );
+                                                 (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString()),
+                                                 (CleanCacheCommand)CommandBase.GetByIdentifier(CommandIdentifier.cleanCache.ToString()));
         }
 
         private static void DecodeCommand(string command)
@@ -61,13 +61,6 @@ namespace DeadHand
         private static void SimulateOSStart()
         {
             var rnd = new Random(); 
-            Console.Write("connecting to 122.128.70.188");
-            for (int i = 0; i < rnd.Next(2, 8); i++)
-            {
-                Thread.Sleep(1000);
-                Console.Write(".");
-            }
-            Console.WriteLine("connected");
             Console.Write("Booting GuardianOS 93 by GuardSoft (Military version)");
             for (int i = 0; i < rnd.Next(2, 8); i++)
             {

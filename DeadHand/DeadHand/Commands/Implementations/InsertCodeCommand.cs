@@ -16,6 +16,7 @@ namespace DeadHand.Commands.Implementations
 
         public override string Description => "Controls Dead Hand system";
         public bool CancelCommand { get; set; }
+        public DateTime AcceptCodeTime { get; internal set; }
 
         public override void Execute(string param = null)
         {
@@ -35,12 +36,18 @@ namespace DeadHand.Commands.Implementations
 
             if (result == _delayCode && OnSuccesfullDelayCode != null)
             {
-                Console.WriteLine("Code correct. Next Dead Hand activation in 7 minutes");
+                if((AcceptCodeTime - DateTime.Now).Minutes > 4)
+                {
+                    Console.WriteLine("Too early to enter delay code!");
+                    return;
+
+                }
+                Console.WriteLine("Code correct. Next Dead Hand activation in 10 minutes");
                 OnSuccesfullDelayCode.Invoke();
             }
             else if(result == _activationCode)
             {
-                Console.WriteLine("Code correct. Dead Hand activation in 7 minutes");
+                Console.WriteLine("Code correct. Dead Hand activation in 10 minutes");
                 OnSuccesfullDelayCode.Invoke();
             }
             else if(result == _shutdownCode)

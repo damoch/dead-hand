@@ -6,6 +6,7 @@
         deadHand,
         checkRadio,
         weatherService,
-        defrag
+        defrag,
+        cleanCache
     }
 }

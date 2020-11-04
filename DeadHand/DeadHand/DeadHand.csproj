@@ -46,6 +46,7 @@
     <Compile Include="Commands\Abstracts\CommandBase.cs" />
     <Compile Include="Commands\Enums\CommandIdentifier.cs" />
     <Compile Include="Commands\Implementations\CheckRadioCommand.cs" />
+    <Compile Include="Commands\Implementations\CleanCacheCommand.cs" />
     <Compile Include="Commands\Implementations\DecoderCommand.cs" />
     <Compile Include="Commands\Implementations\DefragCommand.cs" />
     <Compile Include="Commands\Implementations\ECMSCommand.cs" />

@@ -34,7 +34,7 @@ namespace DeadHand.Scenarios.Abstracts
                 Content = $"Asset {Environment.UserName},"+
                 @"The hostile government has issued stand down order to its military forces, and expressed will to resume peace talks.
 Our intelligence has noted, that hostile forces are indeed standing down and returning to their bases."+
-$"With that in mind, Startegic Command authorizes {Environment.UserName} to enter following Dead Hand shutdown code IMMEDIATELY" +
+$"With that in mind, Startegic Command authorizes {Environment.UserName} to enter following Dead Hand shutdown code IMMEDIATELY\n" +
 @"FA7S-I82B-HEY4-HWEF"
 
             }, false);
