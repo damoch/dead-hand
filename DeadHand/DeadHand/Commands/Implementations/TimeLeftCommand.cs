@@ -4,6 +4,7 @@ using System;
 
 namespace DeadHand.Commands.Implementations
 {
+    //This should be an option to the deadHand command
     internal class TimeLeftCommand : CommandBase
     {
         public override CommandIdentifier Identifier => CommandIdentifier.timeLeft;

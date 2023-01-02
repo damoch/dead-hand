@@ -5,6 +5,7 @@ using System.Threading;
 
 namespace DeadHand.Commands.Implementations
 {
+    //TODO: station name and its status should be removed from this class
     internal class CheckRadioCommand : CommandBase
     {
         public override CommandIdentifier Identifier => CommandIdentifier.checkRadio;
@@ -47,9 +48,10 @@ namespace DeadHand.Commands.Implementations
             }
         }
 
-        internal enum ProgrammingType
+
+    }
+    internal enum ProgrammingType
     {
         normal, specialBulletin, presidentialAddress, none
-    }
     }
 }

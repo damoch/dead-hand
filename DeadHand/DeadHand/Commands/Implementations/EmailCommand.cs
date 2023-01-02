@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Enums;
-
+//TODO: add the feature to check previous messages, new message received tone
 namespace DeadHand.Commands.Implementations
 {
     internal class EmailCommand : CommandBase
@@ -117,6 +117,7 @@ namespace DeadHand.Commands.Implementations
         }
 
         public int SpookyAdd { get; set; }
+        public ProgrammingType ProgrammingType { get; set; }
 
     }
 }

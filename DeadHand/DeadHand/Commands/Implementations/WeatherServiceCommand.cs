@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DeadHand.Commands.Implementations
 {
+    //TODO: Data should be loaded from scenario
     internal class WeatherServiceCommand : CommandBase
     {
         public override CommandIdentifier Identifier => CommandIdentifier.weatherService;
