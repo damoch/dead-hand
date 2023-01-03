@@ -56,6 +56,7 @@
     <Compile Include="Commands\Implementations\ShutdownCommand.cs" />
     <Compile Include="Commands\Implementations\StatusCommand.cs" />
     <Compile Include="Commands\Implementations\WeatherServiceCommand.cs" />
+    <Compile Include="Consts.cs" />
     <Compile Include="GameController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

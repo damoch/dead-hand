@@ -15,7 +15,7 @@ namespace DeadHand.Scenarios.Implementations
         {
             _emails = new Dictionary<int, Email>
             {
-                { 60 * 1000 ,                 
+                { 1,                 
                 new Email()
                 {
                     ReceivedDate = DateTime.Now,
@@ -34,7 +34,7 @@ Since peace talks in Geneva have been cancelled, and hostile armed force has iss
 "\n5. "+Environment.UserName+" is responsible for operation of computer controling Dead Hand system"+
 "\n6. Dead Hand may be shut down only by entering shutdown code, that will be issued in ALL CLEAR message from Strategic Command"
                 } },
-                { 2 * 60 * 1000 ,
+                { 2  ,
                     new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
@@ -59,7 +59,7 @@ THIS CONCLUDES CIVIL DANGER WARNING MESSAGE
             }
                 },
                 {
-                    7 * 60 * 1000, new Email()
+                    7 , new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
                 Subject = "EVACUATE IMMEDIATELY - THIS IS NOT A TEST",
@@ -89,7 +89,7 @@ THIS CONCLUDES EVACUATE IMMEDIATELY MESSAGE
             }
                 },
                 {
-                    11 * 60 * 1000, new Email()
+                    11 , new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
                 Subject = "AIR ATTACK ALERT - THIS IS NOT A TEST",
@@ -120,7 +120,7 @@ THIS CONCLUDES AIR ATTACK ALERT MESSAGE
             }
                 },
                 {
-                    15 * 60 * 1000, new Email()
+                    15 , new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
                 Subject = "ALL CLEAR - THIS IS NOT A TEST",
@@ -147,7 +147,7 @@ THIS CONCLUDES ALL CLEAR MESSAGE
             }
                 },
                 {
-                    16 * 60 * 1000, new Email()
+                    16 , new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
                 Subject = "CIVIL DANGER WARNING - EVACUATE IMMEDIATELY - THIS IS NOT A TEST",
@@ -188,7 +188,7 @@ THIS CONCLUDES CIVIL DANGER WARNING MESSAGE
 
                 },
                 {
-                    20 * 60 * 1000,new Email()
+                    20 ,new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
                 Subject = "PRESIDENTIAL ADDRESS",
@@ -220,7 +220,7 @@ THIS CONCLUDES PRESIDENTIAL ADDRESS
             }
                 },
                 {
-                    24 * 60 * 1000, new Email()
+                    24 , new Email()
             {
                 Sender = "command@stratcom.com",
                 Subject = "Order no. 584",
@@ -233,7 +233,7 @@ $"With that in mind, Startegic Command authorizes {Environment.UserName} to ente
             }
                 },
                 {
-                   23 * 60 * 1000, new Email()
+                   23 , new Email()
             {
                 Sender = "EMERGENCY ALERT SERVICE",
                 Subject = "ALL CLEAR - THIS IS NOT A TEST",

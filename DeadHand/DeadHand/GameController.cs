@@ -71,7 +71,7 @@ namespace DeadHand
             _defragCommand.CurrentSettings = DeadHandSettings;
             _statusCommand.CurrentSettings = DeadHandSettings;
             _cleanCacheCommand.CurrentSettings = DeadHandSettings;
-            _deadHandMaintenanceTimer = new Timer(_rng.Next(2, 4) * 60 * 1000);
+            _deadHandMaintenanceTimer = new Timer(_rng.Next(2, 4) * Consts.TimerMinute);
             _deadHandMaintenanceTimer.Elapsed += _deadHandMaintenanceTimer_Elapsed;
             _deadHandMaintenanceTimer.Start();
             _scenario.StartScenario();
@@ -88,8 +88,8 @@ namespace DeadHand
             {
                 _gameEnterCodeTimer.Dispose();
             }
-            _gameTimer = new Timer(10 * 60 * 1000);
-            _gameEnterCodeTimer = new Timer(6 * 60 * 1000);
+            _gameTimer = new Timer(10 * Consts.TimerMinute);
+            _gameEnterCodeTimer = new Timer(6 * Consts.TimerMinute);
             _gameEnterCodeTimer.Elapsed += _gameEnterCodeTimer_Elapsed;
             _deadHandService.CurrentTimer = DateTime.Now.AddMinutes(10);
             _deadHandService.AcceptCodeTime = DateTime.Now.AddMinutes(6);
