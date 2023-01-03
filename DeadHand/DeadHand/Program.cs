@@ -28,8 +28,7 @@ namespace DeadHand
         {
             //FIXIT: this does not feel good...
             _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()), 
-                                                 (TimeLeftCommand)CommandBase.GetByIdentifier(CommandIdentifier.timeLeft.ToString()),
-                                                 (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
+                                                 (DeadHandCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
                                                  (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()),
                                                  (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString()),
                                                  (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString()),
@@ -62,6 +61,7 @@ namespace DeadHand
 
         private static void SimulateOSStart()
         {
+            //TODO: Better OS start
             var rnd = new Random(); 
             Console.Write("Booting GuardianOS 93 by GuardSoft (Military version)");
             for (int i = 0; i < rnd.Next(2, 8); i++)
@@ -88,7 +88,6 @@ namespace DeadHand
             Thread.Sleep(500);
             Console.WriteLine("OK!");
             Console.WriteLine("Type 'help' to get list of commands");
-            Console.WriteLine("email: there are new messages");
         }
 
         private static string CommandPrompt()

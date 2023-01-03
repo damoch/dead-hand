@@ -10,12 +10,11 @@ namespace DeadHand
     public class GameController
     {
         private EmailCommand _emailService;
-        private System.Timers.Timer _gameTimer;
-        private System.Timers.Timer _gameEnterCodeTimer;
-        private System.Timers.Timer _deadHandMaintenanceTimer;
+        private Timer _gameTimer;
+        private Timer _gameEnterCodeTimer;
+        private Timer _deadHandMaintenanceTimer;
         private bool _emailNewMessages;
-        private TimeLeftCommand _timerService;
-        private InsertCodeCommand _codeService;
+        private DeadHandCommand _deadHandService;
         private CheckRadioCommand _radioService;
         private DefragCommand _defragCommand;
         private StatusCommand _statusCommand;
@@ -34,23 +33,21 @@ namespace DeadHand
         }
 
         internal GameController(EmailCommand emailService,
-                                TimeLeftCommand timerService,
-                                InsertCodeCommand codeService,
+                                DeadHandCommand codeService,
                                 CheckRadioCommand checkRadioCommand,
                                 DefragCommand defragCommand,
                                 StatusCommand statusCommand,
                                 CleanCacheCommand cleanCacheCommand,
                                 WeatherServiceCommand weatherServiceCommand)
         {
-            SetupEmailService(emailService);
-            _timerService = timerService;
-            _codeService = codeService;
+            _emailService = emailService;
+            _deadHandService = codeService;
             _radioService = checkRadioCommand;
             _defragCommand = defragCommand;
             _statusCommand = statusCommand;
             _cleanCacheCommand = cleanCacheCommand;
             _weatherServiceCommand = weatherServiceCommand;
-            _codeService.OnSuccesfullDelayCode += StartTimer;
+            _deadHandService.OnSuccesfullDelayCode += StartTimer;
             DeadHandSettings = new DeadHandSettings()
             {
                 MotherboardTemperature = 80,
@@ -79,7 +76,7 @@ namespace DeadHand
         {
             _scenario = new FalseWarningScenario(_emailService, _radioService, _weatherServiceCommand);
             _scenario.StartScenario();
-            _codeService.OnSystemShutdown += _scenario.ScenarioEndingShutdown;
+            _deadHandService.OnSystemShutdown += _scenario.ScenarioEndingShutdown;
 
         }
 
@@ -93,11 +90,11 @@ namespace DeadHand
             {
                 _gameEnterCodeTimer.Dispose();
             }
-            _gameTimer = new System.Timers.Timer(10 * 60 * 1000);
+            _gameTimer = new Timer(10 * 60 * 1000);
             _gameEnterCodeTimer = new Timer(4 * 60 * 1000);
             _gameEnterCodeTimer.Elapsed += _gameEnterCodeTimer_Elapsed;
-            _timerService.CurrentTimer = DateTime.Now.AddMinutes(10);
-            _codeService.AcceptCodeTime = DateTime.Now.AddMinutes(6);
+            _deadHandService.CurrentTimer = DateTime.Now.AddMinutes(10);
+            _deadHandService.AcceptCodeTime = DateTime.Now.AddMinutes(6);
             _gameTimer.Elapsed += _gameTimer_Elapsed;
             _gameTimer.Start();
             _gameEnterCodeTimer.Start();
@@ -116,12 +113,7 @@ namespace DeadHand
         private void _gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _scenario.ScenarioEndingLaunch();
-            _codeService.CancelCommand = true;
-        }
-
-        private void SetupEmailService(EmailCommand emailService)
-        {
-            _emailService = emailService;
+            _deadHandService.CancelCommand = true;
         }
     }
 
