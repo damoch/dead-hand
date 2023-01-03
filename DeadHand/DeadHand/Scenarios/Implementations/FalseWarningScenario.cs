@@ -7,8 +7,10 @@ namespace DeadHand.Scenarios.Implementations
 {
     internal class FalseWarningScenario : ScenarioBase
     {        
-        public FalseWarningScenario(EmailCommand emailService, CheckRadioCommand radioService) : base(emailService, radioService)
+        public FalseWarningScenario(EmailCommand emailService, CheckRadioCommand radioService, WeatherServiceCommand weatherServiceCommand) : base(emailService, radioService, weatherServiceCommand)
         {
+            radioService.SetCommandData("National Radio Channel 4");
+            weatherServiceCommand.SetCommandData("Delivers latest update from Naval Weather Service", "\nTemperature: 25°C/77°F\nWind: 10KPH/6.21MPH\nCloudy\nHumidity: 10%");
             _emails = new Dictionary<int, Email>
             {
                 { 60 * 1000 ,                 

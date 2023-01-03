@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using DeadHand.Commands.Implementations;
 using System.Timers;
 using DeadHand.Scenarios.Abstracts;
@@ -10,8 +9,7 @@ namespace DeadHand
 {
     public class GameController
     {
-        internal EmailCommand EmailService { get; set; }
-
+        private EmailCommand _emailService;
         private System.Timers.Timer _gameTimer;
         private System.Timers.Timer _gameEnterCodeTimer;
         private System.Timers.Timer _deadHandMaintenanceTimer;
@@ -21,6 +19,7 @@ namespace DeadHand
         private CheckRadioCommand _radioService;
         private DefragCommand _defragCommand;
         private StatusCommand _statusCommand;
+        private WeatherServiceCommand _weatherServiceCommand;
         private CleanCacheCommand _cleanCacheCommand;
         private ScenarioBase _scenario;
         private Random _rng = new Random();
@@ -40,7 +39,8 @@ namespace DeadHand
                                 CheckRadioCommand checkRadioCommand,
                                 DefragCommand defragCommand,
                                 StatusCommand statusCommand,
-                                CleanCacheCommand cleanCacheCommand)
+                                CleanCacheCommand cleanCacheCommand,
+                                WeatherServiceCommand weatherServiceCommand)
         {
             SetupEmailService(emailService);
             _timerService = timerService;
@@ -49,6 +49,7 @@ namespace DeadHand
             _defragCommand = defragCommand;
             _statusCommand = statusCommand;
             _cleanCacheCommand = cleanCacheCommand;
+            _weatherServiceCommand = weatherServiceCommand;
             _codeService.OnSuccesfullDelayCode += StartTimer;
             DeadHandSettings = new DeadHandSettings()
             {
@@ -76,7 +77,7 @@ namespace DeadHand
 
         private void CreateTimeline()
         {
-            _scenario = new FalseWarningScenario(EmailService, _radioService);
+            _scenario = new FalseWarningScenario(_emailService, _radioService, _weatherServiceCommand);
             _scenario.StartScenario();
             _codeService.OnSystemShutdown += _scenario.ScenarioEndingShutdown;
 
@@ -120,7 +121,7 @@ namespace DeadHand
 
         private void SetupEmailService(EmailCommand emailService)
         {
-            EmailService = emailService;
+            _emailService = emailService;
         }
     }
 

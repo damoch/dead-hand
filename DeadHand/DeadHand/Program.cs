@@ -26,13 +26,15 @@ namespace DeadHand
 
         private static void SetupGame()
         {
+            //FIXIT: this does not feel good...
             _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()), 
                                                  (TimeLeftCommand)CommandBase.GetByIdentifier(CommandIdentifier.timeLeft.ToString()),
                                                  (InsertCodeCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
                                                  (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()),
                                                  (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString()),
                                                  (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString()),
-                                                 (CleanCacheCommand)CommandBase.GetByIdentifier(CommandIdentifier.cleanCache.ToString()));
+                                                 (CleanCacheCommand)CommandBase.GetByIdentifier(CommandIdentifier.cleanCache.ToString()),
+                                                 (WeatherServiceCommand)CommandBase.GetByIdentifier(CommandIdentifier.weatherService.ToString()));
         }
 
         private static void DecodeCommand(string command)

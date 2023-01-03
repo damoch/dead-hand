@@ -7,16 +7,20 @@ namespace DeadHand.Scenarios.Abstracts
 {
     internal abstract class ScenarioBase
     {
+        //TODO: remove unused command references
         public ScenarioBase(EmailCommand emailService,
-                            CheckRadioCommand radioService)
+                            CheckRadioCommand radioService,
+                            WeatherServiceCommand weatherServiceCommand)
         {
             _rng = new Random();
             _emailService = emailService;
             _triggers = new List<System.Timers.Timer>();
             _radioService = radioService;
+            _weatherServiceCommand = weatherServiceCommand;
         }
         public abstract string ScenarioName { get; }
         protected Random _rng;
+        protected WeatherServiceCommand _weatherServiceCommand;
         protected EmailCommand _emailService;
         protected CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
