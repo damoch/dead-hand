@@ -1,10 +1,6 @@
 ﻿using DeadHand.Commands.Implementations;
 using DeadHand.Scenarios.Abstracts;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DeadHand.Scenarios.Implementations
 {
@@ -16,19 +12,8 @@ namespace DeadHand.Scenarios.Implementations
         }
         public override string ScenarioName => throw new NotImplementedException();
 
-        public override void ScenarioEndingLaunch()
-        {
-            throw new NotImplementedException();
-        }
+        public override string EndingLaunchText => throw new NotImplementedException();
 
-        public override void ScenarioEndingShutdown()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void StartScenario()
-        {
-            throw new NotImplementedException();
-        }
+        public override string EndingShutdownText => throw new NotImplementedException();
     }
 }

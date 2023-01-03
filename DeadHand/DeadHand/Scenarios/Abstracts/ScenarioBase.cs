@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using System.Timers;
 
 namespace DeadHand.Scenarios.Abstracts
 {
@@ -16,21 +15,44 @@ namespace DeadHand.Scenarios.Abstracts
             _triggers = new List<System.Timers.Timer>();
             _radioService = radioService;
         }
-        protected bool _isDeception;
         public abstract string ScenarioName { get; }
         protected Random _rng;
         protected EmailCommand _emailService;
         protected CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
         protected Dictionary<int, Email> _emails;
-        public abstract void StartScenario();
+        public abstract string EndingLaunchText { get; }
+        public abstract string EndingShutdownText { get; }
 
-       
+        public void StartScenario()
+        {
+            foreach (var email in _emails)
+            {
+                var newEvent = new System.Timers.Timer(email.Key);
+                newEvent.Elapsed += (o, e) =>
+                {
+                    _emailService.AddEmail(email.Value, true);
+                    _radioService.CurrentProgramming = email.Value.ProgrammingType;
+                    ((System.Timers.Timer)o).Stop();
+                };
+                newEvent.Start();
+                _triggers.Add(newEvent);
+            }
+        }
 
+        public void ScenarioEndingLaunch()
+        {
+            SimulateLaunch();
+            Console.Clear();
+            Console.WriteLine(EndingLaunchText);
+        }
 
-
-        public abstract void ScenarioEndingLaunch();
-        public abstract void ScenarioEndingShutdown();
+        public void ScenarioEndingShutdown()
+        {
+            SimulateShutdown();
+            Console.Clear();
+            Console.WriteLine(EndingShutdownText);
+        }
 
         protected void SimulateShutdown()
         {
