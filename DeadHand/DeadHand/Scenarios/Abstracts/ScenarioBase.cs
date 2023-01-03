@@ -7,20 +7,28 @@ namespace DeadHand.Scenarios.Abstracts
 {
     internal abstract class ScenarioBase
     {
+        public abstract string DelayCode { get; }
+        public abstract string ActivationCode { get; }
+        public abstract string ShutdownCode { get; }
+        public abstract string RadioStationID { get; }
+        public abstract Tuple<string, string> WeatherServiceData { get; }
         //TODO: remove unused command references
         public ScenarioBase(EmailCommand emailService,
                             CheckRadioCommand radioService,
-                            WeatherServiceCommand weatherServiceCommand)
+                            WeatherServiceCommand weatherServiceCommand,
+                            DeadHandCommand deadHandCommand)
         {
             _rng = new Random();
             _emailService = emailService;
             _triggers = new List<System.Timers.Timer>();
             _radioService = radioService;
             _weatherServiceCommand = weatherServiceCommand;
+            _deadHandCommand = deadHandCommand;
         }
         public abstract string ScenarioName { get; }
         protected Random _rng;
         protected WeatherServiceCommand _weatherServiceCommand;
+        private DeadHandCommand _deadHandCommand;
         protected EmailCommand _emailService;
         protected CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
@@ -30,6 +38,9 @@ namespace DeadHand.Scenarios.Abstracts
 
         public void StartScenario()
         {
+            _radioService.SetCommandData(RadioStationID);
+            _weatherServiceCommand.SetCommandData(WeatherServiceData.Item1, WeatherServiceData.Item2);
+            _deadHandCommand.SetCodes(ActivationCode, ShutdownCode, DelayCode);
             foreach (var email in _emails)
             {
                 var newEvent = new System.Timers.Timer(email.Key);
@@ -87,7 +98,6 @@ namespace DeadHand.Scenarios.Abstracts
                 Console.Beep(900, 30);
                 Thread.Sleep(30);
             }
-
         }
 
         protected void SimulateLaunch()

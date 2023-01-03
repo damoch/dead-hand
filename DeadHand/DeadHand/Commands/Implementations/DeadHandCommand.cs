@@ -7,10 +7,11 @@ namespace DeadHand.Commands.Implementations
 {
     internal class DeadHandCommand : CommandBase
     {
+        private string _delayCode;
+        private string _activationCode;
+        private string _shutdownCode;
+
         //TODO: move codes to scenario
-        private string _delayCode = "F7SA-USA7-JA98-CDSA";
-        private string _activationCode = "2DCJ-CA83-8A9H-A9HD";
-        private string _shutdownCode = "FA7S-I82B-HEY4-HWEF";
         public override CommandIdentifier Identifier => CommandIdentifier.deadHand;
         public Action OnSuccesfullDelayCode { get; set; }
         public Action OnSystemShutdown { get; set; }
@@ -77,6 +78,13 @@ namespace DeadHand.Commands.Implementations
             {
                 Console.WriteLine("Code incorrect");
             }
+        }
+
+        public void SetCodes(string activationCode, string shutdownCode, string delayCode)
+        {
+            _activationCode = activationCode;
+            _shutdownCode = shutdownCode;
+            _delayCode = delayCode;
         }
     }
 }

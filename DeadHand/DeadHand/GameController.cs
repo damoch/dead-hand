@@ -74,10 +74,9 @@ namespace DeadHand
 
         private void CreateTimeline()
         {
-            _scenario = new FalseWarningScenario(_emailService, _radioService, _weatherServiceCommand);
+            _scenario = new FalseWarningScenario(_emailService, _radioService, _weatherServiceCommand, _deadHandService);
             _scenario.StartScenario();
             _deadHandService.OnSystemShutdown += _scenario.ScenarioEndingShutdown;
-
         }
 
         public void StartTimer()
@@ -123,6 +122,7 @@ namespace DeadHand
         public int MemoryCacheUsedPercentage { get; set; }
         public int MotherboardTemperature { get; set; }
 
+        //TODO: Read these values from scenario
         public bool NeedsMaintenance { get => DiskFragmentationPercentage > 50 || MemoryCacheUsedPercentage > 70; }
 
         public override string ToString()

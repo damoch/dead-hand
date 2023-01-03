@@ -6,11 +6,13 @@ using System.Collections.Generic;
 namespace DeadHand.Scenarios.Implementations
 {
     internal class FalseWarningScenario : ScenarioBase
-    {        
-        public FalseWarningScenario(EmailCommand emailService, CheckRadioCommand radioService, WeatherServiceCommand weatherServiceCommand) : base(emailService, radioService, weatherServiceCommand)
+    {
+        public override string DelayCode => "F7SA-USA7-JA98-CDSA";
+        public override string ActivationCode => "2DCJ-CA83-8A9H-A9HD";
+        public override string ShutdownCode => "FA7S-I82B-HEY4-HWEF";
+        public override string RadioStationID => "National Radio Channel 4";
+        public FalseWarningScenario(EmailCommand emailService, CheckRadioCommand radioService, WeatherServiceCommand weatherServiceCommand, DeadHandCommand deadHandCommand) : base(emailService, radioService, weatherServiceCommand, deadHandCommand)
         {
-            radioService.SetCommandData("National Radio Channel 4");
-            weatherServiceCommand.SetCommandData("Delivers latest update from Naval Weather Service", "\nTemperature: 25°C/77°F\nWind: 10KPH/6.21MPH\nCloudy\nHumidity: 10%");
             _emails = new Dictionary<int, Email>
             {
                 { 60 * 1000 ,                 
@@ -22,9 +24,9 @@ namespace DeadHand.Scenarios.Implementations
                     Content = @"To asset "+Environment.UserName+@", 
 Since peace talks in Geneva have been cancelled, and hostile armed force has issued red alert to their strategic weapons division, Strategic Command has issued STANDBY alert.
 
-1. "+Environment.UserName+" has been authorized to enter following Dead Hand activation code: 2DCJ-CA83-8A9H-A9HD" +
+1. "+Environment.UserName+" has been authorized to enter following Dead Hand activation code:" + ActivationCode +
 "\n2. 10 minutes after activation Dead Hand will automatically launch retaliationary nuclear strike against enemy cities" +
-"\n3. In final 4 minutes before activation "+Environment.UserName+" will get the chance to enter following delay code: F7SA-USA7-JA98-CDSA. Entering that code will delay retaliation for 7 minutes"+
+"\n3. In final 4 minutes before activation "+Environment.UserName+" will get the chance to enter following delay code:"+ DelayCode + ". Entering that code will delay retaliation for 7 minutes"+
 "\n4. To help "+Environment.UserName+" make decision whether enter the code and wait another 10 minutes, or allow attack to commence, following checks may be performed:"+
 "\na) Check whether National Radio program 4 is still broadcasting"+
 "\nb) Check whether Naval Wether Service stil issues weather updates"+
@@ -226,8 +228,7 @@ THIS CONCLUDES PRESIDENTIAL ADDRESS
                 Content = $"Asset {Environment.UserName}," +
                 @"The hostile government has issued stand down order to its military forces, and expressed will to resume peace talks.
 Our intelligence has noted, that hostile forces are indeed standing down and returning to their bases." +
-$"With that in mind, Startegic Command authorizes {Environment.UserName} to enter following Dead Hand shutdown code IMMEDIATELY\n" +
-@"FA7S-I82B-HEY4-HWEF"
+$"With that in mind, Startegic Command authorizes {Environment.UserName} to enter following Dead Hand shutdown code IMMEDIATELY\n" + ShutdownCode
 
             }
                 },
@@ -293,5 +294,6 @@ $"This scenario has one more ending\n" +
 $"" +
 $"Thanks for playing Dead Hand, developed by kszaku in October of 2020\n";
 
+        public override Tuple<string, string> WeatherServiceData => new Tuple<string, string>("Delivers latest update from Naval Weather Service", "\nTemperature: 25°C/77°F\nWind: 10KPH/6.21MPH\nCloudy\nHumidity: 10%");
     }
 }
