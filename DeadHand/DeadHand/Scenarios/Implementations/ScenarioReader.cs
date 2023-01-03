@@ -26,5 +26,17 @@ namespace DeadHand.Scenarios.Implementations
         public override string RadioStationID => throw new NotImplementedException();
 
         public override Tuple<string, string> WeatherServiceData => throw new NotImplementedException();
+
+        public override int MotherboardTemperature => throw new NotImplementedException();
+
+        public override int MemoryCacheUsedPercentage => throw new NotImplementedException();
+
+        public override int DiskFragmentationPercentage => throw new NotImplementedException();
+
+        public override Tuple<int, int> DiskFragmentationPercentageChanges => throw new NotImplementedException();
+
+        public override Tuple<int, int> MemoryCacheUsedPercentageChanges => throw new NotImplementedException();
+
+        public override Tuple<int, int> MotherboardTemperatureChanges => throw new NotImplementedException();
     }
 }

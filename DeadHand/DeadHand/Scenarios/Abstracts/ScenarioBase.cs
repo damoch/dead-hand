@@ -7,12 +7,14 @@ namespace DeadHand.Scenarios.Abstracts
 {
     internal abstract class ScenarioBase
     {
+        public abstract Tuple<int, int> DiskFragmentationPercentageChanges { get; }
+        public abstract Tuple<int, int> MemoryCacheUsedPercentageChanges { get; }
+        public abstract Tuple<int, int> MotherboardTemperatureChanges { get; }
         public abstract string DelayCode { get; }
         public abstract string ActivationCode { get; }
         public abstract string ShutdownCode { get; }
         public abstract string RadioStationID { get; }
         public abstract Tuple<string, string> WeatherServiceData { get; }
-        //TODO: remove unused command references
         public ScenarioBase(EmailCommand emailService,
                             CheckRadioCommand radioService,
                             WeatherServiceCommand weatherServiceCommand,
@@ -35,6 +37,9 @@ namespace DeadHand.Scenarios.Abstracts
         protected Dictionary<int, Email> _emails;
         public abstract string EndingLaunchText { get; }
         public abstract string EndingShutdownText { get; }
+        public abstract int MotherboardTemperature { get; }
+        public abstract int MemoryCacheUsedPercentage { get; }
+        public abstract int DiskFragmentationPercentage { get; }
 
         public void StartScenario()
         {

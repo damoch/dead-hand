@@ -295,5 +295,17 @@ $"" +
 $"Thanks for playing Dead Hand, developed by kszaku in October of 2020\n";
 
         public override Tuple<string, string> WeatherServiceData => new Tuple<string, string>("Delivers latest update from Naval Weather Service", "\nTemperature: 25°C/77°F\nWind: 10KPH/6.21MPH\nCloudy\nHumidity: 10%");
+
+        public override int MotherboardTemperature => 80;
+
+        public override int MemoryCacheUsedPercentage => 20;
+
+        public override int DiskFragmentationPercentage => 10;
+
+        public override Tuple<int, int> DiskFragmentationPercentageChanges => new Tuple<int, int>(0, 40);
+
+        public override Tuple<int, int> MemoryCacheUsedPercentageChanges => new Tuple<int, int>(0, 40);
+
+        public override Tuple<int, int> MotherboardTemperatureChanges => new Tuple<int, int>(60, 120);
     }
 }

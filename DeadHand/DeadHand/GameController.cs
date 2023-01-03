@@ -48,33 +48,32 @@ namespace DeadHand
             _cleanCacheCommand = cleanCacheCommand;
             _weatherServiceCommand = weatherServiceCommand;
             _deadHandService.OnSuccesfullDelayCode += StartTimer;
-            DeadHandSettings = new DeadHandSettings()
-            {
-                MotherboardTemperature = 80,
-                MemoryCacheUsedPercentage = 20,
-                DiskFragmentationPercentage = 10
-            };
-
-            _deadHandMaintenanceTimer = new Timer(_rng.Next(2, 4) * 60 * 1000);
-            _deadHandMaintenanceTimer.Elapsed += _deadHandMaintenanceTimer_Elapsed;
-            _deadHandMaintenanceTimer.Start();
-            _defragCommand.CurrentSettings = DeadHandSettings;
-            _statusCommand.CurrentSettings = DeadHandSettings;
-            _cleanCacheCommand.CurrentSettings = DeadHandSettings;
 
             CreateTimeline();
         }
 
         private void _deadHandMaintenanceTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            DeadHandSettings.DiskFragmentationPercentage += _rng.Next(0, 40);
-            DeadHandSettings.MemoryCacheUsedPercentage += _rng.Next(0, 40);
-            DeadHandSettings.MotherboardTemperature = _rng.Next(60, 120);
+            DeadHandSettings.DiskFragmentationPercentage += _rng.Next(_scenario.DiskFragmentationPercentageChanges.Item1, _scenario.DiskFragmentationPercentageChanges.Item2);
+            DeadHandSettings.MemoryCacheUsedPercentage += _rng.Next(_scenario.MemoryCacheUsedPercentageChanges.Item1, _scenario.MemoryCacheUsedPercentageChanges.Item2);
+            DeadHandSettings.MotherboardTemperature = _rng.Next(_scenario.MotherboardTemperatureChanges.Item1, _scenario.MotherboardTemperatureChanges.Item2);
         }
 
         private void CreateTimeline()
         {
             _scenario = new FalseWarningScenario(_emailService, _radioService, _weatherServiceCommand, _deadHandService);
+            DeadHandSettings = new DeadHandSettings()
+            {
+                MotherboardTemperature = _scenario.MotherboardTemperature,
+                MemoryCacheUsedPercentage = _scenario.MemoryCacheUsedPercentage,
+                DiskFragmentationPercentage = _scenario.DiskFragmentationPercentage
+            };
+            _defragCommand.CurrentSettings = DeadHandSettings;
+            _statusCommand.CurrentSettings = DeadHandSettings;
+            _cleanCacheCommand.CurrentSettings = DeadHandSettings;
+            _deadHandMaintenanceTimer = new Timer(_rng.Next(2, 4) * 60 * 1000);
+            _deadHandMaintenanceTimer.Elapsed += _deadHandMaintenanceTimer_Elapsed;
+            _deadHandMaintenanceTimer.Start();
             _scenario.StartScenario();
             _deadHandService.OnSystemShutdown += _scenario.ScenarioEndingShutdown;
         }
@@ -90,7 +89,7 @@ namespace DeadHand
                 _gameEnterCodeTimer.Dispose();
             }
             _gameTimer = new Timer(10 * 60 * 1000);
-            _gameEnterCodeTimer = new Timer(4 * 60 * 1000);
+            _gameEnterCodeTimer = new Timer(6 * 60 * 1000);
             _gameEnterCodeTimer.Elapsed += _gameEnterCodeTimer_Elapsed;
             _deadHandService.CurrentTimer = DateTime.Now.AddMinutes(10);
             _deadHandService.AcceptCodeTime = DateTime.Now.AddMinutes(6);
