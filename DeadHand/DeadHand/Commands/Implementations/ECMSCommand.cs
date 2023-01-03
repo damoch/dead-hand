@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 using System.Threading;
 using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Enums;
@@ -17,7 +15,7 @@ namespace DeadHand.Commands.Implementations
         public override void Execute(string param = null)
         {
             Console.WriteLine("Starting ECMS");
-            Process.Start("microsoft-edge:https://damoch.itch.io/evil-cult-managment-system");
+            Process.Start("https://damoch.itch.io/evil-cult-managment-system");
             Thread.Sleep(5000);
         }
     }

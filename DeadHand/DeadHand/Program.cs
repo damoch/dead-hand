@@ -14,6 +14,7 @@ namespace DeadHand
 
         static void Main(string[] args)
         {
+            //Console.ForegroundColor = ConsoleColor.Green;
             SetupGame();
 #if !DEBUG
             SimulateOSStart();
@@ -50,8 +51,19 @@ namespace DeadHand
             try
             {
                 var cmd = CommandBase.GetByIdentifier(commName);
-                var param = commTab.Length > 1 ? commTab[1] : null;
-                cmd.Execute(param);
+
+                if(commTab.Length == 1)
+                {
+                    cmd.Execute();
+                }
+                if(commTab.Length == 2)
+                {
+                    cmd.Execute(commTab[1]);
+                }
+                if(commTab.Length > 2)
+                {
+                    cmd.Execute(commTab[1] + " " + commTab[2]);
+                }
             }
             catch
             {

@@ -12,18 +12,19 @@ namespace DeadHand.Commands.Implementations
     {
         public override CommandIdentifier Identifier => CommandIdentifier.email;
 
-        public override string Description => "Email client. Usage:\n email list - lists unread messages \n email read - writes first of unread messages";
-
-        public List<Email> EmailList { get; set; }
+        public override string Description => "Email client. Usage:\n email list - lists unread messages \n email read - writes first of unread messages\nemail read [number] - read email of specific id (ex: email read 3)";
+        private int _currentIndex;
+        public Dictionary<int, Email> EmailList { get; set; }
 
         public EmailCommand()
         {
-            EmailList = new List<Email>();
+            _currentIndex = 1;
+            EmailList = new Dictionary<int, Email>();
         }
 
         public void AddEmail(Email email, bool playTones)
         {
-            EmailList.Add(email);
+            EmailList.Add(_currentIndex, email);
             if (playTones)
             {
                 Console.Beep(900, 1000);
@@ -46,15 +47,20 @@ namespace DeadHand.Commands.Implementations
             }
             try
             {
-                var option = Enum.Parse(typeof(EmailOptions), param);
-
-                switch (option)
+                switch (param)
                 {
-                    case EmailOptions.list:
+                    case "list":
                         ListEmails();
                         break;
-                    case EmailOptions.read:
-                        ReadFirstEmails();
+                    case "read":
+                        ReadEmails();
+                        break;
+                    default:
+                        if (param.StartsWith("read") &&  param.Contains(' '))
+                        {
+                            var index = int.Parse(param.Split(' ')[1]);
+                            ReadEmails(index);
+                        }
                         break;
                 }
             }
@@ -66,41 +72,45 @@ namespace DeadHand.Commands.Implementations
 
         private void ListEmails()
         {
-            var unreadMessages = EmailList.Where(x => !x.IsRead).ToList();
-            if (unreadMessages.Count == 0)
+            if (EmailList.Count == 0)
             {
-                Console.WriteLine("No new messages");
+                Console.WriteLine("email: inbox is empty");
                 return;
             }
-
-            foreach (var item in unreadMessages)
+            foreach (var item in EmailList)
             {
-                Console.WriteLine("Sender: {0}", item.Sender);
-                Console.WriteLine("Date: {0}", item.ReceivedDate);
-                Console.WriteLine("Subject: {0}", item.Subject);
+                Console.WriteLine("ID: {0}", item.Key);
+                Console.WriteLine("Sender: {0}", item.Value.Sender);
+                Console.WriteLine("Date: {0}", item.Value.ReceivedDate);
+                Console.WriteLine("Subject: {0}", item.Value.Subject);
                 Console.WriteLine("");
             }
         }
 
-        private void ReadFirstEmails()
+        private void ReadEmails(int? indx = null)
         {
-            var unreadMessage = EmailList.FirstOrDefault(x => !x.IsRead);
-            if (unreadMessage == null)
+            var message = EmailList.Values.FirstOrDefault(x => !x.IsRead);
+            if (message == null && indx == null)
             {
                 Console.WriteLine("No messages to read");
                 return;
             }
-            unreadMessage.IsRead = true;
-            Console.WriteLine("Sender: {0}", unreadMessage.Sender);
-            Console.WriteLine("Date: {0}", unreadMessage.ReceivedDate);
-            Console.WriteLine("Subject: {0}", unreadMessage.Subject);
-            Console.WriteLine(unreadMessage);
+            else if (indx != null && !EmailList.ContainsKey(indx.Value))
+            {
+                Console.WriteLine($"No message with ID: {indx.Value}");
+                return;
+            }
+            else if(indx != null && EmailList.ContainsKey(indx.Value))
+            {
+                message = EmailList[indx.Value];
+            }
+            message.IsRead = true;
+            Console.WriteLine("ID: {0}", indx.Value);
+            Console.WriteLine("Sender: {0}", message.Sender);
+            Console.WriteLine("Date: {0}", message.ReceivedDate);
+            Console.WriteLine("Subject: {0}", message.Subject);
+            Console.WriteLine(message);
         }
-    }
-
-
-    enum EmailOptions {
-        list, read
     }
 
     internal class Email
