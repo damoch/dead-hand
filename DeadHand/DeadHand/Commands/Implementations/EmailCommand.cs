@@ -22,20 +22,12 @@ namespace DeadHand.Commands.Implementations
             EmailList = new Dictionary<int, Email>();
         }
 
-        public void AddEmail(Email email, bool playTones)
+        public void AddEmail(Email email)
         {
-            EmailList.Add(_currentIndex, email);
-            if (playTones)
-            {
-                Console.Beep(900, 1000);
-                Thread.Sleep(500);
-                Console.Beep(900, 1000);
-                Thread.Sleep(500);
-                Console.Beep(900, 1000);
-                Thread.Sleep(500);
-                Console.Beep(500, 3000);
-            }
+            EmailList.Add(_currentIndex++, email);
             Console.WriteLine("email: there are new messages");
+            Consts.PlayMelody(Consts.NewEmailSound);
+            Console.Write("\n>>> ");
         }
 
         public override void Execute(string param = null)
@@ -92,12 +84,12 @@ namespace DeadHand.Commands.Implementations
             var message = EmailList.Values.FirstOrDefault(x => !x.IsRead);
             if (message == null && indx == null)
             {
-                Console.WriteLine("No messages to read");
+                Console.WriteLine("email: no messages to read");
                 return;
             }
             else if (indx != null && !EmailList.ContainsKey(indx.Value))
             {
-                Console.WriteLine($"No message with ID: {indx.Value}");
+                Console.WriteLine($"email: no message with ID: {indx.Value}");
                 return;
             }
             else if(indx != null && EmailList.ContainsKey(indx.Value))
@@ -130,4 +122,5 @@ namespace DeadHand.Commands.Implementations
         public ProgrammingType ProgrammingType { get; set; }
 
     }
+
 }

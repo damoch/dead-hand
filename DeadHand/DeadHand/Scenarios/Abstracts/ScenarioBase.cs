@@ -51,7 +51,7 @@ namespace DeadHand.Scenarios.Abstracts
                 var newEvent = new System.Timers.Timer(email.Key * Consts.TimerMinute);
                 newEvent.Elapsed += (o, e) =>
                 {
-                    _emailService.AddEmail(email.Value, true);
+                    _emailService.AddEmail(email.Value);
                     _radioService.CurrentProgramming = email.Value.ProgrammingType;
                     ((System.Timers.Timer)o).Stop();
                 };
