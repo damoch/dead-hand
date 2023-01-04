@@ -16,6 +16,13 @@ namespace DeadHand
             new Note(Tone.B, Duration.HALF)
         };
 
+        public static Note[] OSStartSound =
+{
+            new Note(Tone.F, Duration.EIGHTH),
+            new Note(Tone.C, Duration.EIGHTH),
+            new Note(Tone.G, Duration.HALF)
+        };
+
         public static int TimerMinute = 60 * 1000;
         public static void PlayMelody(Note[] tune)
         {

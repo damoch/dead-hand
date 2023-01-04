@@ -2,6 +2,7 @@
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Implementations;
 using System;
+using System.IO;
 using System.Threading;
 
 namespace DeadHand
@@ -73,6 +74,19 @@ namespace DeadHand
 
         private static void SimulateOSStart()
         {
+            var logo = File.ReadAllLines("Data/GuardianOSlogo.txt");
+            foreach (var line in logo)
+            {
+                foreach (var c in line)
+                {
+                    Console.Write(c);
+                }
+                Thread.Sleep(50);
+                Console.Write('\n');
+            }
+            Consts.PlayMelody(Consts.OSStartSound);
+            Thread.Sleep(3000);
+            Console.Clear();
             //TODO: Better OS start
             var rnd = new Random(); 
             Console.Write("Booting GuardianOS 93 by GuardSoft (Military version)");

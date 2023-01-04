@@ -112,13 +112,6 @@ namespace DeadHand.Commands.Implementations
         public DateTime ReceivedDate { get; set; }
         public bool IsRead { get; set; }
         public string Content { get; set; }
-
-        public override string ToString()
-        {
-            return Content;
-        }
-
-        public int SpookyAdd { get; set; }
         public ProgrammingType ProgrammingType { get; set; }
 
     }
