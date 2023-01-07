@@ -17,7 +17,7 @@ namespace DeadHand
         {
             //Console.ForegroundColor = ConsoleColor.Green;
             SetupGame();
-#if !DEBUG
+#if DEBUG
             SimulateOSStart();
 #endif
             while (true)
@@ -74,6 +74,38 @@ namespace DeadHand
 
         private static void SimulateOSStart()
         {
+            var rnd = new Random();
+            Console.WriteLine("Graphics device detected, setting up...");
+            Thread.Sleep(2500);
+            Console.WriteLine("Boozer test");
+            Console.Beep(600, 600);
+            Console.WriteLine("OK");
+            Console.WriteLine("Computer configuration:");
+            Console.WriteLine("CPU: DEC21064-CA-166 1GHz");
+            Console.Write("Memory check");
+            for (int i = 0; i < rnd.Next(2, 8); i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+            Console.WriteLine("256MB detected\n");
+            Thread.Sleep(1000);
+            Console.WriteLine("Listing IDE devices...");
+            Thread.Sleep(2000);
+            Console.WriteLine("A: 3+1⁄2-inch HD ");
+            Thread.Sleep(1000);
+            Console.WriteLine("B: Zip drive");
+            Thread.Sleep(500);
+            Console.WriteLine("D: CD-ROM drive");
+            Thread.Sleep(500);
+            Console.WriteLine("F: Tape device");
+            Thread.Sleep(3000);
+            Console.WriteLine("C: HDD Drive");
+            Thread.Sleep(3000);
+            Console.Clear();
+            Console.WriteLine("Booting from default storage device...");
+            Thread.Sleep(3000);
+            Console.Clear();
             var logo = File.ReadAllLines("Data/GuardianOSlogo.txt");
             foreach (var line in logo)
             {
@@ -88,21 +120,26 @@ namespace DeadHand
             Thread.Sleep(3000);
             Console.Clear();
             //TODO: Better OS start
-            var rnd = new Random(); 
-            Console.Write("Booting GuardianOS 93 by GuardSoft (Military version)");
+            Console.Write("Starting GuardianOS");
             for (int i = 0; i < rnd.Next(2, 8); i++)
             {
                 Thread.Sleep(1000);
                 Console.Write(".");
             }
-            Console.WriteLine("MemoryTest: OK");
-            Console.Write("Logging in");
+            Console.Write("\nLogging in");
             for (int i = 0; i < rnd.Next(2, 8); i++)
             {
                 Thread.Sleep(1000);
                 Console.Write(".");
             }
             Console.WriteLine($"Hello {Environment.UserName}!");
+            Console.Write("Establishing connection to Dead Hand main computer");
+            for (int i = 0; i < rnd.Next(2, 8); i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+            Console.WriteLine("Connection OK!");
             Console.Write("Checking weapon system status");
             for (int i = 0; i < rnd.Next(2, 8); i++)
             {
@@ -111,7 +148,7 @@ namespace DeadHand
             }
             Console.WriteLine("All systems nominal");
             Console.WriteLine("Starting command prompt");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             Console.WriteLine("OK!");
             Console.WriteLine("Type 'help' to get list of commands");
         }
