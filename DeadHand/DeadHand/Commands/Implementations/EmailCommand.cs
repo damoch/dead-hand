@@ -97,11 +97,14 @@ namespace DeadHand.Commands.Implementations
                 message = EmailList[indx.Value];
             }
             message.IsRead = true;
-            Console.WriteLine("ID: {0}", indx.Value);
+            if (indx.HasValue)
+            {
+                Console.WriteLine("ID: {0}", indx.Value);
+            }
             Console.WriteLine("Sender: {0}", message.Sender);
             Console.WriteLine("Date: {0}", message.ReceivedDate);
             Console.WriteLine("Subject: {0}", message.Subject);
-            Console.WriteLine(message);
+            Console.WriteLine(message.Content);
         }
     }
 
