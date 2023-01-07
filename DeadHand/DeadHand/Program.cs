@@ -17,7 +17,7 @@ namespace DeadHand
         {
             //Console.ForegroundColor = ConsoleColor.Green;
             SetupGame();
-#if DEBUG
+#if !DEBUG
             SimulateOSStart();
 #endif
             while (true)
@@ -28,14 +28,7 @@ namespace DeadHand
 
         private static void SetupGame()
         {
-            //FIXIT: this does not feel good...
-            _gameController = new GameController((EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()), 
-                                                 (DeadHandCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString()),
-                                                 (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()),
-                                                 (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString()),
-                                                 (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString()),
-                                                 (CleanCacheCommand)CommandBase.GetByIdentifier(CommandIdentifier.cleanCache.ToString()),
-                                                 (WeatherServiceCommand)CommandBase.GetByIdentifier(CommandIdentifier.weatherService.ToString()));
+            _gameController = new GameController();
         }
 
         private static void DecodeCommand(string command)

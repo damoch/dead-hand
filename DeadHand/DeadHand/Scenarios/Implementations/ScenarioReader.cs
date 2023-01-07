@@ -6,8 +6,7 @@ namespace DeadHand.Scenarios.Implementations
 {
     internal class ScenarioReader : ScenarioBase
     {
-        public ScenarioReader(EmailCommand emailService, CheckRadioCommand radioService, WeatherServiceCommand weatherServiceCommand, DeadHandCommand deadHandCommand) : 
-            base(emailService, radioService, weatherServiceCommand, deadHandCommand)
+        public ScenarioReader(DeadHandCommand deadHandCommand) : base(deadHandCommand)
         {
             //TODO: Implement
         }

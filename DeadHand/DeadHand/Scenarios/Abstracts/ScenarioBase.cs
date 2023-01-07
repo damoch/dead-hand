@@ -1,4 +1,6 @@
-﻿using DeadHand.Commands.Implementations;
+﻿using DeadHand.Commands.Abstracts;
+using DeadHand.Commands.Enums;
+using DeadHand.Commands.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -15,16 +17,13 @@ namespace DeadHand.Scenarios.Abstracts
         public abstract string ShutdownCode { get; }
         public abstract string RadioStationID { get; }
         public abstract Tuple<string, string> WeatherServiceData { get; }
-        public ScenarioBase(EmailCommand emailService,
-                            CheckRadioCommand radioService,
-                            WeatherServiceCommand weatherServiceCommand,
-                            DeadHandCommand deadHandCommand)
+        public ScenarioBase(DeadHandCommand deadHandCommand)
         {
             _rng = new Random();
-            _emailService = emailService;
             _triggers = new List<System.Timers.Timer>();
-            _radioService = radioService;
-            _weatherServiceCommand = weatherServiceCommand;
+            _emailService = (EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString());
+            _radioService = (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString());
+            _weatherServiceCommand = (WeatherServiceCommand)CommandBase.GetByIdentifier(CommandIdentifier.weatherService.ToString());
             _deadHandCommand = deadHandCommand;
         }
         public abstract string ScenarioName { get; }

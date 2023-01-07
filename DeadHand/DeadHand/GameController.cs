@@ -4,21 +4,20 @@ using System.Timers;
 using DeadHand.Scenarios.Abstracts;
 using DeadHand.Scenarios.Implementations;
 using System.Text;
+using DeadHand.Commands.Enums;
+using DeadHand.Commands.Abstracts;
 
 namespace DeadHand
 {
     public class GameController
     {
-        private EmailCommand _emailService;
         private Timer _gameTimer;
         private Timer _gameEnterCodeTimer;
         private Timer _deadHandMaintenanceTimer;
         private bool _emailNewMessages;
         private DeadHandCommand _deadHandService;
-        private CheckRadioCommand _radioService;
         private DefragCommand _defragCommand;
         private StatusCommand _statusCommand;
-        private WeatherServiceCommand _weatherServiceCommand;
         private CleanCacheCommand _cleanCacheCommand;
         private ScenarioBase _scenario;
         private Random _rng = new Random();
@@ -32,21 +31,12 @@ namespace DeadHand
             }
         }
 
-        internal GameController(EmailCommand emailService,
-                                DeadHandCommand codeService,
-                                CheckRadioCommand checkRadioCommand,
-                                DefragCommand defragCommand,
-                                StatusCommand statusCommand,
-                                CleanCacheCommand cleanCacheCommand,
-                                WeatherServiceCommand weatherServiceCommand)
+        internal GameController()
         {
-            _emailService = emailService;
-            _deadHandService = codeService;
-            _radioService = checkRadioCommand;
-            _defragCommand = defragCommand;
-            _statusCommand = statusCommand;
-            _cleanCacheCommand = cleanCacheCommand;
-            _weatherServiceCommand = weatherServiceCommand;
+            _deadHandService = (DeadHandCommand)CommandBase.GetByIdentifier(CommandIdentifier.deadHand.ToString());
+            _defragCommand = (DefragCommand)CommandBase.GetByIdentifier(CommandIdentifier.defrag.ToString());
+            _statusCommand = (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString());
+            _cleanCacheCommand = (CleanCacheCommand)CommandBase.GetByIdentifier(CommandIdentifier.cleanCache.ToString());
             _deadHandService.OnSuccesfullDelayCode += StartTimer;
 
             CreateTimeline();
@@ -61,7 +51,7 @@ namespace DeadHand
 
         private void CreateTimeline()
         {
-            _scenario = new FalseWarningScenario(_emailService, _radioService, _weatherServiceCommand, _deadHandService);
+            _scenario = new FalseWarningScenario(_deadHandService);
             DeadHandSettings = new DeadHandSettings()
             {
                 MotherboardTemperature = _scenario.MotherboardTemperature,

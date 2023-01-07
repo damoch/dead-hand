@@ -1,11 +1,9 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Enums;
-//TODO: add the feature to check previous messages, new message received tone
+
 namespace DeadHand.Commands.Implementations
 {
     internal class EmailCommand : CommandBase

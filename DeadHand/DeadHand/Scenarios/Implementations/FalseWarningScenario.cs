@@ -11,7 +11,7 @@ namespace DeadHand.Scenarios.Implementations
         public override string ActivationCode => "2DCJ-CA83-8A9H-A9HD";
         public override string ShutdownCode => "FA7S-I82B-HEY4-HWEF";
         public override string RadioStationID => "National Radio Channel 4";
-        public FalseWarningScenario(EmailCommand emailService, CheckRadioCommand radioService, WeatherServiceCommand weatherServiceCommand, DeadHandCommand deadHandCommand) : base(emailService, radioService, weatherServiceCommand, deadHandCommand)
+        public FalseWarningScenario(DeadHandCommand deadHandCommand) : base(deadHandCommand)
         {
             _emails = new Dictionary<int, Email>
             {
