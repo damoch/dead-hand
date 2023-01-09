@@ -71,6 +71,11 @@ namespace DeadHand.Commands.Implementations
             }
             else if(result == _shutdownCode)
             {
+                if (CurrentTimer == new DateTime())
+                {
+                    Console.WriteLine("Dead Hand countdown not started yet.");
+                    return;
+                }
                 CancelCommand = true;
                 OnSystemShutdown.Invoke();
             }

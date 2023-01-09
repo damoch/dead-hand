@@ -66,6 +66,7 @@ namespace DeadHand
             _deadHandMaintenanceTimer.Start();
             _scenario.StartScenario();
             _deadHandService.OnSystemShutdown += _scenario.ScenarioEndingShutdown;
+            _deadHandService.OnSystemShutdown += () => { _gameTimer.Stop();  };
         }
 
         public void StartTimer()

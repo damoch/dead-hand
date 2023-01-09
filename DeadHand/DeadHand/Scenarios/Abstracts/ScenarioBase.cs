@@ -64,6 +64,14 @@ namespace DeadHand.Scenarios.Abstracts
             SimulateLaunch();
             Console.Clear();
             Console.WriteLine(EndingLaunchText);
+            Shutdown();
+        }
+
+        private void Shutdown()
+        {
+            Console.WriteLine("PRESS ANY KEY TO EXIT");
+            Console.ReadKey();
+            Environment.Exit(0);
         }
 
         public void ScenarioEndingShutdown()
@@ -71,6 +79,7 @@ namespace DeadHand.Scenarios.Abstracts
             SimulateShutdown();
             Console.Clear();
             Console.WriteLine(EndingShutdownText);
+            Shutdown();
         }
 
         protected void SimulateShutdown()
@@ -96,12 +105,15 @@ namespace DeadHand.Scenarios.Abstracts
                 Thread.Sleep(30);
             }
             Thread.Sleep(2000);
+            Console.WriteLine("");
             foreach (var c in "WEAPON SYSTEMS DISENGAGED")
             {
                 Console.Write(c);
                 Console.Beep(900, 30);
                 Thread.Sleep(30);
             }
+            Thread.Sleep(5000);
+            Console.Clear();
         }
 
         protected void SimulateLaunch()
