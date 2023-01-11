@@ -16,7 +16,8 @@ namespace DeadHand.Commands.Abstracts
             { CommandIdentifier.weatherService, new WeatherServiceCommand() },
             { CommandIdentifier.defrag, new DefragCommand() },
             { CommandIdentifier.status, new StatusCommand() },
-            { CommandIdentifier.cleanCache, new CleanCacheCommand() }
+            { CommandIdentifier.cleanCache, new CleanCacheCommand() },
+            { CommandIdentifier.changeColor, new ChangeColorCommand() }
         };
         public abstract CommandIdentifier Identifier { get; }
         public abstract string Description { get; }

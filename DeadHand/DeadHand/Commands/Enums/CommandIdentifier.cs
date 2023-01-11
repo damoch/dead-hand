@@ -7,6 +7,7 @@
         checkRadio,
         weatherService,
         defrag,
-        cleanCache
+        cleanCache,
+        changeColor
     }
 }

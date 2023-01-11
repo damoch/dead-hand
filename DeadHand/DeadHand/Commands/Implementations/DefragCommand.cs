@@ -13,15 +13,20 @@ namespace DeadHand.Commands.Implementations
         public override string Description => "Fixes fragmentation of hard drive. No parameter";
 
         public override void Execute(string param = null)
-        {
-            Console.WriteLine("Starting defragmentation of hard drive... This might take some time");
-            Thread.Sleep(_rng.Next(2, 4) * 1000);
-            for (int i = 1; i <= 100; i++)
+        {  
+            Console.Write("Defragmenting hard drive: ");
+            Console.WriteLine();
+            for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine($"\rDefragmentation: {i}%");
                 Thread.Sleep(_rng.Next(50, 800));
+                Console.Write("\r{0}% complete", i);
             }
-            Console.WriteLine("Operation succesfull!");
+
+            Console.Write("\r100% complete");
+            Console.WriteLine();
+            Console.WriteLine("Hard drive defragmented");
+
+
             CurrentSettings.DiskFragmentationPercentage = _rng.Next(10, 20);
         }
     }

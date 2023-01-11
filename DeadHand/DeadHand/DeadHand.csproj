@@ -48,6 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -60,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Commands\Abstracts\CommandBase.cs" />
     <Compile Include="Commands\Enums\CommandIdentifier.cs" />
+    <Compile Include="Commands\Implementations\ChangeColorCommand.cs" />
     <Compile Include="Commands\Implementations\CheckRadioCommand.cs" />
     <Compile Include="Commands\Implementations\CleanCacheCommand.cs" />
     <Compile Include="Commands\Implementations\DecoderCommand.cs" />
@@ -81,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\GuardianOSlogo.txt">

@@ -1,5 +1,6 @@
 ﻿using DeadHand.Commands.Implementations;
 using DeadHand.Scenarios.Abstracts;
+using Newtonsoft.Json;
 using System;
 
 namespace DeadHand.Scenarios.Implementations
@@ -37,5 +38,6 @@ namespace DeadHand.Scenarios.Implementations
         public override Tuple<int, int> MemoryCacheUsedPercentageChanges => throw new NotImplementedException();
 
         public override Tuple<int, int> MotherboardTemperatureChanges => throw new NotImplementedException();
+
     }
 }
