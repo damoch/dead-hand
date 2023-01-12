@@ -86,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Data\Scenarios\FalseWarming.dhscen" />
     <Content Include="Data\Scenarios\falseWarning.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

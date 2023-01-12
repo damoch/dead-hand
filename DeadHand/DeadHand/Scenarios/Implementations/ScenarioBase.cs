@@ -8,10 +8,18 @@ using System.IO;
 using System.Text;
 using System.Threading;
 
-namespace DeadHand.Scenarios.Abstracts
+namespace DeadHand.Scenarios.Implementations
 {
-    internal class ScenarioBase
+    public class ScenarioBase
     {
+        public ScenarioBase()
+        {
+            _rng = new Random();
+            _triggers = new List<System.Timers.Timer>();
+            _weatherServiceCommand = CommandBase.GetByIdentifier(CommandIdentifier.weatherService.ToString()) as WeatherServiceCommand;
+            _emailService = CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()) as EmailCommand;
+            _radioService = CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()) as CheckRadioCommand;
+        }
         public  Tuple<int, int> DiskFragmentationPercentageChanges { get; set; }
         public  Tuple<int, int> MemoryCacheUsedPercentageChanges { get; set; }
         public  Tuple<int, int> MotherboardTemperatureChanges { get; set; }
@@ -22,10 +30,10 @@ namespace DeadHand.Scenarios.Abstracts
         public  Tuple<string, string> WeatherServiceData { get; set; }
         public  string ScenarioName { get; set; }
         protected Random _rng;
-        protected WeatherServiceCommand _weatherServiceCommand;
+        private WeatherServiceCommand _weatherServiceCommand;
         private DeadHandCommand _deadHandCommand;
-        protected EmailCommand _emailService;
-        protected CheckRadioCommand _radioService;
+        private EmailCommand _emailService;
+        private CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
         public Dictionary<int, Email> Emails { get; set; }
         public string EndingLaunchText { get; set; }
@@ -231,7 +239,7 @@ json = base64;
             }
         }
         
-        public static ScenarioBase FromJson(string name, DeadHandCommand command)
+        internal static ScenarioBase FromJson(string name, DeadHandCommand command)
         {
             try
             {

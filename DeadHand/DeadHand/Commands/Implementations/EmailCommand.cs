@@ -106,7 +106,7 @@ namespace DeadHand.Commands.Implementations
         }
     }
 
-    internal class Email
+    public class Email
     {
         public string Sender { get; set; }
         public string Subject { get; set; }

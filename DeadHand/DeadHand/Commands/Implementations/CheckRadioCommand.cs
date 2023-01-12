@@ -54,7 +54,7 @@ namespace DeadHand.Commands.Implementations
         }
 
     }
-    internal enum ProgrammingType
+    public enum ProgrammingType
     {
         normal, specialBulletin, presidentialAddress, none
     }

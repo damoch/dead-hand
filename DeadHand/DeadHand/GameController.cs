@@ -1,7 +1,7 @@
 ﻿using System;
 using DeadHand.Commands.Implementations;
 using System.Timers;
-using DeadHand.Scenarios.Abstracts;
+using DeadHand.Scenarios.Implementations;
 using System.Text;
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Abstracts;
