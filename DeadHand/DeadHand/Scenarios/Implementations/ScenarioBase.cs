@@ -1,51 +1,45 @@
 ﻿using DeadHand.Commands.Abstracts;
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Implementations;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Threading;
 
 namespace DeadHand.Scenarios.Abstracts
 {
-    internal abstract class ScenarioBase
+    internal class ScenarioBase
     {
-        public abstract Tuple<int, int> DiskFragmentationPercentageChanges { get; }
-        public abstract Tuple<int, int> MemoryCacheUsedPercentageChanges { get; }
-        public abstract Tuple<int, int> MotherboardTemperatureChanges { get; }
-        public abstract string DelayCode { get; }
-        public abstract string ActivationCode { get; }
-        public abstract string ShutdownCode { get; }
-        public abstract string RadioStationID { get; }
-        public abstract Tuple<string, string> WeatherServiceData { get; }
-        public ScenarioBase(DeadHandCommand deadHandCommand)
-        {
-            _rng = new Random();
-            _triggers = new List<System.Timers.Timer>();
-            _emailService = (EmailCommand)CommandBase.GetByIdentifier(CommandIdentifier.email.ToString());
-            _radioService = (CheckRadioCommand)CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString());
-            _weatherServiceCommand = (WeatherServiceCommand)CommandBase.GetByIdentifier(CommandIdentifier.weatherService.ToString());
-            _deadHandCommand = deadHandCommand;
-        }
-        public abstract string ScenarioName { get; }
+        public  Tuple<int, int> DiskFragmentationPercentageChanges { get; set; }
+        public  Tuple<int, int> MemoryCacheUsedPercentageChanges { get; set; }
+        public  Tuple<int, int> MotherboardTemperatureChanges { get; set; }
+        public  string DelayCode { get; set; }
+        public  string ActivationCode { get; set; }
+        public  string ShutdownCode { get; set; }
+        public  string RadioStationID { get; set; }
+        public  Tuple<string, string> WeatherServiceData { get; set; }
+        public  string ScenarioName { get; set; }
         protected Random _rng;
         protected WeatherServiceCommand _weatherServiceCommand;
         private DeadHandCommand _deadHandCommand;
         protected EmailCommand _emailService;
         protected CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
-        protected Dictionary<int, Email> _emails;
-        public abstract string EndingLaunchText { get; }
-        public abstract string EndingShutdownText { get; }
-        public abstract int MotherboardTemperature { get; }
-        public abstract int MemoryCacheUsedPercentage { get; }
-        public abstract int DiskFragmentationPercentage { get; }
+        public Dictionary<int, Email> Emails { get; set; }
+        public string EndingLaunchText { get; set; }
+        public string EndingShutdownText { get; set; }
+        public  int MotherboardTemperature { get; set; }
+        public  int MemoryCacheUsedPercentage { get; set; }
+        public  int DiskFragmentationPercentage { get; set; }
 
         public void StartScenario()
         {
             _radioService.SetCommandData(RadioStationID);
             _weatherServiceCommand.SetCommandData(WeatherServiceData.Item1, WeatherServiceData.Item2);
             _deadHandCommand.SetCodes(ActivationCode, ShutdownCode, DelayCode);
-            foreach (var email in _emails)
+            foreach (var email in Emails)
             {
                 var newEvent = new System.Timers.Timer(email.Key * Consts.TimerMinute);
                 newEvent.Elapsed += (o, e) =>
@@ -96,7 +90,7 @@ namespace DeadHand.Scenarios.Abstracts
             Console.Beep(600, 1000);
             Console.Beep(500, 1000);
             Console.Beep(400, 1000);
-            Console.Clear();            
+            Console.Clear();
             Thread.Sleep(2000);
             foreach (var c in "USER HAS ENTERED CORRECT SHUTDOWN CODE")
             {
@@ -213,6 +207,53 @@ namespace DeadHand.Scenarios.Abstracts
             foreach (var item in _triggers)
             {
                 item.Stop();
+            }
+        }
+
+        internal bool ToJson(string name)
+        {
+            try
+            {
+                var json = JsonConvert.SerializeObject(this, Formatting.Indented);
+                
+#if !DEBUG
+var bytes = Encoding.UTF8.GetBytes(json);
+var base64 = Convert.ToBase64String(bytes);
+json = base64;
+#endif
+
+                File.WriteAllText($"{name}.json", json);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
+        public static ScenarioBase FromJson(string name, DeadHandCommand command)
+        {
+            try
+            {
+                var json = File.ReadAllText(name);
+#if !DEBUG
+                var bytes = Convert.FromBase64String(json);
+                json = Encoding.UTF8.GetString(bytes);
+#endif
+                
+                var scenario = JsonConvert.DeserializeObject<ScenarioBase>(json);
+                scenario._deadHandCommand = command;
+                return scenario;
+            }
+
+            catch (Exception ex)
+            {
+#if DEBUG
+                Console.WriteLine(ex);
+#else
+Console.WriteLine("Error loading scenario");
+#endif
+                return null;
             }
         }
     }

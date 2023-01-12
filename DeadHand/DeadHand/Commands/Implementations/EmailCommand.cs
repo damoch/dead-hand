@@ -115,6 +115,13 @@ namespace DeadHand.Commands.Implementations
         public string Content { get; set; }
         public ProgrammingType ProgrammingType { get; set; }
 
+        //serialization to json
+        public Email()
+        {
+            ReceivedDate = DateTime.Now;
+        }
+        
+
     }
 
 }

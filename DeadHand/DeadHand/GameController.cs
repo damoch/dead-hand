@@ -2,7 +2,6 @@
 using DeadHand.Commands.Implementations;
 using System.Timers;
 using DeadHand.Scenarios.Abstracts;
-using DeadHand.Scenarios.Implementations;
 using System.Text;
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Abstracts;
@@ -51,7 +50,7 @@ namespace DeadHand
 
         private void CreateTimeline()
         {
-            _scenario = new FalseWarningScenario(_deadHandService);
+            _scenario = ScenarioBase.FromJson("Data/Scenarios/falseWarning.json", _deadHandService);
             DeadHandSettings = new DeadHandSettings()
             {
                 MotherboardTemperature = _scenario.MotherboardTemperature,

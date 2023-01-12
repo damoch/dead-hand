@@ -82,12 +82,14 @@
     <Compile Include="GameController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenarios\Abstracts\ScenarioBase.cs" />
-    <Compile Include="Scenarios\Implementations\FalseWarningScenario.cs" />
-    <Compile Include="Scenarios\Implementations\ScenarioReader.cs" />
+    <Compile Include="Scenarios\Implementations\ScenarioBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Data\Scenarios\FalseWarming.dhscen" />
+    <Content Include="Data\Scenarios\falseWarning.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
