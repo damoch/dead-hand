@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="FilePath" HorizontalAlignment="Center" Margin="0,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" IsReadOnly="true"/>
+        <Button x:Name="openFileButton" Content="Load a file" Margin="0,66,0,311" HorizontalAlignment="Center" Width="780" Click="openFileButton_Click"/>
+        <TextBox x:Name="ScenarioNameTextBox" HorizontalAlignment="Left" Height="33" Margin="10,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
+        <TextBox x:Name="ScenarioEndingLaunchText" HorizontalAlignment="Left" Height="193" Margin="21,217,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="297"/>
+        <TextBox x:Name="ScenarioEndingShutdownTextBox" TextWrapping="Wrap" Text="TextBox" Margin="356,217,107,24"/>
+        <TextBox x:Name="ActivationCodeTextBox" HorizontalAlignment="Left" Height="33" Margin="242,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="207"/>
+        <TextBox x:Name="ShutdownCodeTextBox" HorizontalAlignment="Left" Height="33" Margin="484,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
 
     </Grid>
 </Window>

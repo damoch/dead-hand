@@ -20,15 +20,15 @@ namespace DeadHand.Scenarios.Implementations
             _emailService = CommandBase.GetByIdentifier(CommandIdentifier.email.ToString()) as EmailCommand;
             _radioService = CommandBase.GetByIdentifier(CommandIdentifier.checkRadio.ToString()) as CheckRadioCommand;
         }
-        public  Tuple<int, int> DiskFragmentationPercentageChanges { get; set; }
-        public  Tuple<int, int> MemoryCacheUsedPercentageChanges { get; set; }
-        public  Tuple<int, int> MotherboardTemperatureChanges { get; set; }
-        public  string DelayCode { get; set; }
-        public  string ActivationCode { get; set; }
-        public  string ShutdownCode { get; set; }
-        public  string RadioStationID { get; set; }
-        public  Tuple<string, string> WeatherServiceData { get; set; }
-        public  string ScenarioName { get; set; }
+        public Tuple<int, int> DiskFragmentationPercentageChanges { get; set; }
+        public Tuple<int, int> MemoryCacheUsedPercentageChanges { get; set; }
+        public Tuple<int, int> MotherboardTemperatureChanges { get; set; }
+        public string DelayCode { get; set; }
+        public string ActivationCode { get; set; }
+        public string ShutdownCode { get; set; }
+        public string RadioStationID { get; set; }
+        public Tuple<string, string> WeatherServiceData { get; set; }
+        public string ScenarioName { get; set; }
         protected Random _rng;
         private WeatherServiceCommand _weatherServiceCommand;
         private DeadHandCommand _deadHandCommand;
@@ -38,9 +38,9 @@ namespace DeadHand.Scenarios.Implementations
         public Dictionary<int, Email> Emails { get; set; }
         public string EndingLaunchText { get; set; }
         public string EndingShutdownText { get; set; }
-        public  int MotherboardTemperature { get; set; }
-        public  int MemoryCacheUsedPercentage { get; set; }
-        public  int DiskFragmentationPercentage { get; set; }
+        public int MotherboardTemperature { get; set; }
+        public int MemoryCacheUsedPercentage { get; set; }
+        public int DiskFragmentationPercentage { get; set; }
 
         public void StartScenario()
         {
@@ -218,12 +218,12 @@ namespace DeadHand.Scenarios.Implementations
             }
         }
 
-        internal bool ToJson(string name)
+        public bool ToJson(string name)
         {
             try
             {
                 var json = JsonConvert.SerializeObject(this, Formatting.Indented);
-                
+
 #if !DEBUG
 var bytes = Encoding.UTF8.GetBytes(json);
 var base64 = Convert.ToBase64String(bytes);
@@ -238,7 +238,7 @@ json = base64;
                 return false;
             }
         }
-        
+
         internal static ScenarioBase FromJson(string name, DeadHandCommand command)
         {
             try
@@ -248,7 +248,7 @@ json = base64;
                 var bytes = Convert.FromBase64String(json);
                 json = Encoding.UTF8.GetString(bytes);
 #endif
-                
+
                 var scenario = JsonConvert.DeserializeObject<ScenarioBase>(json);
                 scenario._deadHandCommand = command;
                 return scenario;
@@ -263,6 +263,13 @@ Console.WriteLine("Error loading scenario");
 #endif
                 return null;
             }
+        }
+
+        //WARNING: DO NOT USE FROM THE GAME, ONLY FROM THE EDITOR
+        public static ScenarioBase FromJson(string name)
+        {
+            return FromJson(name, null);
+
         }
     }
 }
