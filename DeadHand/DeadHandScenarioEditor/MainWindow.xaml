@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeadHandScenarioEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="545" Width="948">
     <Grid>
-        <TextBox x:Name="FilePath" HorizontalAlignment="Center" Margin="0,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" IsReadOnly="true"/>
-        <Button x:Name="openFileButton" Content="Load a file" Margin="0,66,0,311" HorizontalAlignment="Center" Width="780" Click="openFileButton_Click"/>
-        <TextBox x:Name="ScenarioNameTextBox" HorizontalAlignment="Left" Height="33" Margin="10,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
-        <TextBox x:Name="ScenarioEndingLaunchText" HorizontalAlignment="Left" Height="193" Margin="21,217,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="297"/>
-        <TextBox x:Name="ScenarioEndingShutdownTextBox" TextWrapping="Wrap" Text="TextBox" Margin="356,217,107,24"/>
-        <TextBox x:Name="ActivationCodeTextBox" HorizontalAlignment="Left" Height="33" Margin="242,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="207"/>
-        <TextBox x:Name="ShutdownCodeTextBox" HorizontalAlignment="Left" Height="33" Margin="484,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
+        <TextBox x:Name="FilePath" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" IsReadOnly="true"/>
+        <Button x:Name="openFileButton" Content="Load a file" Margin="0,48,0,0" Width="780" Click="openFileButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30"/>
+        <TextBox x:Name="ScenarioNameTextBox" HorizontalAlignment="Left" Height="33" Margin="41,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
+        <TextBox x:Name="ScenarioEndingLaunchText" HorizontalAlignment="Left" Height="277" Margin="99,242,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="ScenarioEndingShutdownTextBox" TextWrapping="Wrap" Text="TextBox" Margin="468,217,107,24"/>
+        <TextBox x:Name="ActivationCodeTextBox" HorizontalAlignment="Left" Height="32" Margin="41,166,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
+        <TextBox x:Name="ShutdownCodeTextBox" HorizontalAlignment="Left" Height="33" Margin="311,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
+        <TextBox x:Name="RadioIDTextBox" HorizontalAlignment="Left" Height="33" Margin="311,165,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
+        <TextBox HorizontalAlignment="Left" Height="33" Margin="616,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="242"/>
+        <Label Content="File path" HorizontalAlignment="Left" Margin="84,0,0,0" VerticalAlignment="Top" Height="25" FontSize="10" Width="200"/>
+        <Label Content="Scenario name" HorizontalAlignment="Left" Margin="41,87,0,0" VerticalAlignment="Top" FontSize="10" Width="173"/>
+        <Label Content="Scenario ending launch" HorizontalAlignment="Left" Margin="99,219,0,0" VerticalAlignment="Top" FontSize="10" Width="300"/>
 
     </Grid>
 </Window>

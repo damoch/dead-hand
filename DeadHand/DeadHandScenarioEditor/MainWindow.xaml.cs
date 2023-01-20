@@ -36,7 +36,7 @@ namespace DeadHandScenarioEditor
                 Filter = "JSON Files (*.json)|*.json"
             };
             openFileDialoge.ShowDialog();
-            if (openFileDialoge.FileName != null)
+            if (!string.IsNullOrEmpty(openFileDialoge.FileName))
             {
                 _scenario = ScenarioBase.FromJson(openFileDialoge.FileName);
                 FilePath.Text = openFileDialoge.FileName;
@@ -46,7 +46,7 @@ namespace DeadHandScenarioEditor
                 ActivationCodeTextBox.Text = _scenario.ActivationCode;
                 ShutdownCodeTextBox.Text = _scenario.ShutdownCode;
                 //delayCodeTextBox.Text = _scenario.DelayCode;
-                //radioStationIDTextBox.Text = _scenario.RadioStationID;
+                RadioIDTextBox.Text = _scenario.RadioStationID;
                 //weatherServiceDataTextBox.Text = _scenario.WeatherServiceData.Item1;
                 //weatherServiceDataTextBox.Text = _scenario.WeatherServiceData.Item2;
                 //motherboardTemperatureTextBox.Text = _scenario.MotherboardTemperature.ToString();
