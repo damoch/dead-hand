@@ -11,8 +11,4 @@
     <ProjectReference Include="..\DeadHand\DeadHand.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
-
 </Project>

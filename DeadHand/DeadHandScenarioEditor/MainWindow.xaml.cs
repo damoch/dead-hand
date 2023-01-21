@@ -1,4 +1,5 @@
 ﻿using DeadHand.Scenarios.Implementations;
+using DeadHandScenarioEditor.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,20 @@ namespace DeadHandScenarioEditor
     public partial class MainWindow : Window
     {
         private ScenarioBase _scenario;
-        
+        private WeatherDataEditor _weatherDataEditor;
+
         public MainWindow()
         {
+            _weatherDataEditor = new WeatherDataEditor();
+            _weatherDataEditor.WeatherServiceDataChanged += WeatherDataEditor_WeatherServiceDataChanged;
+            _weatherDataEditor.Hide();
             _scenario = new ScenarioBase();
             InitializeComponent();
+        }
+
+        private void WeatherDataEditor_WeatherServiceDataChanged(object? sender, Tuple<string, string> e)
+        {
+            _scenario.WeatherServiceData = e;
         }
 
         private void openFileButton_Click(object sender, RoutedEventArgs e)
@@ -45,10 +55,8 @@ namespace DeadHandScenarioEditor
                 ScenarioEndingShutdownTextBox.Text = _scenario.EndingShutdownText;
                 ActivationCodeTextBox.Text = _scenario.ActivationCode;
                 ShutdownCodeTextBox.Text = _scenario.ShutdownCode;
-                //delayCodeTextBox.Text = _scenario.DelayCode;
+                DelayCodeTextBox.Text = _scenario.DelayCode;
                 RadioIDTextBox.Text = _scenario.RadioStationID;
-                //weatherServiceDataTextBox.Text = _scenario.WeatherServiceData.Item1;
-                //weatherServiceDataTextBox.Text = _scenario.WeatherServiceData.Item2;
                 //motherboardTemperatureTextBox.Text = _scenario.MotherboardTemperature.ToString();
                 //memoryCacheUsedPercentageTextBox.Text = _scenario.MemoryCacheUsedPercentage.ToString();
                 //diskFragmentationPercentageTextBox.Text = _scenario.DiskFragmentationPercentage.ToString();
@@ -59,6 +67,12 @@ namespace DeadHandScenarioEditor
                 //diskFragmentationPercentageChangesTextBox.Text = _scenario.DiskFragmentationPercentageChanges.Item1.ToString();
                 //diskFragmentationPercentageChangesTextBox.Text = _scenario.DiskFragmentationPercentageChanges.Item2.ToString();
             }
+        }
+
+        private void EditWeatherButton_Click(object sender, RoutedEventArgs e)
+        {
+            _weatherDataEditor.SetWeatherServiceData(_scenario.WeatherServiceData);
+            _weatherDataEditor.Show();
         }
     }
 }
