@@ -31,7 +31,16 @@ namespace DeadHandScenarioEditor.View
         {
             SeviceNameTextBox.Text = serviceValues.Item1;
             WeatherServiceText.Text = serviceValues.Item2;
-            Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WeatherServiceDataChanged.Invoke(this, new Tuple<string, string>(SeviceNameTextBox.Text, WeatherServiceText.Text));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

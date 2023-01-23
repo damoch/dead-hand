@@ -24,7 +24,8 @@
         <Label Content="Activation code" HorizontalAlignment="Left" Margin="41,148,0,0" VerticalAlignment="Top" Width="173"/>
         <Label Content="Radio station name" HorizontalAlignment="Left" Margin="249,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.516,0.565" Width="260"/>
         <Label Content="Scenario ending shutdown" HorizontalAlignment="Left" Margin="491,217,0,0" VerticalAlignment="Top" Width="373"/>
-        <Button x:Name="EditWeatherButton" Content="Edit weather data" HorizontalAlignment="Left" Height="33" Margin="587,105,0,0" VerticalAlignment="Top" Width="258" Click="EditWeatherButton_Click"/>
+        <Button x:Name="EditWeatherButton" Content="Edit weather data" HorizontalAlignment="Left" Height="23" Margin="543,87,0,0" VerticalAlignment="Top" Width="158" Click="EditWeatherButton_Click"/>
+        <Button x:Name="EditDifficultyButton" Content="Edit difficulty options" HorizontalAlignment="Left" Height="23" Margin="706,87,0,0" VerticalAlignment="Top" Width="158" Click="EditDifficultyButton_Click"/>
 
     </Grid>
 </Window>

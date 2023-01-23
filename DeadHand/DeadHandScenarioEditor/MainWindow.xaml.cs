@@ -24,12 +24,10 @@ namespace DeadHandScenarioEditor
     {
         private ScenarioBase _scenario;
         private WeatherDataEditor _weatherDataEditor;
+        private DeviceSettingsData _deviceSettingsData;
 
         public MainWindow()
         {
-            _weatherDataEditor = new WeatherDataEditor();
-            _weatherDataEditor.WeatherServiceDataChanged += WeatherDataEditor_WeatherServiceDataChanged;
-            _weatherDataEditor.Hide();
             _scenario = new ScenarioBase();
             InitializeComponent();
         }
@@ -37,6 +35,7 @@ namespace DeadHandScenarioEditor
         private void WeatherDataEditor_WeatherServiceDataChanged(object? sender, Tuple<string, string> e)
         {
             _scenario.WeatherServiceData = e;
+            _weatherDataEditor.Close();
         }
 
         private void openFileButton_Click(object sender, RoutedEventArgs e)
@@ -71,8 +70,17 @@ namespace DeadHandScenarioEditor
 
         private void EditWeatherButton_Click(object sender, RoutedEventArgs e)
         {
+            _weatherDataEditor = new WeatherDataEditor();
+            _weatherDataEditor.WeatherServiceDataChanged += WeatherDataEditor_WeatherServiceDataChanged;
             _weatherDataEditor.SetWeatherServiceData(_scenario.WeatherServiceData);
-            _weatherDataEditor.Show();
+            _weatherDataEditor.ShowDialog();
+        }
+
+        private void EditDifficultyButton_Click(object sender, RoutedEventArgs e)
+        {
+            _deviceSettingsData = new DeviceSettingsData();
+            _deviceSettingsData.SetupData(_scenario.MotherboardTemperature, _scenario.MemoryCacheUsedPercentage, _scenario.DiskFragmentationPercentage, _scenario.MotherboardTemperatureChanges, _scenario.MemoryCacheUsedPercentageChanges, _scenario.DiskFragmentationPercentageChanges);
+            _deviceSettingsData.ShowDialog();
         }
     }
 }
