@@ -1,19 +1,9 @@
-﻿using DeadHand.Scenarios.Implementations;
+﻿using DeadHand.Commands.Implementations;
+using DeadHand.Scenarios.Implementations;
 using DeadHandScenarioEditor.View;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DeadHandScenarioEditor
 {
@@ -25,6 +15,8 @@ namespace DeadHandScenarioEditor
         private ScenarioBase _scenario;
         private WeatherDataEditor _weatherDataEditor;
         private DeviceSettingsData _deviceSettingsData;
+        private EditEmailsWindow _editEmailsWindow;
+
 
         public MainWindow()
         {
@@ -80,7 +72,33 @@ namespace DeadHandScenarioEditor
         {
             _deviceSettingsData = new DeviceSettingsData();
             _deviceSettingsData.SetupData(_scenario.MotherboardTemperature, _scenario.MemoryCacheUsedPercentage, _scenario.DiskFragmentationPercentage, _scenario.MotherboardTemperatureChanges, _scenario.MemoryCacheUsedPercentageChanges, _scenario.DiskFragmentationPercentageChanges);
+            _deviceSettingsData.OnSave += DeviceSettingsData_OnSave;
             _deviceSettingsData.ShowDialog();
+        }
+
+        private void DeviceSettingsData_OnSave(object? sender, Tuple<int, int, int, Tuple<int, int>, Tuple<int, int>, Tuple<int, int>> e)
+        {
+            _scenario.MotherboardTemperature = e.Item1;
+            _scenario.MemoryCacheUsedPercentage = e.Item2;
+            _scenario.DiskFragmentationPercentage = e.Item3;
+            _scenario.MotherboardTemperatureChanges = e.Item4;
+            _scenario.MemoryCacheUsedPercentageChanges = e.Item5;
+            _scenario.DiskFragmentationPercentageChanges = e.Item6;
+            _deviceSettingsData.Close();
+        }
+
+        private void EditEmailsButton_Click(object sender, RoutedEventArgs e)
+        {
+            _editEmailsWindow = new EditEmailsWindow();
+            _editEmailsWindow.SetEmails(_scenario.Emails);
+            _editEmailsWindow.OnSave += EditEmailsWindow_OnSave;
+            _editEmailsWindow.ShowDialog();
+        }
+
+        private void EditEmailsWindow_OnSave(object? sender, Dictionary<float, Email> e)
+        {
+            _scenario.Emails = e;
+            _editEmailsWindow.Close();
         }
     }
 }

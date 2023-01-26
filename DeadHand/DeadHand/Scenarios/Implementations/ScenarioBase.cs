@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading;
 
 namespace DeadHand.Scenarios.Implementations
@@ -35,7 +34,7 @@ namespace DeadHand.Scenarios.Implementations
         private EmailCommand _emailService;
         private CheckRadioCommand _radioService;
         protected List<System.Timers.Timer> _triggers;
-        public Dictionary<int, Email> Emails { get; set; }
+        public Dictionary<float, Email> Emails { get; set; }
         public string EndingLaunchText { get; set; }
         public string EndingShutdownText { get; set; }
         public int MotherboardTemperature { get; set; }

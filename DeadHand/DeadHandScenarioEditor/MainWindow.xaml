@@ -26,6 +26,7 @@
         <Label Content="Scenario ending shutdown" HorizontalAlignment="Left" Margin="491,217,0,0" VerticalAlignment="Top" Width="373"/>
         <Button x:Name="EditWeatherButton" Content="Edit weather data" HorizontalAlignment="Left" Height="23" Margin="543,87,0,0" VerticalAlignment="Top" Width="158" Click="EditWeatherButton_Click"/>
         <Button x:Name="EditDifficultyButton" Content="Edit difficulty options" HorizontalAlignment="Left" Height="23" Margin="706,87,0,0" VerticalAlignment="Top" Width="158" Click="EditDifficultyButton_Click"/>
+        <Button x:Name="EditEmailsButton" Content="Edit emails" HorizontalAlignment="Left" Height="25" Margin="543,126,0,0" VerticalAlignment="Top" Width="321" Click="EditEmailsButton_Click"/>
 
     </Grid>
 </Window>

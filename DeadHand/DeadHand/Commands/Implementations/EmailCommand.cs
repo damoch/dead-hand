@@ -108,6 +108,7 @@ namespace DeadHand.Commands.Implementations
 
     public class Email
     {
+
         public string Sender { get; set; }
         public string Subject { get; set; }
         public DateTime ReceivedDate { get; set; }
@@ -120,8 +121,16 @@ namespace DeadHand.Commands.Implementations
         {
             ReceivedDate = DateTime.Now;
         }
-        
 
+        public Email(string sender, string subject, string content, ProgrammingType programmingType = ProgrammingType.normal)
+        {
+            Sender = sender;
+            Subject = subject;
+            Content = content;
+            ProgrammingType = programmingType;
+            ReceivedDate = DateTime.Now;
+            IsRead = false;
+        }
     }
 
 }

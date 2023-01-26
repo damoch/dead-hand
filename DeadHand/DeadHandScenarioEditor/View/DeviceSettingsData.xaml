@@ -7,15 +7,16 @@
         mc:Ignorable="d"
         Title="DeviceSettingsData" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="DiskFragmentationChangeLowTextBox" HorizontalAlignment="Left" Height="31" Margin="60,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="DiskFragmentationChangeLowTextBox"  HorizontalAlignment="Left" Height="31" Margin="60,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="DiskFragmentationChangeHighTextBox" HorizontalAlignment="Left" Height="31" Margin="283,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="157"/>
         <TextBox x:Name="MemoryCacheUsedPercentageChangesLowTextBox" HorizontalAlignment="Left" Height="31" Margin="60,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="MemoryCacheUsedPercentageChangesHighTextBox" HorizontalAlignment="Left" Height="31" Margin="268,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="172"/>
-        <TextBox x:Name="MotherboardTemperatureChangesHighTextBox" HorizontalAlignment="Left" Height="31" Margin="60,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="152"/>
-        <TextBox x:Name="MotherboardTemperatureChangesLowTextBox" HorizontalAlignment="Left" Height="31" Margin="268,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="172"/>
+        <TextBox x:Name="MotherboardTemperatureChangesLowTextBox" HorizontalAlignment="Left" Height="31" Margin="60,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="MotherboardTemperatureChangesHighTextBox" HorizontalAlignment="Left" Height="31" Margin="268,252,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="172"/>
         <TextBox x:Name="BaseMotherboardTemperatureTextBox" HorizontalAlignment="Left" Height="26" Margin="46,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="134"/>
         <TextBox x:Name="BaseMemoryCacheUsedPercentageTextBox" HorizontalAlignment="Left" Height="26" Margin="244,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="BaseDiskFragmentationPercentageTextBox" HorizontalAlignment="Left" Height="26" Margin="455,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="204"/>
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Height="35" Margin="505,268,0,0" VerticalAlignment="Top" Width="164" Click="SaveButton_Click"/>
 
     </Grid>
 </Window>
