@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
 namespace DeadHandScenarioEditor.View
 {
@@ -39,6 +40,7 @@ namespace DeadHandScenarioEditor.View
                 SubjectTextField.Text = _email.Subject;
                 ContentTextField.Text = _email.Content;
                 SenderTextField.Text = _email.Sender;
+                EmailDatePicker.Value = _email.ReceivedDate;
                 TimeOfArrivalTextBox.Text = _emailId.ToString();
 
             }
@@ -61,20 +63,6 @@ namespace DeadHandScenarioEditor.View
                 
             }
 
-        }
-
-        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            if (_email != null)
-            {
-                _emails[_emailId].Subject = SubjectTextField.Text;
-                _emails[_emailId].Content = ContentTextField.Text;
-            }
-            var textBlock = (TextBlock)sender;
-            _emailId = float.Parse(textBlock.Text.Split(' ')[0]);
-            _email = _emails[_emailId];
-            SubjectTextField.Text = _email.Subject;
-            ContentTextField.Text = _email.Content;
         }
 
         private void SaveEmailButton_Click(object sender, RoutedEventArgs e)

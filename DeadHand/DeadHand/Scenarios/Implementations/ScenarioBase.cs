@@ -5,12 +5,14 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Threading;
 
 namespace DeadHand.Scenarios.Implementations
 {
     public class ScenarioBase
     {
+        private readonly string _fileExtension = "dhsce";
         public ScenarioBase()
         {
             _rng = new Random();
@@ -223,12 +225,6 @@ namespace DeadHand.Scenarios.Implementations
             {
                 var json = JsonConvert.SerializeObject(this, Formatting.Indented);
 
-#if !DEBUG
-var bytes = Encoding.UTF8.GetBytes(json);
-var base64 = Convert.ToBase64String(bytes);
-json = base64;
-#endif
-
                 File.WriteAllText($"{name}.json", json);
                 return true;
             }
@@ -243,10 +239,6 @@ json = base64;
             try
             {
                 var json = File.ReadAllText(name);
-#if !DEBUG
-                var bytes = Convert.FromBase64String(json);
-                json = Encoding.UTF8.GetString(bytes);
-#endif
 
                 var scenario = JsonConvert.DeserializeObject<ScenarioBase>(json);
                 scenario._deadHandCommand = command;
@@ -268,7 +260,55 @@ Console.WriteLine("Error loading scenario");
         public static ScenarioBase FromJson(string name)
         {
             return FromJson(name, null);
+        }
 
+        //WARNING: DO NOT USE FROM THE GAME, ONLY FROM THE EDITOR
+        public static ScenarioBase FromBinary(string path) {
+            return FromBinary(path, null);
+        }
+        
+        public bool ToBinary(string name)
+        {
+            try
+            {
+                var json = JsonConvert.SerializeObject(this, Formatting.Indented);
+                //use binarywriter to write the json to a file
+                using (var writer = new BinaryWriter(File.Open($"{name}.{_fileExtension}", FileMode.Create)))
+                {
+                    writer.Write(json);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
+        internal static ScenarioBase FromBinary(string name, DeadHandCommand command)
+        {
+            try
+            {
+                //use binaryreader to read the json from a file
+                using (var reader = new BinaryReader(File.Open(name, FileMode.Open)))
+                {
+                    var json = reader.ReadString();
+                    var scenario = JsonConvert.DeserializeObject<ScenarioBase>(json);
+                    scenario._deadHandCommand = command;
+                    return scenario;
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+#if DEBUG
+                Console.WriteLine(ex);
+#else
+Console.WriteLine("Error loading scenario");
+#endif
+                return null;
+            }
         }
     }
 }
