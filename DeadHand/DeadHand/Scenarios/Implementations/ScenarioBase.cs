@@ -5,14 +5,13 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading;
 
 namespace DeadHand.Scenarios.Implementations
 {
     public class ScenarioBase
     {
-        private readonly string _fileExtension = "dhsce";
+        public static readonly string FileExtension = "dhsce";
         public ScenarioBase()
         {
             _rng = new Random();
@@ -219,13 +218,17 @@ namespace DeadHand.Scenarios.Implementations
             }
         }
 
-        public bool ToJson(string name)
+        public bool ToJson(string path)
         {
+            if (!path.EndsWith(".json"))
+            {
+                path += ".json";
+            }
             try
             {
                 var json = JsonConvert.SerializeObject(this, Formatting.Indented);
 
-                File.WriteAllText($"{name}.json", json);
+                File.WriteAllText($"{path}.json", json);
                 return true;
             }
             catch (Exception)
@@ -267,13 +270,16 @@ Console.WriteLine("Error loading scenario");
             return FromBinary(path, null);
         }
         
-        public bool ToBinary(string name)
+        public bool ExportScenario(string path)
         {
+            if (!path.EndsWith($".{FileExtension}"))
+            {
+                path += $".{FileExtension}";
+            }
             try
             {
                 var json = JsonConvert.SerializeObject(this, Formatting.Indented);
-                //use binarywriter to write the json to a file
-                using (var writer = new BinaryWriter(File.Open($"{name}.{_fileExtension}", FileMode.Create)))
+                using (var writer = new BinaryWriter(File.Open($"{path}.{FileExtension}", FileMode.Create)))
                 {
                     writer.Write(json);
                 }

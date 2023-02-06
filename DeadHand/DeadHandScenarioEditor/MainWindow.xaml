@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DeadHandScenarioEditor"
         mc:Ignorable="d"
-        Title="Dead Hand Scenario Editor" Height="545" Width="948">
-    <Grid>
+        Title="Dead Hand Scenario Editor" Height="675" Width="948">
+    <Grid Margin="0,0,0,-6">
         <TextBox x:Name="FilePath" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" IsReadOnly="true"/>
         <Button x:Name="openFileButton" Content="Load a file" Margin="0,48,0,0" Width="780" Click="openFileButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30"/>
         <TextBox x:Name="ScenarioNameTextBox" HorizontalAlignment="Left" Height="33" Margin="41,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
-        <TextBox x:Name="ScenarioEndingLaunchText" Margin="70,242,578,10" TextWrapping="Wrap" Text="TextBlock"/>
-        <TextBox x:Name="ScenarioEndingShutdownTextBox" TextWrapping="Wrap" Text="TextBox" Margin="491,242,84,10"/>
+        <TextBox x:Name="ScenarioEndingLaunchText" Margin="70,242,578,118" TextWrapping="Wrap" Text="TextBlock"/>
+        <TextBox x:Name="ScenarioEndingShutdownTextBox" TextWrapping="Wrap" Text="TextBox" Margin="491,242,84,118"/>
         <TextBox x:Name="ActivationCodeTextBox" HorizontalAlignment="Left" Height="32" Margin="41,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
         <TextBox x:Name="ShutdownCodeTextBox" HorizontalAlignment="Left" Height="29" Margin="571,177,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
         <TextBox x:Name="RadioIDTextBox" HorizontalAlignment="Left" Height="33" Margin="249,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
@@ -27,6 +27,9 @@
         <Button x:Name="EditWeatherButton" Content="Edit weather data" HorizontalAlignment="Left" Height="23" Margin="543,87,0,0" VerticalAlignment="Top" Width="158" Click="EditWeatherButton_Click"/>
         <Button x:Name="EditDifficultyButton" Content="Edit difficulty options" HorizontalAlignment="Left" Height="23" Margin="706,87,0,0" VerticalAlignment="Top" Width="158" Click="EditDifficultyButton_Click"/>
         <Button x:Name="EditEmailsButton" Content="Edit emails" HorizontalAlignment="Left" Height="25" Margin="543,126,0,0" VerticalAlignment="Top" Width="321" Click="EditEmailsButton_Click"/>
+        <Button x:Name="CreateScenarioButton" Content="Create new scenario" HorizontalAlignment="Left" Height="30" Margin="70,547,0,0" VerticalAlignment="Top" Width="794" Click="CreateScenarioButton_Click"/>
+        <Button x:Name="SaveToJsonButton" Content="Save to .json" HorizontalAlignment="Left" Height="29" Margin="70,589,0,0" VerticalAlignment="Top" Width="794" Click="SaveToJsonButton_Click"/>
+        <Button x:Name="ExportScenarioButton" Content="Export excenario file" HorizontalAlignment="Left" Height="32" Margin="70,623,0,0" VerticalAlignment="Top" Width="794" Click="ExportScenarioButton_Click"/>
 
     </Grid>
 </Window>

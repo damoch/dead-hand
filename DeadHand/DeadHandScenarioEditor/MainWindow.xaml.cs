@@ -100,5 +100,70 @@ namespace DeadHandScenarioEditor
             _scenario.Emails = e;
             _editEmailsWindow.Close();
         }
+
+        private void CreateScenarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Create new scenario and clear editor fields
+            _scenario = new ScenarioBase();
+            _scenario.Emails = new Dictionary<float, Email>();
+            _scenario.WeatherServiceData = new Tuple<string, string>("", "");
+            _scenario.MotherboardTemperatureChanges = new Tuple<int, int>(0, 0);
+            _scenario.MemoryCacheUsedPercentageChanges = new Tuple<int, int>(0, 0);
+            _scenario.DiskFragmentationPercentageChanges = new Tuple<int, int>(0, 0);
+            
+            FilePath.Text = "";
+            ScenarioNameTextBox.Text = "";
+            ScenarioEndingLaunchText.Text = "";
+            ScenarioEndingShutdownTextBox.Text = "";
+            ActivationCodeTextBox.Text = "";
+            ShutdownCodeTextBox.Text = "";
+            DelayCodeTextBox.Text = "";
+            RadioIDTextBox.Text = "";
+        }
+
+        private void SaveToJsonButton_Click(object sender, RoutedEventArgs e)
+        {
+            //open save dialoge
+            var saveFileDialoge = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "JSON Files (*.json)|*.json"
+            };
+            saveFileDialoge.ShowDialog();
+            if (!string.IsNullOrEmpty(saveFileDialoge.FileName))
+            {
+                //save scenario to file
+                _scenario.ScenarioName = ScenarioNameTextBox.Text;
+                _scenario.EndingLaunchText = ScenarioEndingLaunchText.Text;
+                _scenario.EndingShutdownText = ScenarioEndingShutdownTextBox.Text;
+                _scenario.ActivationCode = ActivationCodeTextBox.Text;
+                _scenario.ShutdownCode = ShutdownCodeTextBox.Text;
+                _scenario.DelayCode = DelayCodeTextBox.Text;
+                _scenario.RadioStationID = RadioIDTextBox.Text;
+                _scenario.ToJson(saveFileDialoge.FileName);
+                FilePath.Text = saveFileDialoge.FileName;
+            }
+        }
+
+        private void ExportScenarioButton_Click(object sender, RoutedEventArgs e)
+        {
+            //open save dialoge
+            var saveFileDialoge = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = $"Scenario Files (*.{ScenarioBase.FileExtension})|*.{ScenarioBase.FileExtension}"
+            };
+            saveFileDialoge.ShowDialog();
+            if (!string.IsNullOrEmpty(saveFileDialoge.FileName))
+            {
+                //save scenario to file
+                _scenario.ScenarioName = ScenarioNameTextBox.Text;
+                _scenario.EndingLaunchText = ScenarioEndingLaunchText.Text;
+                _scenario.EndingShutdownText = ScenarioEndingShutdownTextBox.Text;
+                _scenario.ActivationCode = ActivationCodeTextBox.Text;
+                _scenario.ShutdownCode = ShutdownCodeTextBox.Text;
+                _scenario.DelayCode = DelayCodeTextBox.Text;
+                _scenario.RadioStationID = RadioIDTextBox.Text;
+                _scenario.ExportScenario(saveFileDialoge.FileName);
+            }
+        }
     }
 }

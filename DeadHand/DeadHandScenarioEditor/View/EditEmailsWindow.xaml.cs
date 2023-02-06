@@ -1,4 +1,5 @@
 ﻿using DeadHand.Commands.Implementations;
+using DeadHand.Scenarios.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
