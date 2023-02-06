@@ -309,9 +309,8 @@ Console.WriteLine("Error loading scenario");
             catch (Exception ex)
             {
 #if DEBUG
-                Console.WriteLine(ex);
-#else
 Console.WriteLine("Error loading scenario");
+                Console.WriteLine(ex);
 #endif
                 return null;
             }

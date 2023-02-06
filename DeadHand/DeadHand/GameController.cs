@@ -5,6 +5,8 @@ using DeadHand.Scenarios.Implementations;
 using System.Text;
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Abstracts;
+using System.IO;
+using System.Collections.Generic;
 
 namespace DeadHand
 {
@@ -20,6 +22,7 @@ namespace DeadHand
         private CleanCacheCommand _cleanCacheCommand;
         private ScenarioBase _scenario;
         private Random _rng = new Random();
+        private Dictionary<int, ScenarioBase> _scenarios = new Dictionary<int, ScenarioBase>();
         internal DeadHandSettings DeadHandSettings { get; set; }
         public void ChceckEmail()
         {
@@ -37,8 +40,46 @@ namespace DeadHand
             _statusCommand = (StatusCommand)CommandBase.GetByIdentifier(CommandIdentifier.status.ToString());
             _cleanCacheCommand = (CleanCacheCommand)CommandBase.GetByIdentifier(CommandIdentifier.cleanCache.ToString());
             _deadHandService.OnSuccesfullDelayCode += StartTimer;
+            
+            LoadScenarios();
+        }
 
-            CreateTimeline();
+        private void LoadScenarios()
+        {
+            //get list of files from scenario folder
+            var files = Directory.GetFiles("Data/Scenarios");
+            var id = 0;
+            //for each file
+            foreach (var file in files)
+            {
+                //load scenario with exception handling
+                try
+                {
+                    var scenario = ScenarioBase.FromBinary(file, _deadHandService);
+                    if (scenario != null)
+                    {
+                        _scenarios.Add(id, scenario);
+                        id++;
+                    }
+                }
+                catch (Exception ex)
+                {
+#if DEBUG
+                    Console.WriteLine($"Error loading scenario file {file}: {ex.Message}");
+#endif
+                }
+            }
+            
+        }
+
+        public Dictionary<int, string> GetScenarios()
+        {
+            var scenarios = new Dictionary<int, string>();
+            foreach (var scenario in _scenarios)
+            {
+                scenarios.Add(scenario.Key, scenario.Value.ScenarioName);
+            }
+            return scenarios;
         }
 
         private void _deadHandMaintenanceTimer_Elapsed(object sender, ElapsedEventArgs e)
@@ -48,9 +89,9 @@ namespace DeadHand
             DeadHandSettings.MotherboardTemperature = _rng.Next(_scenario.MotherboardTemperatureChanges.Item1, _scenario.MotherboardTemperatureChanges.Item2);
         }
 
-        private void CreateTimeline()
+        public void CreateTimeline(int id)
         {
-            _scenario = ScenarioBase.FromJson("Data/Scenarios/falseWarning.json", _deadHandService);
+            _scenario = _scenarios[id];
             DeadHandSettings = new DeadHandSettings()
             {
                 MotherboardTemperature = _scenario.MotherboardTemperature,

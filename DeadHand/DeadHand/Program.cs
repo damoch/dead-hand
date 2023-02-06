@@ -2,6 +2,7 @@
 using DeadHand.Commands.Enums;
 using DeadHand.Commands.Implementations;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 
@@ -10,6 +11,7 @@ namespace DeadHand
     class Program
     {
         private static GameController _gameController;
+        private static Dictionary<int, string> _scenarios;
 
         public static GameController GameController { get => _gameController; }
 
@@ -17,6 +19,7 @@ namespace DeadHand
         {
             //Console.ForegroundColor = ConsoleColor.Green;
             SetupGame();
+            PickScenario();
 #if !DEBUG
             SimulateOSStart();
 #endif
@@ -26,9 +29,40 @@ namespace DeadHand
             }
         }
 
+        private static void PickScenario()
+        {
+            Console.WriteLine("Welcome to Dead Hand");
+            Console.WriteLine("Pick scenario by entering its number:");
+            foreach (var scenario in _scenarios)
+            {
+                Console.WriteLine($"{scenario.Key} - {scenario.Value}");
+            }
+            while (true)
+            {
+                try
+                {
+                    var scenarioId = int.Parse(Console.ReadLine());
+                    _gameController.CreateTimeline(scenarioId);
+                    Console.Clear();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Invalid scenario number");
+#if DEBUG
+                    Console.WriteLine(ex.Message);
+#endif
+                }
+
+            }
+
+            
+        }
+
         private static void SetupGame()
         {
             _gameController = new GameController();
+            _scenarios = _gameController.GetScenarios();
         }
 
         private static void DecodeCommand(string command)
