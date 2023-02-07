@@ -21,7 +21,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBox x:Name="WeatherServiceText" Grid.Column="1" HorizontalAlignment="Center" Height="138" Margin="0,82,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="311"/>
+        <TextBox x:Name="WeatherServiceText" AcceptsReturn="True" Grid.Column="1" HorizontalAlignment="Center" Height="138" Margin="0,82,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="311"/>
         <Button Grid.Column="1" Content="Save" HorizontalAlignment="Left" Height="22" Margin="17,225,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
         <Button Grid.Column="1" Content="Cancel" HorizontalAlignment="Left" Height="22" Margin="190,225,0,0" VerticalAlignment="Top" Width="136" Click="Button_Click_1"/>
         <Label Grid.Column="1" Content="In-game command description" HorizontalAlignment="Left" Height="22" Margin="24,6,0,0" VerticalAlignment="Top" Width="307" FontSize="9"/>

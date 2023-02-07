@@ -1,0 +1,29 @@
+{
+  "DiskFragmentationPercentageChanges": {
+    "Item1": 0,
+    "Item2": 0
+  },
+  "MemoryCacheUsedPercentageChanges": {
+    "Item1": 0,
+    "Item2": 0
+  },
+  "MotherboardTemperatureChanges": {
+    "Item1": 0,
+    "Item2": 0
+  },
+  "DelayCode": "USAF-DELA-4200-6900",
+  "ActivationCode": "USAF-17GF-1AFD-SU22",
+  "ShutdownCode": "USAF-SHUT-DOWN-NOOW",
+  "RadioStationID": "KLON - L.A. Infinite Repeat",
+  "WeatherServiceData": {
+    "Item1": "Download weather forecast for Southern California from NOAA",
+    "Item2": "Weather data for Los Angeles area: \r\n\r\nTemperature: 80°F\r\nWind: 15mph ESE\r\nPressure: 29.73 in\r\nCondition: Partly Cloudy"
+  },
+  "ScenarioName": "Weapons test gone wrong",
+  "Emails": {},
+  "EndingLaunchText": "",
+  "EndingShutdownText": "",
+  "MotherboardTemperature": 0,
+  "MemoryCacheUsedPercentage": 0,
+  "DiskFragmentationPercentage": 0
+}

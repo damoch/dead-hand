@@ -228,7 +228,7 @@ namespace DeadHand.Scenarios.Implementations
             {
                 var json = JsonConvert.SerializeObject(this, Formatting.Indented);
 
-                File.WriteAllText($"{path}.json", json);
+                File.WriteAllText($"{path}", json);
                 return true;
             }
             catch (Exception)
@@ -279,7 +279,7 @@ Console.WriteLine("Error loading scenario");
             try
             {
                 var json = JsonConvert.SerializeObject(this, Formatting.Indented);
-                using (var writer = new BinaryWriter(File.Open($"{path}.{FileExtension}", FileMode.Create)))
+                using (var writer = new BinaryWriter(File.Open($"{path}", FileMode.Create)))
                 {
                     writer.Write(json);
                 }
