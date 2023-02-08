@@ -17,6 +17,15 @@
         <TextBox x:Name="BaseMemoryCacheUsedPercentageTextBox" HorizontalAlignment="Left" Height="26" Margin="244,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="156"/>
         <TextBox x:Name="BaseDiskFragmentationPercentageTextBox" HorizontalAlignment="Left" Height="26" Margin="455,351,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="204"/>
         <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" Height="35" Margin="505,268,0,0" VerticalAlignment="Top" Width="164" Click="SaveButton_Click"/>
+        <Label Content="Base motherboard temperature" HorizontalAlignment="Left" Height="28" Margin="10,318,0,0" VerticalAlignment="Top" Width="202"/>
+        <Label Content="Base memory cahce" HorizontalAlignment="Left" Height="28" Margin="217,318,0,0" VerticalAlignment="Top" Width="209"/>
+        <Label Content="Base disk fragmentation" HorizontalAlignment="Left" Height="28" Margin="440,318,0,0" VerticalAlignment="Top" Width="258"/>
+        <Label Content="Motherboard temp. change low" HorizontalAlignment="Left" Height="35" Margin="46,217,0,0" VerticalAlignment="Top" Width="187"/>
+        <Label Content="Motherboard temp. change high" HorizontalAlignment="Left" Height="35" Margin="244,217,0,0" VerticalAlignment="Top" Width="238"/>
+        <Label Content="Memory cache % change low" HorizontalAlignment="Left" Height="30" Margin="10,139,0,0" VerticalAlignment="Top" Width="234"/>
+        <Label Content="memory cahce % change high" HorizontalAlignment="Left" Height="30" Margin="249,139,0,0" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Disk fragmentation % change low" HorizontalAlignment="Left" Height="30" Margin="31,45,0,0" VerticalAlignment="Top" Width="225"/>
+        <Label Content="Disk fragmentation % chnage high" HorizontalAlignment="Left" Height="30" Margin="268,45,0,0" VerticalAlignment="Top" Width="226"/>
 
     </Grid>
 </Window>

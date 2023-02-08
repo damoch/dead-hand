@@ -30,6 +30,7 @@ namespace DeadHandScenarioEditor.View
         {
             InitializeComponent();
             EmailsListBox.SelectionChanged += EmailsListBox_SelectionChanged;
+            ProgrammingTypeSelect.ItemsSource = Enum.GetValues(typeof(ProgrammingType)).Cast<ProgrammingType>();
         }
 
         private void EmailsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,6 +44,7 @@ namespace DeadHandScenarioEditor.View
                 SenderTextField.Text = _email.Sender;
                 EmailDatePicker.Value = _email.ReceivedDate;
                 TimeOfArrivalTextBox.Text = _emailId.ToString();
+                ProgrammingTypeSelect.SelectedItem = _email.ProgrammingType;
 
             }
         }
@@ -77,6 +79,8 @@ namespace DeadHandScenarioEditor.View
                 _emails[_emailId].Subject = SubjectTextField.Text;
                 _emails[_emailId].Content = ContentTextField.Text;
                 _emails[_emailId].Sender = SenderTextField.Text;
+                _emails[_emailId].ReceivedDate = (DateTime)EmailDatePicker.Value;
+                _emails[_emailId].ProgrammingType = (ProgrammingType)ProgrammingTypeSelect.SelectedItem;
             }
             SetEmails(_emails);
         }

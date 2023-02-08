@@ -17,6 +17,7 @@
         <Button x:Name="SaveEmailsButton" Content="Save email list" HorizontalAlignment="Left" Height="35" Margin="294,429,0,0" VerticalAlignment="Top" Width="279" Click="SaveEmailsButton_Click"/>
         <Button x:Name="AddNewEmailButton" Content="New Email" Margin="620,78,34,339" Click="AddNewEmailButton_Click"/>
         <xctk:DateTimePicker x:Name="EmailDatePicker" HorizontalAlignment="Left" Height="157" Margin="620,219,0,0" VerticalAlignment="Top" Width="365" />
+        <ListBox x:Name="ProgrammingTypeSelect" HorizontalAlignment="Left" Height="79" Margin="620,399,0,0" VerticalAlignment="Top" Width="365" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
 
     </Grid>
