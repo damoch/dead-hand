@@ -5,20 +5,24 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadHand", "DeadHand\DeadHand.csproj", "{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadHandScenarioEditor", "DeadHandScenarioEditor\DeadHandScenarioEditor.csproj", "{631B040C-BFED-42DF-9777-BE26AEFF1AA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeadHandScenarioEditor", "DeadHandScenarioEditor\DeadHandScenarioEditor.csproj", "{631B040C-BFED-42DF-9777-BE26AEFF1AA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
 		{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD1F6F14-591F-4AF0-A087-64936FCD0AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{631B040C-BFED-42DF-9777-BE26AEFF1AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{631B040C-BFED-42DF-9777-BE26AEFF1AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631B040C-BFED-42DF-9777-BE26AEFF1AA4}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
 		{631B040C-BFED-42DF-9777-BE26AEFF1AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{631B040C-BFED-42DF-9777-BE26AEFF1AA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

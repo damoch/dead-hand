@@ -1,15 +1,15 @@
 {
   "DiskFragmentationPercentageChanges": {
-    "Item1": 0,
-    "Item2": 0
+    "Item1": 15,
+    "Item2": 25
   },
   "MemoryCacheUsedPercentageChanges": {
-    "Item1": 0,
-    "Item2": 0
+    "Item1": 7,
+    "Item2": 15
   },
   "MotherboardTemperatureChanges": {
-    "Item1": 0,
-    "Item2": 0
+    "Item1": 6,
+    "Item2": 18
   },
   "DelayCode": "USAF-DELA-4200-6900",
   "ActivationCode": "USAF-17GF-1AFD-SU22",
@@ -20,10 +20,27 @@
     "Item2": "Weather data for Los Angeles area: \r\n\r\nTemperature: 80°F\r\nWind: 15mph ESE\r\nPressure: 29.73 in\r\nCondition: Partly Cloudy"
   },
   "ScenarioName": "Weapons test gone wrong",
-  "Emails": {},
-  "EndingLaunchText": "",
-  "EndingShutdownText": "",
-  "MotherboardTemperature": 0,
-  "MemoryCacheUsedPercentage": 0,
-  "DiskFragmentationPercentage": 0
+  "Emails": {
+    "1": {
+      "Sender": null,
+      "Subject": null,
+      "ReceivedDate": "2023-02-08T11:02:38.8768466+01:00",
+      "IsRead": false,
+      "Content": null,
+      "ProgrammingType": 0
+    },
+    "2": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "ORDER NO. 121",
+      "ReceivedDate": "2023-02-08T11:04:09.7319112+01:00",
+      "IsRead": false,
+      "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nSeveral ICBM launches have been detected from the launch sites in the Soviet Union. NORAD is investigating this situation. The President is entering Looking Glass plane and will take command post soon. In the meantime, the DEFCON 2 alert is being issued to all of the US Armed Forces, and activation of the Dead Hand system has been authorized. \r\n\r\nYou are ordered to enter the activation code USAF-17GF-1AFD-SU22 and await further instructions.\r\n\r\nGod Bless America.",
+      "ProgrammingType": 0
+    }
+  },
+  "EndingLaunchText": "EPILOGUE: \r\n\r\n[Clipping from propaganda newspaper distributed in USA]\r\n\r\nSEPTEMBER 1ST 1996, TRENCH NEAR BERLIN\r\n\r\nAs we enter the fourth year of stalemate on the eastern front, and as the global community gets the real idea of the scale of devastation from the nuclear attacks of ‘92, many people around the world ask the same questions - could this have been prevented? How did that even come to be? \r\n\r\nYesterday I might come to what are some possible answers. As probably everyone knows, with the diminishing numbers of men and women fit to serve in armed forces, many of the NATO countries had decided to use some of the military prison population to hold off the Soviet advance on one of many trenches on the German frontline. \r\n\r\nThese men and women have their chance to atone for their many crimes in this just and unprovoked war against communism. And one of these men is private Spencer Hunter Stewart, a 38 years old member of “Easy” penal company, who claimed to be an operator of a mysterious “Dead Hand” computer, which failure led to the start of the nuclear war. Oh, and that he has been “scapegoated” for the failure, and is totally innocent of any crimes he was accused of.\r\n\r\nHis sergeant, however, says that it could be no further from the truth. Spencer Hunter Stewart used to be logistics officer in USMC (Stewart claimed to be USAF officer) who was convicted of defrauding taxpayers money during his service, and imprisoned months before an unprovoked and not very effective Soviet nuclear attack against the United States happened. He is also famous for being a con man involved within many pyramid schemes, and his words, while indeed entertaining, should be taken with a massive grain of salt.\r\n\r\nCitizens who read this at home should take one thing to their heart. While our brave men and women from US Armed forces, and Allied countries fight (and will soon win) on the frontline, the communist lies will try to infiltrate hearts and minds of those on homefront. Anyone who is trying to sow seeds of panic and doubt or misinformation about scale of radiation or devastation in mainland US or any of the Allied countries should be immediately reported to the nearest MP, police or FBI officer. Martial law must be respected at all times, because our enemy never sleeps.\r\n\r\nFrom the frontline,\r\nBen Shaw\r\n\r\nScenario name: Test gone wrong\r\nThis scenario has one more ending\r\nWritten by kszaku (a.k.a damoch) in February 2023\r\n\r\nThanks for playing Dead Hand\r\n",
+  "EndingShutdownText": "EPILOGUE:\r\n\r\nTOP SECRET - FOR YOUR EYES ONLY\r\nFROM: President George Herbert Walker Bush\r\nTO: General George Lee Butler \r\n\r\nJuly 10, 1991\r\n\r\nGeneral,\r\n\r\nThe incident of July 7 should never happen. It is a miracle that the worst has not come to be, and we have not experienced nuclear annihilation. It is also unthinkable that such a massive disaster would happen because of a computer glitch. \r\n\r\nWith that in mind I order you to deactivate the Dead Hand system once and for all. Every installation that is in any way linked to that system is to be disabled once and for all, and scrapped or destroyed. All documentation that even mentions that system must be destroyed as well, if that means the necessity for replanning of our nuclear strategy, that is for the better.\r\n\r\nAll personnel that were responsible for that system, will be moved to other posts, and must sign the NDA’s. They are not allowed to talk about “Dead Hand”, and they will take the knowledge about that system to their graves.\r\n\r\nAs for the man responsible for regaining the control over the “Dead Hand” system, Colonel Spencer Hunter Stewart, forward him my personal gratitude, and offer whatever material possession he pleases and then discharge him from service. If he opposes, he will be dealt with by usual means.\r\n\r\nGod Bless America.\r\n\r\nWith Regards,\r\nPresident of the United States of America\r\nGeorge H.W. Bush\r\n\r\nScenario name: Test gone wrong\r\nThis scenario has one more ending\r\nWritten by kszaku (a.k.a damoch) in February 2023\r\n\r\nThanks for playing Dead Hand",
+  "MotherboardTemperature": 80,
+  "MemoryCacheUsedPercentage": 25,
+  "DiskFragmentationPercentage": 30
 }

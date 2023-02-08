@@ -10,8 +10,8 @@
         <TextBox x:Name="FilePath" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="780" IsReadOnly="true"/>
         <Button x:Name="openFileButton" Content="Load a file" Margin="0,48,0,0" Width="780" Click="openFileButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30"/>
         <TextBox x:Name="ScenarioNameTextBox" HorizontalAlignment="Left" Height="33" Margin="41,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
-        <TextBox x:Name="ScenarioEndingLaunchText" Margin="70,242,578,118" TextWrapping="Wrap" Text="TextBlock"/>
-        <TextBox x:Name="ScenarioEndingShutdownTextBox" TextWrapping="Wrap" Text="TextBox" Margin="491,242,84,118"/>
+        <TextBox x:Name="ScenarioEndingLaunchText" AcceptsReturn="True" Margin="70,242,578,118" TextWrapping="Wrap" Text="TextBlock"/>
+        <TextBox x:Name="ScenarioEndingShutdownTextBox" AcceptsReturn="True" TextWrapping="Wrap" Text="TextBox" Margin="491,242,84,118"/>
         <TextBox x:Name="ActivationCodeTextBox" HorizontalAlignment="Left" Height="32" Margin="41,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="173"/>
         <TextBox x:Name="ShutdownCodeTextBox" HorizontalAlignment="Left" Height="29" Margin="571,177,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>
         <TextBox x:Name="RadioIDTextBox" HorizontalAlignment="Left" Height="33" Margin="249,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="260"/>

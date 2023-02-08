@@ -99,7 +99,8 @@ namespace DeadHandScenarioEditor.View
 
         private void AddNewEmailButton_Click(object sender, RoutedEventArgs e)
         {
-            _emails.Add(_emails.Keys.Max()+1, new Email());
+            var min = _emails.Any() ? _emails.Keys.Min() : 0;
+            _emails.Add(min + 1, new Email());
             SetEmails(_emails);
         }
     }
