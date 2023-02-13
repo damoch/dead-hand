@@ -21,20 +21,52 @@
   },
   "ScenarioName": "Weapons test gone wrong",
   "Emails": {
-    "1": {
-      "Sender": null,
-      "Subject": null,
-      "ReceivedDate": "2023-02-08T11:02:38.8768466+01:00",
+    "3": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "WARNING",
+      "ReceivedDate": "1991-07-07T01:05:29.468+02:00",
       "IsRead": false,
-      "Content": null,
+      "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nThe previous message was intended as a component of Strategic Readiness Exercise \"Overwhelming Force '91.\" Regrettably, there has been an error. Instead of transmitting the designated simulated activation code, an actual code was transmitted. We must assume that the Dead Hand system has been activated.\r\n\r\nThe exercise has been terminated and the personnel at NORAD are taking immediate action to secure the deactivation code. As the designated code entry operator, you are essential to this effort.\r\n\r\nI will expedite transmission of the deactivation code to your location.\r\n",
       "ProgrammingType": 0
     },
     "2": {
       "Sender": "startcom@usaf.mil",
       "Subject": "ORDER NO. 121",
-      "ReceivedDate": "2023-02-08T11:04:09.7319112+01:00",
+      "ReceivedDate": "1991-07-07T01:04:09.731+02:00",
       "IsRead": false,
-      "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nSeveral ICBM launches have been detected from the launch sites in the Soviet Union. NORAD is investigating this situation. The President is entering Looking Glass plane and will take command post soon. In the meantime, the DEFCON 2 alert is being issued to all of the US Armed Forces, and activation of the Dead Hand system has been authorized. \r\n\r\nYou are ordered to enter the activation code USAF-17GF-1AFD-SU22 and await further instructions.\r\n\r\nGod Bless America.",
+      "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nMultiple ICBM launches have been detected from Soviet Union-based launch sites. NORAD is in the process of evaluating the situation. The President is enroute to the Looking Glass plane and will soon assume command. Meanwhile, a DEFCON 2 alert has been sounded across all branches of the US Armed Forces and activation of the Dead Hand system has been authorized.\r\n\r\nYou are directed to immediately input the activation code USAF-17GF-1AFD-SU22 and stand by for further directives.\r\n\r\nGod Bless America.\r\n",
+      "ProgrammingType": 0
+    },
+    "4": {
+      "Sender": null,
+      "Subject": null,
+      "ReceivedDate": "2023-02-13T23:18:56.2256878+01:00",
+      "IsRead": false,
+      "Content": null,
+      "ProgrammingType": 0
+    },
+    "7": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 1",
+      "ReceivedDate": "1991-07-07T01:07:09.393+02:00",
+      "IsRead": false,
+      "Content": "SITREP:\r\n\r\nThere's been a catastrophic computer blunder at NORAD and we're sure as hell it led to the real activation code being sent instead of a mock one. The folks over at NORAD are currently working around the clock to restart their entire network, so who knows how long that'll take.\r\n\r\nBut, one of the sharp officers over here had the bright idea to jot down the latest delay code just in case - breaking just about every safety protocol in the book. Thank God he did.\r\n\r\nThe code is: USAF-DELA-4200-6900. Enter it ASAP, you're our last hope to buy us some time. I'll keep you updated as more information becomes available.\r\n",
+      "ProgrammingType": 0
+    },
+    "8": {
+      "Sender": null,
+      "Subject": null,
+      "ReceivedDate": "2023-02-13T23:21:34.7441644+01:00",
+      "IsRead": false,
+      "Content": null,
+      "ProgrammingType": 0
+    },
+    "10": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 2",
+      "ReceivedDate": "1991-07-07T01:10:09.176+02:00",
+      "IsRead": false,
+      "Content": "SITREP: \r\nColonel, the situation here is dire. The techies at NORAD are struggling to get the system back online, and it's a slow process.\r\n\r\nIt's making me nostalgic for the \"bomber gap\" days. Feels like we're getting old.\r\n\r\nBut don't you let that happen, Colonel. Keep your eye on Dead Hand like it's the last thing you'll ever see. Because for you and 6 billion others, it might just be. I'll keep you informed as things develop.\r\n",
       "ProgrammingType": 0
     }
   },
