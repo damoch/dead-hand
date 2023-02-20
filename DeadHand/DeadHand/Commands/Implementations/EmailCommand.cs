@@ -131,6 +131,16 @@ namespace DeadHand.Commands.Implementations
             ReceivedDate = DateTime.Now;
             IsRead = false;
         }
+
+        public Email(Email email)
+        {
+            Sender = email.Sender;
+            Subject = email.Subject;
+            Content = email.Content;
+            ProgrammingType = email.ProgrammingType;
+            ReceivedDate = email.ReceivedDate;
+            IsRead = email.IsRead;
+        }
     }
 
 }

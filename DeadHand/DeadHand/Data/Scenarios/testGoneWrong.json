@@ -37,14 +37,6 @@
       "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nMultiple ICBM launches have been detected from Soviet Union-based launch sites. NORAD is in the process of evaluating the situation. The President is enroute to the Looking Glass plane and will soon assume command. Meanwhile, a DEFCON 2 alert has been sounded across all branches of the US Armed Forces and activation of the Dead Hand system has been authorized.\r\n\r\nYou are directed to immediately input the activation code USAF-17GF-1AFD-SU22 and stand by for further directives.\r\n\r\nGod Bless America.\r\n",
       "ProgrammingType": 0
     },
-    "4": {
-      "Sender": null,
-      "Subject": null,
-      "ReceivedDate": "2023-02-13T23:18:56.2256878+01:00",
-      "IsRead": false,
-      "Content": null,
-      "ProgrammingType": 0
-    },
     "7": {
       "Sender": "startcom@usaf.mil",
       "Subject": "SITREP 1",
@@ -53,20 +45,44 @@
       "Content": "SITREP:\r\n\r\nThere's been a catastrophic computer blunder at NORAD and we're sure as hell it led to the real activation code being sent instead of a mock one. The folks over at NORAD are currently working around the clock to restart their entire network, so who knows how long that'll take.\r\n\r\nBut, one of the sharp officers over here had the bright idea to jot down the latest delay code just in case - breaking just about every safety protocol in the book. Thank God he did.\r\n\r\nThe code is: USAF-DELA-4200-6900. Enter it ASAP, you're our last hope to buy us some time. I'll keep you updated as more information becomes available.\r\n",
       "ProgrammingType": 0
     },
-    "8": {
-      "Sender": null,
-      "Subject": null,
-      "ReceivedDate": "2023-02-13T23:21:34.7441644+01:00",
+    "14": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 3",
+      "ReceivedDate": "1991-07-07T01:14:09.107+02:00",
       "IsRead": false,
-      "Content": null,
+      "Content": "SITREP:\r\nGood news on the horizon, techs at NORAD completed a successful diagnostic boot of the system with no hiccups. They're now in the process of bringing the system back online and getting us that crucial deactivation code. Fingers crossed. \r\n\r\nBut, in the meantime, there's a bit of a sticky situation brewing. Apparently, someone at Whiskey Hotel let the cat out of the bag and informed the Soviets of a potential incoming attack. Naturally, they're on high alert and have activated their nuclear forces. But as of now, no attack is incoming. \r\n\r\nColonel, your orders remain unchanged. It's your responsibility to prevent the launch of the Dead Hand system. If you succeed, you'll be a hero, but if you fail... well, let's just say it won't be pretty. Hang tight, soldier. I'll keep you updated with any new intel.\r\n\r\n",
+      "ProgrammingType": 0
+    },
+    "19": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 4",
+      "ReceivedDate": "1991-07-07T01:19:09.353+02:00",
+      "IsRead": false,
+      "Content": "SITREP:\r\nBad news from the front, Colonel. The techs here are still battling more issues with the network and it seems to be taking longer than expected. I'll be holding those responsible accountable for this mismanagement of the system that has put us in this mess. The Commander-in-Chief has taken command at Looking Glass as a precautionary measure. \r\n\r\nIn other news, the mole who warned the Soviets has been exposed. To think, a Soviet spy was hired at the White House. God bless America, am I right? \r\n\r\nBut this is the home stretch, and we're counting on you to keep Dead Hand at bay. Hold the line, soldier.\r\n\r\n\r\n",
       "ProgrammingType": 0
     },
     "10": {
       "Sender": "startcom@usaf.mil",
       "Subject": "SITREP 2",
-      "ReceivedDate": "1991-07-07T01:10:09.176+02:00",
+      "ReceivedDate": "1991-07-07T01:10:09.43+02:00",
       "IsRead": false,
       "Content": "SITREP: \r\nColonel, the situation here is dire. The techies at NORAD are struggling to get the system back online, and it's a slow process.\r\n\r\nIt's making me nostalgic for the \"bomber gap\" days. Feels like we're getting old.\r\n\r\nBut don't you let that happen, Colonel. Keep your eye on Dead Hand like it's the last thing you'll ever see. Because for you and 6 billion others, it might just be. I'll keep you informed as things develop.\r\n",
+      "ProgrammingType": 0
+    },
+    "23": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 5",
+      "ReceivedDate": "1991-07-07T01:22:09.975+02:00",
+      "IsRead": false,
+      "Content": "SITREP:\r\n\r\nGood news - the system is online. Bad news - apparently, you cant just get the deactivation code - it has to be re-calculated again. They are working on that as we speak, and it should be regenerated soon. \r\n\r\nThe President has issued DEFCON 2, for real this time. It is a serious situation, and our thoughts and prayers are with you, Colonel.\r\nGoodspeed!\r\n",
+      "ProgrammingType": 0
+    },
+    "26": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "DEACTIVATION CODE - ENTER ASAP",
+      "ReceivedDate": "2023-02-20T17:56:16.0465481+01:00",
+      "IsRead": false,
+      "Content": "DEAD HAND DEACTIVATION CODE: USAF-SHUT-DOWN-NOOW\r\n",
       "ProgrammingType": 0
     }
   },

@@ -22,6 +22,7 @@
         <Label Content="Subject" HorizontalAlignment="Left" Height="23" Margin="290,0,0,0" VerticalAlignment="Top" Width="283"/>
         <Label Content="Sender" HorizontalAlignment="Left" Height="24" Margin="294,54,0,0" VerticalAlignment="Top" Width="284"/>
         <Label Content="Content" HorizontalAlignment="Left" Height="26" Margin="294,108,0,0" VerticalAlignment="Top" Width="279"/>
+        <Button x:Name="DuplicateEmailButton" Content="Duplicate email" HorizontalAlignment="Left" Height="32" Margin="707,38,0,0" VerticalAlignment="Top" Width="261" Click="DuplicateEmailButton_Click"/>
 
 
     </Grid>

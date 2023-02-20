@@ -1,102 +1,94 @@
-߃{
+�V{
   "DiskFragmentationPercentageChanges": {
-    "Item1": 0,
-    "Item2": 40
+    "Item1": 15,
+    "Item2": 25
   },
   "MemoryCacheUsedPercentageChanges": {
-    "Item1": 0,
-    "Item2": 40
+    "Item1": 7,
+    "Item2": 15
   },
   "MotherboardTemperatureChanges": {
-    "Item1": 60,
-    "Item2": 120
+    "Item1": 6,
+    "Item2": 18
   },
-  "DelayCode": "F7SA-USA7-JA98-CDSA",
-  "ActivationCode": "2DCJ-CA83-8A9H-A9HD",
-  "ShutdownCode": "FA7S-I82B-HEY4-HWEF",
-  "RadioStationID": "National Radio Channel 4",
+  "DelayCode": "USAF-DELA-4200-6900",
+  "ActivationCode": "USAF-17GF-1AFD-SU22",
+  "ShutdownCode": "USAF-SHUT-DOWN-NOOW",
+  "RadioStationID": "KLON - L.A. Infinite Repeat",
   "WeatherServiceData": {
-    "Item1": "Delivers latest update from Naval Weather Service",
-    "Item2": "\nTemperature: 25°C/77°F\nWind: 10KPH/6.21MPH\nCloudy\nHumidity: 10%"
+    "Item1": "Download weather forecast for Southern California from NOAA",
+    "Item2": "Weather data for Los Angeles area: \r\n\r\nTemperature: 80°F\r\nWind: 15mph ESE\r\nPressure: 29.73 in\r\nCondition: Partly Cloudy"
   },
-  "ScenarioName": "False warning test",
+  "ScenarioName": "Weapons test gone wrong",
   "Emails": {
-    "1": {
-      "Sender": "command@stratcom.com",
-      "Subject": "Order no. 583",
-      "ReceivedDate": "2023-01-12T17:35:40.5249913+01:00",
+    "3": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "WARNING",
+      "ReceivedDate": "1991-07-07T01:05:29.468+02:00",
       "IsRead": false,
-      "Content": "To asset HP, \r\nSince peace talks in Geneva have been cancelled, and hostile armed force has issued red alert to their strategic weapons division, Strategic Command has issued STANDBY alert.\r\n\r\n1. HP has been authorized to enter following Dead Hand activation code:2DCJ-CA83-8A9H-A9HD\n2. 10 minutes after activation Dead Hand will automatically launch retaliationary nuclear strike against enemy cities\n3. In final 4 minutes before activation HP will get the chance to enter following delay code:F7SA-USA7-JA98-CDSA. Entering that code will delay retaliation for 7 minutes\n4. To help HP make decision whether enter the code and wait another 10 minutes, or allow attack to commence, following checks may be performed:\na) Check whether National Radio program 4 is still broadcasting\nb) Check whether Naval Wether Service stil issues weather updates\nIn addition, all National Civil Defense Service broadcasts will be redirected to HP email inbox in text form\n5. HP is responsible for operation of computer controling Dead Hand system\n6. Dead Hand may be shut down only by entering shutdown code, that will be issued in ALL CLEAR message from Strategic Command",
+      "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nThe previous message was intended as a component of Strategic Readiness Exercise \"Overwhelming Force '91.\" Regrettably, there has been an error. Instead of transmitting the designated simulated activation code, an actual code was transmitted. We must assume that the Dead Hand system has been activated.\r\n\r\nThe exercise has been terminated and the personnel at NORAD are taking immediate action to secure the deactivation code. As the designated code entry operator, you are essential to this effort.\r\n\r\nI will expedite transmission of the deactivation code to your location.\r\n",
       "ProgrammingType": 0
     },
     "2": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "CIVIL DANGER WARNING - THIS IS NOT A TEST",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
+      "Sender": "startcom@usaf.mil",
+      "Subject": "ORDER NO. 121",
+      "ReceivedDate": "1991-07-07T01:04:09.731+02:00",
       "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF THE GOVERNMENT. THIS IS NOT A TEST\r\n\r\nNational Civil Defense Service has issued a CIVIL DANGER WARNING for entire teritory of this country.\r\nTHERE IS NO ATTACK COMMING. THIS IS A WARNING MESSAGE.\r\nEvery citzen of this country is ordered to take following immediate precautions for possible military attack on this country:\r\n1. Prepare shelter in place - stock up in food, water and medical supplies for at least 14 days of stay. If possible, seek shelter in basements of sturdy buildings as far from windows as possible.\r\n2. In case of evacuation order, prepare your personal evacuation kit for every member of your family. If you onw a personal vehlicle, plan evacuation with members of your community who don't own one.\r\n3. Do not try to evacuate members of your family who are in schools or hospitals. Their safety will be ensured by National Civil Defense Service.\r\n4. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n5. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nTHIS CONCLUDES CIVIL DANGER WARNING MESSAGE\r\n",
-      "ProgrammingType": 1
+      "Content": "FOR YOUR EYES ONLY\r\n\r\nColonel Spencer Hunter Stewart,\r\n\r\nMultiple ICBM launches have been detected from Soviet Union-based launch sites. NORAD is in the process of evaluating the situation. The President is enroute to the Looking Glass plane and will soon assume command. Meanwhile, a DEFCON 2 alert has been sounded across all branches of the US Armed Forces and activation of the Dead Hand system has been authorized.\r\n\r\nYou are directed to immediately input the activation code USAF-17GF-1AFD-SU22 and stand by for further directives.\r\n\r\nGod Bless America.\r\n",
+      "ProgrammingType": 0
     },
     "7": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "EVACUATE IMMEDIATELY - THIS IS NOT A TEST",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 1",
+      "ReceivedDate": "1991-07-07T01:07:09.393+02:00",
       "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF THE GOVERNMENT. THIS IS NOT A TEST\r\n\r\nNational Civil Defense Service has issued a EVACUATE IMMEDIATELY message for population of northern provinces of this country.\r\nTHERE IS NO ATTACK COMMING. THIS IS A WARNING MESSAGE.\r\n\r\nDue the significant danger posed by hostile military force outside northern border of this country, the governemnt has decided to evacuate citzens from northern provinces. \r\n\r\nEvery citzen receiving this message is ordered to take immediate actions:\r\n1. Prepare personal evacuation kit, for every member of your family. The kit should contain food, water and necessary medication for at least 72 hours. Do not pack unnecessary things such as jewelery, toys, clothes etc.\r\n2. If you onw a personal vehicle, try to take your neighbours who don't own one with you.\r\n3. Use only designated evacuation routes. Other routes should be kept open for emergency use.\r\n4. If you don't have personal method of transport, go to your local public transport station. Public buses and trains will be in place to evacuate those in need.\r\n5. Do not try to evacuate members of your family who are in schools or hospitals. Their evacuation will be ensured by National Civil Defense Service.\r\n6. If you are not within immediate area of your home, go straight to the evacuation station. Emergency supplies will be assured by members of National Civil Defense Service.\r\n7. Always listen to directions provided by police, fire department, military and National Civil Defense Service officers on site.\r\n8. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n9. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nTHIS CONCLUDES EVACUATE IMMEDIATELY MESSAGE\r\n",
-      "ProgrammingType": 1
+      "Content": "SITREP:\r\n\r\nThere's been a catastrophic computer blunder at NORAD and we're sure as hell it led to the real activation code being sent instead of a mock one. The folks over at NORAD are currently working around the clock to restart their entire network, so who knows how long that'll take.\r\n\r\nBut, one of the sharp officers over here had the bright idea to jot down the latest delay code just in case - breaking just about every safety protocol in the book. Thank God he did.\r\n\r\nThe code is: USAF-DELA-4200-6900. Enter it ASAP, you're our last hope to buy us some time. I'll keep you updated as more information becomes available.\r\n",
+      "ProgrammingType": 0
     },
-    "11": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "AIR ATTACK ALERT - THIS IS NOT A TEST",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
+    "14": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 3",
+      "ReceivedDate": "1991-07-07T01:14:09.107+02:00",
       "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF AIR DEFENSE FORCES. THIS IS NOT A TEST\r\n\r\nNational Civil Defense Service has issued a AIR ATTACK ALERT message for entire teritory of this country.\r\nAIR ATTACK ALERT MEANS, THAT THERE IS ATTACK IN PROGRESS.\r\n\r\nAir Defense Forces had detected multiple enemy attack planes entering this country's airspace. Air Defense Forces will take steps to intercept those planes.\r\n\r\nIT IS TOO LATE TO EVACUATE NOW. SEEK IMMEDIATE SHELTER.\r\n\r\nEvery citzen receiving this message is ordered to take immediate actions:\r\n1. Seek immediate shelter. If possible, go to the basement of sturdy building.\r\n2. If there is no basement in your current bulding, try to place as much space between you and windows and outside world.\r\n3. If you are outside your home, don't go back there. Lead straight to public shelters, that are being set by National Civil Defense Service officers.\r\n4. If you are on the road, pull of and try to seek immediate shelter in a building.\r\n5. Do not try to evacuate members of your family who are in schools or hospitals. Their safety will be ensured by National Civil Defense Service.\r\n6. Always listen to directions provided by police, fire department, military and National Civil Defense Service officers on site.\r\n7. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n8. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nTHIS CONCLUDES AIR ATTACK ALERT MESSAGE\r\n",
-      "ProgrammingType": 1
+      "Content": "SITREP:\r\nGood news on the horizon, techs at NORAD completed a successful diagnostic boot of the system with no hiccups. They're now in the process of bringing the system back online and getting us that crucial deactivation code. Fingers crossed. \r\n\r\nBut, in the meantime, there's a bit of a sticky situation brewing. Apparently, someone at Whiskey Hotel let the cat out of the bag and informed the Soviets of a potential incoming attack. Naturally, they're on high alert and have activated their nuclear forces. But as of now, no attack is incoming. \r\n\r\nColonel, your orders remain unchanged. It's your responsibility to prevent the launch of the Dead Hand system. If you succeed, you'll be a hero, but if you fail... well, let's just say it won't be pretty. Hang tight, soldier. I'll keep you updated with any new intel.\r\n\r\n",
+      "ProgrammingType": 0
     },
-    "15": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "ALL CLEAR - THIS IS NOT A TEST",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
+    "19": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 4",
+      "ReceivedDate": "1991-07-07T01:19:09.353+02:00",
       "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF GOVERNMENT. THIS IS NOT A TEST\r\n\r\nNational Civil Defense Service has issued a ALL CLEAR message for AIR ATTACK ALERT issued earlier.\r\n\r\nAir Defense Forces had detected, that enemy planes had left airspace of this country\r\n\r\nALL CLEAR\r\n\r\nIt is safe to leave your shelter now. If you, or member of your family or community got hurt, National Civil Defense Service officers are in place to provide help.\r\nKeep in mind, that CIVIL DANGER and EVACUATE IMMEDIATELY messages are still in effect. If your area had EVACUATE IMMEDIATELY message issued, you have to continue your evacuation.\r\n\r\n1. Always listen to directions provided by police, fire department, military and National Civil Defense Service officers on site.\r\n2. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n3. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nTHIS CONCLUDES ALL CLEAR MESSAGE\r\n",
-      "ProgrammingType": 1
+      "Content": "SITREP:\r\nBad news from the front, Colonel. The techs here are still battling more issues with the network and it seems to be taking longer than expected. I'll be holding those responsible accountable for this mismanagement of the system that has put us in this mess. The Commander-in-Chief has taken command at Looking Glass as a precautionary measure. \r\n\r\nIn other news, the mole who warned the Soviets has been exposed. To think, a Soviet spy was hired at the White House. God bless America, am I right? \r\n\r\nBut this is the home stretch, and we're counting on you to keep Dead Hand at bay. Hold the line, soldier.\r\n\r\n\r\n",
+      "ProgrammingType": 0
     },
-    "16": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "CIVIL DANGER WARNING - EVACUATE IMMEDIATELY - THIS IS NOT A TEST",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
+    "10": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 2",
+      "ReceivedDate": "1991-07-07T01:10:09.43+02:00",
       "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF THE GOVERNMENT. THIS IS NOT A TEST\r\n\r\nNational Civil Defense Service has issued an update to CIVIL DANGER WARNING issued for entire teritory of this country earlier.\r\nTHERE IS NO ATTACK COMMING. THIS IS A WARNING MESSAGE.\r\n\r\nDue the developments in current crisis, and possibility of nuclear attack against this country, the government has decided to evacuate cities with population above 100 000 citzens.\r\nIf this message applies to you, take following steps\r\n1. Prepare personal evacuation kit, for every member of your family. The kit should contain food, water and necessary medication for at least 72 hours. Do not pack unnecessary things such as jewelery, toys, clothes etc.\r\n2. If you onw a personal vehicle, try to take your neighbours who don't own one with you.\r\n3. Use only designated evacuation routes. Other routes should be kept open for emergency use.\r\n4. If you don't have personal method of transport, go to your local public transport station. Public buses and trains will be in place to evacuate those in need.\r\n5. Do not try to evacuate members of your family who are in schools or hospitals. Their evacuation will be ensured by National Civil Defense Service.\r\n6. If you are not within immediate area of your home, go straight to the evacuation station. Emergency supplies will be assured by members of National Civil Defense Service.\r\n\r\nCitzens of lesser populated areas continue their emergency precautions:\r\n1. Prepare shelter in place - stock up in food, water and medical supplies for at least 14 days of stay. If possible, seek shelter in basements of sturdy buildings as far from windows as possible.\r\n2. In case of evacuation order, prepare your personal evacuation kit for every member of your family. If you onw a personal vehlicle, plan evacuation with members of your community who don't own one.\r\n3. Do not try to evacuate members of your family who are in schools or hospitals. Their safety will be ensured by National Civil Defense Service.\r\n4. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n5. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nRegardless of your situation, remember these rules:\r\n1. Always listen to directions provided by police, fire department, military and National Civil Defense Service officers on site.\r\n2. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n3. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nThe President will address the nation shortly after this message is issued.\r\n\r\nTHIS CONCLUDES CIVIL DANGER WARNING MESSAGE\r\n",
-      "ProgrammingType": 1
-    },
-    "20": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "PRESIDENTIAL ADDRESS",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
-      "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF THE PRESIDENT. THIS IS NOT A TEST\r\n\r\nSTANDBY FOR PRESIDENTIAL ADDRESS...\r\n\r\nLadies and gentlemen, the President of our Country\r\n\r\nMy fellow citzens,\r\nI am standing before you in this hour of test. \r\nOur military forces had reported activities of enemy air forces, fleet and strategic weapon divisions, that suggest threat to our sovergnity.\r\nWe are especially concerned, about the possibility of nuclear attack. \r\n\r\nHowever we are still trying to resume peace talks in Geneva, that had been broken earlier today. If these efforts fail, we are ready to ensure safety of our population, \r\nand retaliate to every attack in kind.\r\n\r\nI have already taken the measures, to ensure safety of every important member of the government and myself. Even if worst will come to past, we will still be able to continue the\r\nfight, and rebuild our great country, after we mourn the dead.\r\n\r\nWe are ready, \r\nGod bless our Country.\r\n\r\nTHIS CONCLUDES PRESIDENTIAL ADDRESS\r\n",
-      "ProgrammingType": 2
-    },
-    "24": {
-      "Sender": "command@stratcom.com",
-      "Subject": "Order no. 584",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
-      "IsRead": false,
-      "Content": "Asset HP,The hostile government has issued stand down order to its military forces, and expressed will to resume peace talks.\r\nOur intelligence has noted, that hostile forces are indeed standing down and returning to their bases.With that in mind, Startegic Command authorizes HP to enter following Dead Hand shutdown code IMMEDIATELY\nFA7S-I82B-HEY4-HWEF",
+      "Content": "SITREP: \r\nColonel, the situation here is dire. The techies at NORAD are struggling to get the system back online, and it's a slow process.\r\n\r\nIt's making me nostalgic for the \"bomber gap\" days. Feels like we're getting old.\r\n\r\nBut don't you let that happen, Colonel. Keep your eye on Dead Hand like it's the last thing you'll ever see. Because for you and 6 billion others, it might just be. I'll keep you informed as things develop.\r\n",
       "ProgrammingType": 0
     },
     "23": {
-      "Sender": "EMERGENCY ALERT SERVICE",
-      "Subject": "ALL CLEAR - THIS IS NOT A TEST",
-      "ReceivedDate": "2023-01-12T17:35:40.5269888+01:00",
+      "Sender": "startcom@usaf.mil",
+      "Subject": "SITREP 5",
+      "ReceivedDate": "1991-07-07T01:22:09.975+02:00",
       "IsRead": false,
-      "Content": "\r\nTHIS MESSAGE IS BROADCASTED AT THE REQUEST OF GOVERNMENT. THIS IS NOT A TEST\r\n\r\nNational Civil Defense Service has issued a ALL CLEAR message for CIVIL DANGER message issued earlier.\r\n\r\nThis country is no longer under threat of hostile aggression.\r\n\r\nALL CLEAR\r\n\r\nIt is safe to leave your shelter now. If you, or member of your family or community got hurt, National Civil Defense Service officers are in place to provide help.\r\n\r\n1. Always listen to directions provided by police, fire department, military and National Civil Defense Service officers on site.\r\n2. Do not use telephone lines. Telephone lines should be kept open for emergency use.\r\n3. Keep battery powered radio with you. Emergency Alert Service updates will be broadcasted through Radio, Television, Cellurar services and Internet.\r\n\r\nTHIS CONCLUDES ALL CLEAR MESSAGE\r\n",
-      "ProgrammingType": 1
+      "Content": "SITREP:\r\n\r\nGood news - the system is online. Bad news - apparently, you cant just get the deactivation code - it has to be re-calculated again. They are working on that as we speak, and it should be regenerated soon. \r\n\r\nThe President has issued DEFCON 2, for real this time. It is a serious situation, and our thoughts and prayers are with you, Colonel.\r\nGoodspeed!\r\n",
+      "ProgrammingType": 0
+    },
+    "26": {
+      "Sender": "startcom@usaf.mil",
+      "Subject": "DEACTIVATION CODE - ENTER ASAP",
+      "ReceivedDate": "2023-02-20T17:56:16.0465481+01:00",
+      "IsRead": false,
+      "Content": "DEAD HAND DEACTIVATION CODE: USAF-SHUT-DOWN-NOOW\r\n",
+      "ProgrammingType": 0
     }
   },
-  "EndingLaunchText": "\r\nEPILOGUE: \r\nAsset responsible for Dead Hand system, had mistaken military exercise of 'hostile force' as a ligitimate threat, and allowed automatic retaliation system to perform\r\nnuclear attack.\r\n\r\n'Hostile force' seeing hundrets of ballistic missles coming their way, launched their own nuclear attack. Other nations seeing that laucnched their own arsennals, mutually destroying\r\neach other in this process.\r\nHP has starved to death, after supplies ended in his bunker\n\nScenario name: False warning\nThis scenario has one more ending\nThanks for playing Dead Hand, developed by kszaku in October of 2020\n",
-  "EndingShutdownText": "\r\nEPILOGUE: \r\n(newspaper article printed following day)\r\nAfter hours of talks behind closed doors, during press conference in Geneva representatives of both countries anounced, that they succesfully signed the peace treaty.\r\nThe treaty is promising the end of tensions between two nuclear powers, that had their tipping point yesterday, as reportedly both countries issued high alerts to their military\r\nforces.\r\nBoth leaders expressed their satisfaction of fact, that total nuclear disarnment has found its place in the threaty.\r\n\r\nUN General Secretary expressed gratitude saying 'May this be last time, that world comes this close to nuclear anihilation. Nuclear weapons are deeply\r\nimmoral, and pose existential threat to all of humanity. We must seek complete destruction of such tools'.\r\n\r\nHowever, no leader wanted to comment, whether infamous 'Dead hand' system actually exists.\r\nScenario name: False warning\nThis scenario has one more ending\nThanks for playing Dead Hand, developed by kszaku in October of 2020\n",
+  "EndingLaunchText": "EPILOGUE: \r\n\r\n[Clipping from propaganda newspaper distributed in USA]\r\n\r\nSEPTEMBER 1ST 1996, TRENCH NEAR BERLIN\r\n\r\nAs we enter the fourth year of stalemate on the eastern front, and as the global community gets the real idea of the scale of devastation from the nuclear attacks of ‘92, many people around the world ask the same questions - could this have been prevented? How did that even come to be? \r\n\r\nYesterday I might come to what are some possible answers. As probably everyone knows, with the diminishing numbers of men and women fit to serve in armed forces, many of the NATO countries had decided to use some of the military prison population to hold off the Soviet advance on one of many trenches on the German frontline. \r\n\r\nThese men and women have their chance to atone for their many crimes in this just and unprovoked war against communism. And one of these men is private Spencer Hunter Stewart, a 38 years old member of “Easy” penal company, who claimed to be an operator of a mysterious “Dead Hand” computer, which failure led to the start of the nuclear war. Oh, and that he has been “scapegoated” for the failure, and is totally innocent of any crimes he was accused of.\r\n\r\nHis sergeant, however, says that it could be no further from the truth. Spencer Hunter Stewart used to be logistics officer in USMC (Stewart claimed to be USAF officer) who was convicted of defrauding taxpayers money during his service, and imprisoned months before an unprovoked and not very effective Soviet nuclear attack against the United States happened. He is also famous for being a con man involved within many pyramid schemes, and his words, while indeed entertaining, should be taken with a massive grain of salt.\r\n\r\nCitizens who read this at home should take one thing to their heart. While our brave men and women from US Armed forces, and Allied countries fight (and will soon win) on the frontline, the communist lies will try to infiltrate hearts and minds of those on homefront. Anyone who is trying to sow seeds of panic and doubt or misinformation about scale of radiation or devastation in mainland US or any of the Allied countries should be immediately reported to the nearest MP, police or FBI officer. Martial law must be respected at all times, because our enemy never sleeps.\r\n\r\nFrom the frontline,\r\nBen Shaw\r\n\r\nScenario name: Test gone wrong\r\nThis scenario has one more ending\r\nWritten by kszaku (a.k.a damoch) in February 2023\r\n\r\nThanks for playing Dead Hand\r\n",
+  "EndingShutdownText": "EPILOGUE:\r\n\r\nTOP SECRET - FOR YOUR EYES ONLY\r\nFROM: President George Herbert Walker Bush\r\nTO: General George Lee Butler \r\n\r\nJuly 10, 1991\r\n\r\nGeneral,\r\n\r\nThe incident of July 7 should never happen. It is a miracle that the worst has not come to be, and we have not experienced nuclear annihilation. It is also unthinkable that such a massive disaster would happen because of a computer glitch. \r\n\r\nWith that in mind I order you to deactivate the Dead Hand system once and for all. Every installation that is in any way linked to that system is to be disabled once and for all, and scrapped or destroyed. All documentation that even mentions that system must be destroyed as well, if that means the necessity for replanning of our nuclear strategy, that is for the better.\r\n\r\nAll personnel that were responsible for that system, will be moved to other posts, and must sign the NDA’s. They are not allowed to talk about “Dead Hand”, and they will take the knowledge about that system to their graves.\r\n\r\nAs for the man responsible for regaining the control over the “Dead Hand” system, Colonel Spencer Hunter Stewart, forward him my personal gratitude, and offer whatever material possession he pleases and then discharge him from service. If he opposes, he will be dealt with by usual means.\r\n\r\nGod Bless America.\r\n\r\nWith Regards,\r\nPresident of the United States of America\r\nGeorge H.W. Bush\r\n\r\nScenario name: Test gone wrong\r\nThis scenario has one more ending\r\nWritten by kszaku (a.k.a damoch) in February 2023\r\n\r\nThanks for playing Dead Hand",
   "MotherboardTemperature": 80,
-  "MemoryCacheUsedPercentage": 20,
-  "DiskFragmentationPercentage": 10
+  "MemoryCacheUsedPercentage": 25,
+  "DiskFragmentationPercentage": 30
 }

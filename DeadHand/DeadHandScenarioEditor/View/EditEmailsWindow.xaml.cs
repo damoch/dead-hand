@@ -57,7 +57,7 @@ namespace DeadHandScenarioEditor.View
             EmailsListBox.SelectedItem = null;
             EmailsListBox.Items.Clear();
             _emails = emails;
-            foreach (var email in emails)
+            foreach (var email in emails.OrderBy(x => x.Key))
             {
                 var textBlock = new TextBlock();
                 textBlock.Text = $"{email.Key} - {email.Value.Subject}";
@@ -101,6 +101,13 @@ namespace DeadHandScenarioEditor.View
         {
             var max = _emails.Any() ? _emails.Keys.Max() : 0;
             _emails.Add(max + 1, new Email());
+            SetEmails(_emails);
+        }
+
+        private void DuplicateEmailButton_Click(object sender, RoutedEventArgs e)
+        {
+            var max = _emails.Any() ? _emails.Keys.Max() : 0;
+            _emails.Add(max + 1, new Email(_email));
             SetEmails(_emails);
         }
     }
