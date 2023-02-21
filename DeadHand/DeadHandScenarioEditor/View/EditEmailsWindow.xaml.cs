@@ -31,6 +31,23 @@ namespace DeadHandScenarioEditor.View
             InitializeComponent();
             EmailsListBox.SelectionChanged += EmailsListBox_SelectionChanged;
             ProgrammingTypeSelect.ItemsSource = Enum.GetValues(typeof(ProgrammingType)).Cast<ProgrammingType>();
+            TimeOfArrivalTextBox.LostFocus += TimeOfArrivalTextBox_LostFocus;
+        }
+
+        private void TimeOfArrivalTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            //parse new value to a var
+            float newValue;
+            if (float.TryParse(TimeOfArrivalTextBox.Text, out newValue))
+            {
+                if (newValue != _emailId)
+                {
+                    _emails.Remove(_emailId);
+                    _emails.Add(newValue, _email);
+                    _emailId = newValue;
+                }
+            }
+            SetEmails(_emails);
         }
 
         private void EmailsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
