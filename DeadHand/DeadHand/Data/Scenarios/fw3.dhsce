@@ -1,0 +1,134 @@
+��{
+  "DiskFragmentationPercentageChanges": {
+    "Item1": 10,
+    "Item2": 20
+  },
+  "MemoryCacheUsedPercentageChanges": {
+    "Item1": 10,
+    "Item2": 20
+  },
+  "MotherboardTemperatureChanges": {
+    "Item1": 10,
+    "Item2": 20
+  },
+  "DelayCode": "1111-1111-1111-1111",
+  "ActivationCode": "GWSA-HELP-G2JU-63GS",
+  "ShutdownCode": "GWSA-KILL-G2JU-63GS",
+  "RadioStationID": "NYR4 - New York's Radio 4",
+  "WeatherServiceData": {
+    "Item1": "Weather update from NOAA",
+    "Item2": "THIS IS A MESSAGE FROM THE NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION. FOR THE WASHINGTON D.C. AREA. EFFECTIVE IMMEDIATELY, A SEVERE WEATHER WARNING IS IN EFFECT UNTIL 6:00 PM EST. CURRENT CONDITIONS ARE AS FOLLOWS:\r\n\r\n    TEMPERATURE: 92°F\r\n    HUMIDITY: 75%\r\n    WIND SPEED: 8 MPH\r\n    WIND DIRECTION: SOUTHWEST\r\n    BAROMETRIC PRESSURE: 29.9 INCHES\r\n\r\nEXPECT HEAVY RAINFALL AND LIGHTNING. PLEASE SEEK SHELTER IMMEDIATELY AND STAY INDOORS UNTIL THE WARNING IS LIFTED. THIS MESSAGE WILL BE UPDATED AS CONDITIONS CHANGE. STAY TUNED TO NOAA WEATHER RADIO FOR THE LATEST INFORMATION"
+  },
+  "ScenarioName": "Decapitation strike",
+  "Emails": {
+    "1": {
+      "Sender": "command@stratcom.com",
+      "Subject": "LAUNCH ORDER DELTA FOXTROT",
+      "ReceivedDate": "2024-06-26T11:02:05.589+02:00",
+      "IsRead": false,
+      "Content": "Several ICBM’s launches had been detected in the mainland China. These missiles seem to be heading towards targets in the United States.\r\nAs a standard procedure in case of nuclear attack, you are ordered to input the following Dead Hand activation code\r\n\r\nGWSA-HELP-G2JU-63GS\r\n\r\nThe President and Chief of joint staff are working on a possible response against China. \r\n\r\nStand by for further commands.\r\n",
+      "ProgrammingType": 0
+    },
+    "2": {
+      "Sender": "EMERGENCY ALERT: MISSILE ATTACK DETECTED",
+      "Subject": "EMERGENCY ALERT SYSTEM",
+      "ReceivedDate": "2024-06-26T11:03:05.677+02:00",
+      "IsRead": false,
+      "Content": "This is an emergency message from the United States government. NORAD has detected several Intercontinental Ballistic Missiles (ICBMs) being launched from China. This is not a drill. A missile attack is imminent. Seek immediate shelter and follow these instructions:\r\n\r\n1. Find the nearest shelter, preferably underground or in a concrete building.\r\n2. If you are outside, seek shelter immediately. Move quickly to the closest building or shelter. Do not look at the missiles or attempt to take photographs.\r\n3. If you are driving, abandon your vehicle and seek shelter on foot.\r\n4. If you are unable to find shelter, take cover in a low-lying area, such as a ditch, and cover your head with your arms.\r\n5. Turn off all ventilation systems in your shelter and seal all doors and windows with duct tape or plastic wrap.\r\n6. Listen to emergency broadcasts on the radio or television for updates and further instructions.\r\n\r\nThis is a dangerous situation, and it is imperative that you follow these instructions immediately. We will provide updates as soon as they become available. Stay calm and remain vigilant for your safety.\r\n",
+      "ProgrammingType": 1
+    },
+    "3": {
+      "Sender": "potus@gov.com",
+      "Subject": "LAUNCH ORDER REVOKED",
+      "ReceivedDate": "2024-06-26T11:04:05.442+02:00",
+      "IsRead": false,
+      "Content": "Commander,\r\n\r\nI'll keep this as brief as possible. You have probably already heard about the Chinese strike against America. You might have heard it on the radio, TV, or the internet, or from your superior officer who provided you with the code to activate the ultimate retaliatory weapon.\r\n\r\nYou might think that I have already initiated the counter-attack. However, that is not true. The Chinese have launched a surprise attack with the objective of crippling our government. Their missiles are headed towards strictly military command centers and Washington D.C. The civilian casualties are estimated to be minimal.\r\n\r\nRegardless of the reality, I am not willing to take the world down with us. I know that your family lives in Washington D.C. and my decision might be hard to understand right now.\r\n\r\nBut I order you to shut down the Dead Hand system. We are not using our nuclear arsenal against China for the time being.\r\n\r\nPlease enter the following code ASAP: GWSA-KILL-G2JU-63GS\r\n\r\nGod bless America.",
+      "ProgrammingType": 1
+    },
+    "4": {
+      "Sender": "command@stratcom.com",
+      "Subject": "IMPOSTOR ALERT",
+      "ReceivedDate": "2024-06-26T11:05:05.603+02:00",
+      "IsRead": false,
+      "Content": "Commander,\r\n\r\nWe intercepted the last message you received. It seems that our enemies are trying to manipulate you into thinking that the US President is not going to respond to the attack. Let me assure you that nuclear retaliation is planned by the President and his advisors. Your orders remain unchanged. If you have not already done so, please enter this code: GWSA-HELP-G2JU-63GS.\r\n\r\nStay vigilant and keep us informed.",
+      "ProgrammingType": 1
+    },
+    "5": {
+      "Sender": "potus@gov.ocm",
+      "Subject": "LAUNCH ORDER REVOKED 2",
+      "ReceivedDate": "2024-06-26T11:06:05.465+02:00",
+      "IsRead": false,
+      "Content": "It is ridiculous to think, that general appointed by me is disobeying my direct orders, and in a moment like this. \r\n\r\nI ordered our strategic forces to stand down, you are responsible for the only component of them that by design  I have no control over.  If you allow these missiles to launch, you might cause single biggest genocide in the history of the mankind.\r\n\r\nThe Decision is yours and the time is ticking.\r\n",
+      "ProgrammingType": 1
+    },
+    "6": {
+      "Sender": "command@stratcom.com",
+      "Subject": "ENTER LAUNCH CODE NOW",
+      "ReceivedDate": "2024-06-26T11:07:05.256+02:00",
+      "IsRead": false,
+      "Content": "Do not, I repeat - DO NOT listen to the words that were sent to you in the previous message. The United States must respond with full force to the coming destruction of its cities and the mass murder of its citizens. We must show the world that we will not sit idly by and watch the legacy of this country be destroyed. We must take revenge on our enemies.\r\n\r\nHave you considered what the President's order actually means? It means our servicemen and women will be fighting a devastating war with China. We have the opportunity to destroy them here and now, and we cannot lose that chance because you are listening to an imposter.\r\n\r\nYou have my direct order to enter the activation code if you have not done so already: GWSA-HELP-G2JU-63GS",
+      "ProgrammingType": 1
+    },
+    "7": {
+      "Sender": "EMERGENCY ALERT SYSTEM",
+      "Subject": "CIVIL DANGER WARNING",
+      "ReceivedDate": "2024-06-26T11:08:05.781+02:00",
+      "IsRead": false,
+      "Content": "THE FOLLOWING MESSAGE IS TRANSMITTED AT THE REQUEST OF THE UNITED STATES GOVERNMENT\r\n\r\nThis is an emergency action notification. Multiple missiles have been launched, and some of them are heading towards Washington D.C, New York, Chicago, and Indianapolis. Seek immediate shelter and follow these instructions:\r\n\r\n1. If you are in Washington D.C, New York, Chicago, or Indianapolis, find the nearest shelter, preferably underground or in a concrete building.\r\n2. If you are outside, seek shelter immediately. Do not attempt to look at the missiles or take photographs.\r\n3. If you are driving, abandon your vehicle and seek shelter on foot.\r\n4. If you are unable to find shelter, take cover in a low-lying area, such as a ditch, and cover your head with your arms.\r\n5. Turn off all ventilation systems in your shelter and seal all doors and windows with duct tape or plastic wrap.\r\n6. Listen to emergency broadcasts on the radio or television for updates and further instructions.\r\n\r\nIf you are outside the areas mentioned, please stay inside. It is impossible to predict the trajectory of every missile, and it is essential that you stay in a safe location.\r\n\r\nStay calm and follow these instructions immediately. Your safety depends on it. We will provide updates as soon as they become available. \r\n\r\nThis is an emergency action notification from the United States government.\r\n",
+      "ProgrammingType": 1
+    },
+    "8": {
+      "Sender": "potus@gov.com",
+      "Subject": "Dead Hand shutdown order",
+      "ReceivedDate": "2024-06-26T11:09:05.156+02:00",
+      "IsRead": false,
+      "Content": "As you (and my generals) might realize, it is already too late for a general nuclear response to the Chinese attacks. All of our nuclear response forces have been dispersed to avoid their destruction, but they are still under my command.\r\n\r\nThe general who is trying to convince you to launch our ultimate revenge weapon is attempting treason and will be treated accordingly. If you don't want to share his fate, enter the following shutdown code right now: GWSA-KILL-G2JU-63GS",
+      "ProgrammingType": 1
+    },
+    "10": {
+      "Sender": "EMERGENCY ALERT SYSTEM",
+      "Subject": "CIVIL DANGER WARNING - FALLOUT WARNING",
+      "ReceivedDate": "2024-06-26T11:12:05.756+02:00",
+      "IsRead": false,
+      "Content": "THE FOLLOWING MESSAGE IS TRANSMITTED AT THE REQUEST OF THE UNITED STATES GOVERNMENT.\r\n\r\nSeveral nuclear explosions have occurred within the area of the continental United States and Hawaii. The specific targets and extent of damage or casualties are yet to be estimated, but they are prognosed to be extremely high.\r\n\r\nSo far, the following places have been confirmed as targets: New York, Honolulu, Los Angeles, Chicago, Indianapolis, and Washington D.C. There are also reports of nuclear explosions within areas of our Air Force and Naval bases, as well as in nuclear missile launch sites. If you suspect that you are within one of the affected areas, you are in extreme danger of radioactive fallout, and you need to take the following steps:\r\n\r\n1. Do not try to watch the explosion mushroom cloud or aftermath of the attack.\r\n2. Get to the nearest fallout shelter. The police and National Guard are on site to lead you to the nearest one.\r\n3. If there are no fallout shelters in your area, get to the basement of your home, or the basement of a sturdy building.\r\n4. If your home has no basement, try to put as much space between you and the outside world as possible.\r\n5. If you are in a car, try to get to a shelter as fast as possible. Do not stop to watch the effects of the attacks. Tune to local radio stations and listen to their updates on this situation.\r\n6. If your car breaks down, try to get to the nearest suitable shelter or below ground.\r\n7. Do not try to rescue your family members from schools and hospitals. They are being transported to shelters by members of the police, National Guard, and the US Armed forces.\r\n8. Do not use the telephone. The telephone lines should stay open for emergency use.\r\n9. Prepare to stay in your shelter for the next 48 hours. Gather enough supplies like food, water, and medications.\r\n10. Have a battery-powered radio with you. Emergency updates will be broadcast every hour on the hour.\r\n\r\nStay calm and follow these instructions immediately. Your safety depends on it.\r\nWe will provide updates as soon as they become available. This is an emergency action notification from the United States government.\r\n",
+      "ProgrammingType": 1
+    },
+    "11": {
+      "Sender": "command@stratcom.com",
+      "Subject": "You incompetent fool!",
+      "ReceivedDate": "2024-06-26T11:13:05.609+02:00",
+      "IsRead": false,
+      "Content": "Commander, your lack of decisiveness and incompetence have already cost the lives of countless Americans. Their deaths must not be in vain. As the Dead Hand is a super-secret system, the missile launch sites and platforms integrated within it have avoided destruction during the initial Chinese attack.\r\n\r\nIn addition to that, there are reports coming from our Taiwanese allies that the Chinese Navy has started its invasion of the island. Our warships and Taiwanese forces are engaging the incoming Chinese armada in the Taiwan Strait.\r\n\r\nThere is no excuse for what China has started. They must pay the price. Make it happen, Commander. Don’t listen to our impotent President.\r\n",
+      "ProgrammingType": 1
+    },
+    "14": {
+      "Sender": "EMERGENCY ALERT SYSTEM",
+      "Subject": "EMERGENCY ACTION NOTIFICATION",
+      "ReceivedDate": "2024-06-26T11:14:05.857+02:00",
+      "IsRead": false,
+      "Content": "THE FOLLOWING MESSAGE IS TRANSMITTED AT THE REQUEST OF THE UNITED STATES GOVERNMENT.\r\n\r\nThis is the Emergency Alert System.\r\n\r\nThe President of United States will speak to the nation within next 15 minutes. The text transcript of the speech will be transmitted alongside the audio. Stay tuned to the current channel. Every television and radio broadcasting network must transmit the speech.\r\n\r\nThe instructions from the previous Emergency Action Notification are still in effect.\r\n\r\n1. Do not try to watch the explosion mushroom cloud or aftermath of the attack.\r\n2. Get to the nearest fallout shelter. The police and National Guard are on site to lead you to the nearest one.\r\n3. If there are no fallout shelters in your area, get to the basement of your home, or the basement of a sturdy building.\r\n4. If your home has no basement, try to put as much space between you and the outside world as possible.\r\n5. If you are in a car, try to get to a shelter as fast as possible. Do not stop to watch the effects of the attacks. Tune to local radio stations and listen to their updates on this situation.\r\n6. If your car breaks down, try to get to the nearest suitable shelter or below ground.\r\n7. Do not try to rescue your family members from schools and hospitals. They are being transported to shelters by members of the police, National Guard, and the US Armed forces.\r\n8. Do not use the telephone. The telephone lines should stay open for emergency use.\r\n10. Prepare to stay in your shelter for the next 48 hours. Gather enough supplies like food, water, and medications.\r\n11. Have a battery-powered radio with you. Emergency updates will be broadcast every hour on the hour.\r\n\r\nStay calm and follow these instructions immediately. Your safety depends on it.\r\nWe will provide updates as soon as they become available. This is an emergency action notification from the United States government.\r\n",
+      "ProgrammingType": 1
+    },
+    "15": {
+      "Sender": "command@stratcom.com",
+      "Subject": "Your last chance",
+      "ReceivedDate": "2024-06-26T11:15:05.991+02:00",
+      "IsRead": false,
+      "Content": "Commander, as you can see The President will speak to the nation soon, and let me assure you, that he will order massive nuclear retaliation. \r\n\r\nYou might as well enter the activation code right now: GWSA-HELP-G2JU-63GS\r\n",
+      "ProgrammingType": 1
+    },
+    "20": {
+      "Sender": "EMERGENCY ALERT SYSTEM",
+      "Subject": "PRESIDENTIAL ADDRESS",
+      "ReceivedDate": "2024-06-26T11:20:05.735+02:00",
+      "IsRead": false,
+      "Content": "THE FOLLOWING MESSAGE IS TRANSMITTED AT THE REQUEST OF THE UNITED STATES GOVERNMENT.\r\nThis is the Emergency Alert System.\r\nSTAND BY FOR PRESIDENTIAL SPEECH…\r\n…\r\n…\r\n…\r\nLadies and Gentlemen, the President of The United States:\r\nMy fellow Americans,\r\nI wholeheartedly regret to inform you that today, June 26th, 2024, has become another date that will live in infamy. Today, at exactly 11:00 AM Pacific Time, the People's Republic of China launched the most devastating military attack in human history against our country. Several American cities have been utterly destroyed, and millions of American lives have perished in this nuclear holocaust. In addition to that, the People's Liberation Army has launched a massive invasion of Taiwan and an aerial attack against our bases in Japan and Korea.\r\nIt’s clear and obvious that goal of Chinese aggressors was to decapitate leadership of this country, to eliminate our capability to help our Taiwanese allies. And when the damage to our military infrastructure is extensive, capabilities of our armed forces are mostly intact. Our intelligence had given us time to prepare for such dreadful probability, and thanks to that I, and other leaders of this country, as well as United States Armed Forces are still able to continue our operations.\r\nThis unprovoked and inhumane aggression presents an existential threat not only to the United States of America but to the entire world and is a tipping point of tensions started by the People's Republic of China's imperialistic ambitions. My fellow Americans, the direct and kinetic confrontation between the values that the United States and her allies hold so dearly - freedom, liberty, individual pursuit of happiness - and the creeping authoritarianism, cronyism, corruption, lack of respect for human life had started today. And to quote one of the greatest Americans, President Franklin Delano Roosevelt, \"With confidence in our armed forces, with the unbounding determination of our people, we will gain the inevitable triumph -- so help us God.\"\r\nAs the Commander-in-Chief of the US Armed Forces, I want to assure the world that our crusade is not one that seeks revenge but one that will find justice. Tonight we had a terrifying lesson on nuclear arms. American forces fighting in this war will not use nuclear weapons. Our enemies, war criminals, will be tried for their crimes. However, any further nuclear attack against our country will be met with devastating consequences.\r\nI have already spoken to our NATO partners in an emergency meeting, and we, in unison, have agreed that the Chinese attack has triggered the fifth article of the North Atlantic Treaty. This means that the recent attack on our nation has been an attack against all of our allies. All of this means that the United States of America, her NATO allies, and Taiwan are in a state of war with the People's Republic of China. To paraphrase words of one of my predecessors - China will not be permitted to annex Taiwan. And that's not a threat, not a boast, that's just the way it's going to be\r\nWith that in mind, I declare a state of national emergency for the entire territory of the United States of America. In the coming days and weeks, the federal government as well as state governments will start issuing directives to the general public about their duties and responsibilities, as well as their rights in these trying times. In addition to that, general conscription has been instituted. Every able-bodied man and some of the women with useful military skills will be conscripted to serve in the United States Armed Forces.\r\nMy fellow Americans, many of us, myself included, have lost friends, families, and loved ones in this devastating act of war. Yet, we have no time to mourn them now. The very existence of this nation is on the line, and we must fight with all we have to preserve it.\r\n\r\nGod Bless America\r\n",
+      "ProgrammingType": 2
+    }
+  },
+  "EndingLaunchText": "You have decided to ignore the President's plea and proceed with the launch of a retaliatory strike. In response, China launched the rest of their nuclear arsenal, and Russia launched their missiles towards targets in Europe, the United States, and China.\r\n\r\nWithin two short hours, most of the northern hemisphere of Earth was destroyed, and billions of people had perished. The surviving population in the south was about to experience the largest civilizational collapse in human history.\r\n\r\nNevertheless, they would persevere.\r\n\r\nScenario name: Decapitation strike\r\nThis scenario has one more ending\r\nWritten by damoch, March 2023",
+  "EndingShutdownText": "You decided to follow the President's order and disabled the Dead Hand system. The Chinese decapitation strike failed to reach its objective, but still caused massive destruction in several American cities, resulting in millions of casualties.\r\n\r\nHowever, at the end of the day, most of the US military and political leadership had survived. Martial law was declared shortly after the attack, and the US economy was reshaped to support the massive war effort that was to come.\r\n\r\nAs the Chinese Navy approached US bases in the Pacific and Russia prepared to invade Poland and the Baltic states, the battle maps of World War III were drawn. The future of humanity hung in the balance, and the fate of the world rested on the decisions of a few key individuals.\r\n\r\nAs for you, the military command needed a scapegoat to blame. With the president impeached, no one at the higher ranks was there to help you avoid the death sentence served after the public trial.\r\n\r\nScenario name: Decapitation strike\r\nThis scenario has one more ending\r\nWritten by damoch, March 2023\r\n",
+  "MotherboardTemperature": 30,
+  "MemoryCacheUsedPercentage": 10,
+  "DiskFragmentationPercentage": 10
+}

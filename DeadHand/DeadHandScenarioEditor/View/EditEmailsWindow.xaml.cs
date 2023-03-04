@@ -36,7 +36,6 @@ namespace DeadHandScenarioEditor.View
 
         private void TimeOfArrivalTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            //parse new value to a var
             float newValue;
             if (float.TryParse(TimeOfArrivalTextBox.Text, out newValue))
             {

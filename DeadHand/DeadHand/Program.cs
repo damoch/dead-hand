@@ -32,7 +32,7 @@ namespace DeadHand
         private static void PickScenario()
         {
             Console.WriteLine("Welcome to Dead Hand");
-            Console.WriteLine("Pick scenario by entering its number:");
+            Console.WriteLine("Pick scenario by entering its number and pressing ENTER:");
             foreach (var scenario in _scenarios)
             {
                 Console.WriteLine($"{scenario.Key} - {scenario.Value}");
