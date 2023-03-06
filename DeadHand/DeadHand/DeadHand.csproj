@@ -100,7 +100,9 @@
   <ItemGroup>
     <Content Include="radioactive.ICO" />
     <None Include="App.config" />
-    <Content Include="Data\Scenarios\falseWarning.json" />
+    <Content Include="Data\Scenarios\falseWarning.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Data\Scenarios\fw.dhsce">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
